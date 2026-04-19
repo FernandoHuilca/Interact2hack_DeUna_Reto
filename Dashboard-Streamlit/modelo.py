@@ -182,6 +182,14 @@ div[data-baseweb="select"] > div:focus,
 div[data-baseweb="select"] > div:focus-within {
     border-color: var(--morado) !important;
 }
+
+/* mapa: tarjeta puntual (solo este bloque) */
+.st-key-map_card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 22px 14px 22px;
+    box-shadow: 0 4px 20px rgba(77,41,115,.13);
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -353,58 +361,56 @@ st.markdown("<br>", unsafe_allow_html=True)
 map_col, pie_col = st.columns([3, 2])
 
 with map_col:
-    st.markdown(
-        '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;'
-        'box-shadow:0 4px 20px rgba(77,41,115,.13);">'
-        '<p style="font-family:Lilita One,cursive;font-weight:400;'
-        'font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Mapa de Riesgo Nacional</p>'
-        '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">'
-        'Distribución geográfica de comercios por nivel de riesgo</p>',
-        unsafe_allow_html=True
-    )
+    with st.container(key="map_card"):
+        st.markdown(
+            '<p style="font-family:Lilita One,cursive;font-weight:400;'
+            'font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Mapa de Riesgo Nacional</p>'
+            '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">'
+            'Distribución geográfica de comercios por nivel de riesgo</p>',
+            unsafe_allow_html=True
+        )
 
-    # Usar coordenadas reales de cada comercio (con dispersión por provincia)
-    map_df = df_raw.copy()
-    map_df["lat"] = map_df["Provincia"].map(lambda p: PROV_COORDS.get(p, (-1.8, -78.5))[0])
-    map_df["lon"] = map_df["Provincia"].map(lambda p: PROV_COORDS.get(p, (-1.8, -78.5))[1])
-    # Pequeña dispersión para que no se apilen todos en el mismo punto
-    rng = np.random.default_rng(99)
-    map_df["lat"] = map_df["lat"] + rng.normal(0, 0.18, len(map_df))
-    map_df["lon"] = map_df["lon"] + rng.normal(0, 0.18, len(map_df))
+        # Usar coordenadas reales de cada comercio (con dispersión por provincia)
+        map_df = df_raw.copy()
+        map_df["lat"] = map_df["Provincia"].map(lambda p: PROV_COORDS.get(p, (-1.8, -78.5))[0])
+        map_df["lon"] = map_df["Provincia"].map(lambda p: PROV_COORDS.get(p, (-1.8, -78.5))[1])
+        # Pequeña dispersión para que no se apilen todos en el mismo punto
+        rng = np.random.default_rng(99)
+        map_df["lat"] = map_df["lat"] + rng.normal(0, 0.18, len(map_df))
+        map_df["lon"] = map_df["lon"] + rng.normal(0, 0.18, len(map_df))
 
-    fig_map = px.scatter_mapbox(
-        map_df,
-        lat="lat", lon="lon",
-        color="Nivel de Riesgo",
-        color_discrete_map={"Alto": "#e74c3c", "Medio": "#fcb632", "Bajo": "#64bda1"},
-        size="Score Churn",
-        size_max=14,
-        hover_name="Comercio",
-        hover_data={"Provincia": True, "Score Churn": True,
-                    "Nivel de Riesgo": True, "lat": False, "lon": False},
-        mapbox_style="carto-positron",
-        zoom=5.4,
-        center={"lat": -1.83, "lon": -78.18},
-    )
-    fig_map.update_layout(
-        margin={"r": 0, "t": 0, "l": 0, "b": 0},
-        paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
-        legend=dict(
-            title="Nivel de Riesgo",
-            orientation="h", y=-0.06, x=0,
-            font=dict(size=11, color="#4d2973"),
-            bgcolor="rgba(255,255,255,0.7)",
-            bordercolor="#ece8f7", borderwidth=1,
-        ),
-        height=420,
-    )
-    st.markdown(
-        '<div style="height:10px;border-top:1px solid #ece8f7;margin:6px 0 12px 0;"></div>',
-        unsafe_allow_html=True
-    )
-    st.plotly_chart(fig_map, use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+        fig_map = px.scatter_mapbox(
+            map_df,
+            lat="lat", lon="lon",
+            color="Nivel de Riesgo",
+            color_discrete_map={"Alto": "#e74c3c", "Medio": "#fcb632", "Bajo": "#64bda1"},
+            size="Score Churn",
+            size_max=14,
+            hover_name="Comercio",
+            hover_data={"Provincia": True, "Score Churn": True,
+                        "Nivel de Riesgo": True, "lat": False, "lon": False},
+            mapbox_style="carto-positron",
+            zoom=5.4,
+            center={"lat": -1.83, "lon": -78.18},
+        )
+        fig_map.update_layout(
+            margin={"r": 0, "t": 0, "l": 0, "b": 0},
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(
+                title="Nivel de Riesgo",
+                orientation="h", y=-0.06, x=0,
+                font=dict(size=11, color="#4d2973"),
+                bgcolor="rgba(255,255,255,0.7)",
+                bordercolor="#ece8f7", borderwidth=1,
+            ),
+            height=420,
+        )
+        st.markdown(
+            '<div style="height:10px;border-top:1px solid #ece8f7;margin:6px 0 12px 0;"></div>',
+            unsafe_allow_html=True
+        )
+        st.plotly_chart(fig_map, use_container_width=True)
 
 with pie_col:
     st.markdown(
