@@ -42,21 +42,22 @@ MENSAJES = {
 
 ACCIONES = {
     "Alto": [
-        "<b>Llamada urgente</b> esta semana: prioridad máxima en el portafolio del comercial.",
-        "<b>Escalar ticket pendiente</b> a soporte nivel 2 de forma inmediata si existe.",
+        "<b>Llamada urgente</b> esta semana: prioridad máxima en el portafolio del encargado.",
+        "<b>Escalar ticket pendiente</b> a soporte técnico de forma inmediata si el caso lo amerita.",
         "<b>Ofrecer asesoría digital personalizada</b>: especialmente si el propietario supera los 45 años.",
-        "<b>Proponer acceso a nueva funcionalidad</b> por 30 días como incentivo de permanencia.",
+        "<b>Proponer acceso anticipado a futuras nuevas funcionalidades</b> como incentivo de permanencia.",
     ],
     "Medio": [
         "<b>Contacto proactivo</b> vía WhatsApp en los próximos 7 días.",
         "<b>Ofrecer beneficio del mes</b>: cashback puntual o límite de transacción ampliado.",
         "<b>Gestionar cierre de tickets</b> de soporte abiertos antes del contacto comercial.",
-        "<b>Compartir reporte de rendimiento</b> comparado con comercios similares en su provincia.",
+        "<b>Realizar una propuesta para mejora de rendimiento en ventas</b> comparado con la competencia directa.",
     ],
     "Bajo": [
-        "<b>Sin acción urgente</b>: revisión en el ciclo mensual de portafolio.",
-        "<b>Considerar para programa</b> de embajadores o referidos de De Una.",
-        "<b>Incluir en campaña</b> de fidelización preventiva del siguiente trimestre.",
+        "<b>Monitoreo pasivo</b>: Mantener revisión mensual mediante el dashboard.",
+        "<b>Reforzar presencia en el punto de venta</b>: Asegurar mediante encuestas automatizadas que el local cuenta con material físico visible como stickers y acrílicos QR de Deuna para incentivar el pago de sus clientes.",
+        "<b>Envío de reporte de valor</b>: Compartir por WhatsApp un resumen mensual automatizado de sus ventas y crecimiento con Deuna para tangibilizar el beneficio que se le da al negocio.",
+        "<b>Incentivar aumento de ticket promedio</b>: Enviar tutoriales cortos o tips sobre cómo ofrecer combos o promociones a los clientes que paguen específicamente con la app.",
     ],
 }
 
