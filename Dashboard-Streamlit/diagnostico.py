@@ -44,21 +44,21 @@ MENSAJES = {
 
 ACCIONES = {
     "Alto": [
-        "📞 Llamada urgente esta semana — prioridad máxima en el portafolio del comercial.",
-        "🔧 Escalar ticket pendiente a soporte nivel 2 de forma inmediata si existe.",
-        "🎯 Ofrecer asesoría digital personalizada — especialmente si el propietario supera los 45 años.",
-        "💡 Proponer acceso a nueva funcionalidad por 30 días como incentivo de permanencia.",
+        "Llamada urgente esta semana — prioridad máxima en el portafolio del comercial.",
+        "Escalar ticket pendiente a soporte nivel 2 de forma inmediata si existe.",
+        "Ofrecer asesoría digital personalizada — especialmente si el propietario supera los 45 años.",
+        "Proponer acceso a nueva funcionalidad por 30 días como incentivo de permanencia.",
     ],
     "Medio": [
-        "📱 Contacto proactivo vía WhatsApp en los próximos 7 días.",
-        "🎁 Ofrecer beneficio del mes — cashback puntual o límite de transacción ampliado.",
-        "📋 Gestionar cierre de tickets de soporte abiertos antes del contacto comercial.",
-        "📊 Compartir reporte de rendimiento comparado con comercios similares en su provincia.",
+        "Contacto proactivo vía WhatsApp en los próximos 7 días.",
+        "Ofrecer beneficio del mes — cashback puntual o límite de transacción ampliado.",
+        "Gestionar cierre de tickets de soporte abiertos antes del contacto comercial.",
+        "Compartir reporte de rendimiento comparado con comercios similares en su provincia.",
     ],
     "Bajo": [
-        "✅ Sin acción urgente — revisión en el ciclo mensual de portafolio.",
-        "🏆 Considerar para programa de embajadores o referidos de De Una.",
-        "📬 Incluir en campaña de fidelización preventiva del siguiente trimestre.",
+        "Sin acción urgente — revisión en el ciclo mensual de portafolio.",
+        "Considerar para programa de embajadores o referidos de De Una.",
+        "Incluir en campaña de fidelización preventiva del siguiente trimestre.",
     ],
 }
 

@@ -11,17 +11,14 @@ from pathlib import Path
 import joblib
 from diagnostico import generar_diagnostico
 
-# Cargar modelo y SHAP values (una sola vez, cached)
-@st.cache_resource
-def cargar_recursos():
-    return {
-        "shap_df":   pd.read_csv("shap_values.csv"),
-        "df_orig":   pd.read_csv("deuna2.csv"),   # datos crudos con id_comercio
-        "modelo":    joblib.load("modelo_RF_churn.joblib"),
-        "scaler":    joblib.load("scaler_churn.joblib"),
-    }
+@st.cache_data
+def cargar_datos():
+    filepath = Path(__file__).resolve().parent.parent / "data" / "predicciones_maestro.csv"
+    df = pd.read_csv(filepath)
+    df.columns = df.columns.str.strip()
+    return df
 
-recursos = cargar_recursos()
+recursos = cargar_datos()
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
@@ -387,7 +384,7 @@ with map_col:
     map_df["lat"] = map_df["lat"] + rng.normal(0, 0.18, len(map_df))
     map_df["lon"] = map_df["lon"] + rng.normal(0, 0.18, len(map_df))
 
-    fig_map = px.scatter_mapbox(
+    fig_map = px.scatter_map(
         map_df,
         lat="lat", lon="lon",
         color="Nivel de Riesgo",
@@ -397,7 +394,7 @@ with map_col:
         hover_name="Comercio",
         hover_data={"Provincia": True, "Score Churn": True,
                     "Nivel de Riesgo": True, "lat": False, "lon": False},
-        mapbox_style="carto-positron",
+        map_style="carto-positron",
         zoom=5.4,
         center={"lat": -1.83, "lon": -78.18},
     )
@@ -418,7 +415,7 @@ with map_col:
         '<div style="height:10px;border-top:1px solid #ece8f7;margin:6px 0 12px 0;"></div>',
         unsafe_allow_html=True
     )
-    st.plotly_chart(fig_map, use_container_width=True)
+    st.plotly_chart(fig_map, width='stretch')
     st.markdown('</div>', unsafe_allow_html=True)
 
 with pie_col:
@@ -478,7 +475,7 @@ with pie_col:
             plot_bgcolor="rgba(0,0,0,0)",
             height=305,
         )
-        st.plotly_chart(fig_pie, use_container_width=True)
+        st.plotly_chart(fig_pie, width='stretch')
 
     with metrics_c:
         st.markdown("<br>", unsafe_allow_html=True)
@@ -605,7 +602,7 @@ with table_col:
 
     event = st.dataframe(
         display_df[display_cols],
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
         on_select="rerun",
         selection_mode="single-row",
@@ -628,40 +625,30 @@ selected_rows = event.selection.rows if event.selection else []
 if selected_rows:
     idx = selected_rows[0]
     row = df_filtered.reset_index(drop=True).iloc[idx]
-    comercio_id = row["ID"]  # ajusta al nombre de columna que usas en df_raw
+    row_raw = recursos.iloc[idx]
 
-    diagnostico, acciones, top_features = generar_diagnostico(
-        id_comercio=comercio_id,
-        df_original=recursos["df_orig"],
-        shap_df=recursos["shap_df"],
+    diagnostico, acciones, factores = generar_diagnostico(
+        row=row_raw.to_dict(),
+        nivel_riesgo=row_raw["nivel_riesgo"],
     )
 
     # ── Diagnóstico ────────────────────────────────────────────
-    st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-    st.markdown("#### 🩺 Diagnóstico (explicado por el modelo)")
-
+    diag_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
+    diag_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Diagnóstico</p>'
+    diag_html += '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Análisis detallado del comercio seleccionado</p>'
     for item in diagnostico:
-        st.markdown(f"<div class='rec-item'>{item}</div>", unsafe_allow_html=True)
-
-    # Mini tabla SHAP para el jurado técnico
-    if top_features:
-        st.markdown("**Variables más influyentes (SHAP):**")
-        for f in top_features:
-            barra = "🔴" if f["shap"] > 0 else "🟢"
-            st.markdown(
-                f"<div class='rec-item'>{barra} <b>{f['nombre']}</b> — "
-                f"{f['impacto']} (SHAP: {abs(f['shap']):.3f})</div>",
-                unsafe_allow_html=True
-            )
-
-    st.markdown('</div>', unsafe_allow_html=True)
+        diag_html += f'<div class="rec-item">{item}</div>'
+    diag_html += '</div>'
+    st.markdown(diag_html, unsafe_allow_html=True)
 
     # ── Acciones ───────────────────────────────────────────────
-    st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-    st.markdown("#### 💡 Acciones recomendadas para el equipo comercial")
+    acc_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
+    acc_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Acciones Recomendadas</p>'
+    acc_html += '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Próximos pasos para el equipo comercial</p>'
     for item in acciones:
-        st.markdown(f"<div class='rec-item'>{item}</div>", unsafe_allow_html=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+        acc_html += f'<div style="background:linear-gradient(90deg, #ece8f7 0%, transparent 100%);border-left:3px solid #a478d1;border-radius:6px;padding:12px 14px;margin-bottom:10px;font-family:Montserrat,sans-serif;font-size:.9rem;color:#4f5563;line-height:1.5;">{item}</div>'
+    acc_html += '</div>'
+    st.markdown(acc_html, unsafe_allow_html=True)
 
 else:
     st.info(" Selecciona una fila de la tabla para ver el diagnóstico detallado del comercio.")
