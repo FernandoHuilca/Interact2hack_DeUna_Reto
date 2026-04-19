@@ -248,7 +248,7 @@ class DashboardDataLoader:
         
         return df_mapped
 
-loader = DashboardDataLoader("predicciones_maestro.csv")
+loader = DashboardDataLoader("predicciones_maestro (1).csv")
 df_raw = loader.get_data()
 
 # Obtenemos las provincias presentes en los datos
