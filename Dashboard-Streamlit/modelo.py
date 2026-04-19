@@ -3,10 +3,20 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-import json
 import random
 import base64
 from pathlib import Path
+
+from diagnostico import generar_diagnostico
+
+@st.cache_data
+def cargar_datos():
+    filepath = Path(__file__).resolve().parent.parent / "data" / "predicciones_maestro (1).csv"
+    df = pd.read_csv(filepath)
+    df.columns = df.columns.str.strip()
+    return df
+
+recursos = cargar_datos()
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
@@ -207,6 +217,18 @@ div[data-baseweb="select"] > div:focus-within {
     padding: 20px 18px;
     box-shadow: 0 2px 10px rgba(77,41,115,.12);
     border-top: 4px solid #4d2973;
+}
+
+/* ── CHART CONTAINERS ── */
+.st-key-chart_card, .st-key-gauge_card {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 22px 22px 14px 22px !important;
+    box-shadow: 0 4px 20px rgba(77,41,115,.13) !important;
+}
+
+.st-key-chart_card > div, .st-key-gauge_card > div {
+    background: transparent !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -630,15 +652,21 @@ with table_col:
 # ─────────────────────────────────────────────
 selected_rows = event.selection.rows if event.selection else []
 
+# ── En la sección de detalle del comercio seleccionado ─────────
 if selected_rows:
     idx = selected_rows[0]
     row = df_filtered.reset_index(drop=True).iloc[idx]
+    row_raw = recursos.iloc[idx]
+
+    diagnostico, acciones, factores = generar_diagnostico(
+        row=row_raw.to_dict(),
+        nivel_riesgo=row_raw["nivel_riesgo"],
+    )
 
     st.markdown(f'<p class="section-title">Detalle: {row["Comercio"]}</p>',
                 unsafe_allow_html=True)
 
     risk_color = {"Alto":"#e74c3c","Medio":"#fcb632","Bajo":"#64bda1"}[row["Nivel de Riesgo"]]
-    badge_cls  = f"badge-{row['Nivel de Riesgo'].lower()}"
 
     # Info general
     d1, d2, d3, d4, d5 = st.columns(5)
@@ -647,7 +675,7 @@ if selected_rows:
         (d2, "Numero celular", row["Numero celular"]),
         (d3, "Tipo comercio", row.get("TipoComercio", row["Comercio"].split()[0])),
         (d4, "Dias sin transar", f"{row['dias_sin_transar']}"),
-        (d5, "Tickets no resueltos", row["Alertas Activas"]),
+        (d5, "Tickets no resueltos", str(int(row["Alertas Activas"]))),
     ]:
         col.markdown(f"""
         <div class="kpi-card" style="border-top-color:{risk_color};">
@@ -657,129 +685,87 @@ if selected_rows:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    chart_col, info_col = st.columns([3, 2])
+    # Gráficos: línea + gauge
+    chart_col, gauge_col = st.columns([3, 2])
 
     with chart_col:
-        st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-        st.markdown("**Actividad de los últimos 12 meses**")
+        with st.container(key="chart_card"):
+            st.markdown('<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Actividad de los últimos 12 meses</p>', unsafe_allow_html=True)
+            st.markdown('<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Transacciones y monto promedio en los últimos 12 meses</p>', unsafe_allow_html=True)
+            
+            meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"]
+            base_tx = row["Transacciones (30d)"]
+            tx_hist = [max(5, int(base_tx * (0.7 + 0.6*random.random()))) for _ in range(12)]
+            amt_hist = [round(row["Monto Promedio ($)"] * (0.7 + 0.6*random.random()), 2) for _ in range(12)]
 
-        meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"]
-        base_tx = row["Transacciones (30d)"]
-        tx_hist = [max(5, int(base_tx * (0.7 + 0.6*random.random()))) for _ in range(12)]
-        amt_hist = [round(row["Monto Promedio ($)"] * (0.7 + 0.6*random.random()), 2) for _ in range(12)]
+            fig_line = go.Figure()
+            fig_line.add_trace(go.Bar(
+                x=meses, y=tx_hist, name="Transacciones",
+                marker_color="#a478d1", opacity=0.75, yaxis="y"))
+            fig_line.add_trace(go.Scatter(
+                x=meses, y=amt_hist, name="Monto Prom ($)",
+                mode="lines+markers", line=dict(color="#4d2973", width=2.5),
+                marker=dict(size=7), yaxis="y2"))
+            fig_line.update_layout(
+                yaxis=dict(title=dict(text="Transacciones", font=dict(color="#a478d1"))),
+                yaxis2=dict(title=dict(text="Monto Prom ($)", font=dict(color="#4d2973")),
+                            overlaying="y", side="right"),
+                legend=dict(orientation="h", y=1.1),
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(236,232,247,.5)",
+                margin=dict(l=10,r=10,t=30,b=10),
+                height=260,
+            )
+            st.plotly_chart(fig_line, use_container_width=True)
 
-        fig_line = go.Figure()
-        fig_line.add_trace(go.Bar(
-            x=meses, y=tx_hist, name="Transacciones",
-            marker_color="#a478d1", opacity=0.75, yaxis="y"))
-        fig_line.add_trace(go.Scatter(
-            x=meses, y=amt_hist, name="Monto Prom ($)",
-            mode="lines+markers", line=dict(color="#4d2973", width=2.5),
-            marker=dict(size=7), yaxis="y2"))
-        fig_line.update_layout(
-            yaxis=dict(title=dict(text="Transacciones", font=dict(color="#a478d1"))),
-            yaxis2=dict(title=dict(text="Monto Prom ($)", font=dict(color="#4d2973")),
-                        overlaying="y", side="right"),
-            legend=dict(orientation="h", y=1.1),
-            paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(236,232,247,.5)",
-            margin=dict(l=10,r=10,t=30,b=10),
-            height=260,
-        )
-        st.plotly_chart(fig_line, use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+    with gauge_col:
+        with st.container(key="gauge_card"):
+            st.markdown('<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Score de Riesgo Churn</p>', unsafe_allow_html=True)
+            st.markdown('<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Indicador de riesgo del comercio</p>', unsafe_allow_html=True)
+            
+            fig_gauge = go.Figure(go.Indicator(
+                mode="gauge+number+delta",
+                value=int(row["Score Churn"]),
+                delta={"reference": 50},
+                gauge={
+                    "axis": {"range": [0,100]},
+                    "bar": {"color": risk_color},
+                    "steps": [
+                        {"range":[0,40],  "color":"#d4edda"},
+                        {"range":[40,70], "color":"#fff3cd"},
+                        {"range":[70,100],"color":"#fde8e8"},
+                    ],
+                    "threshold": {"line":{"color":"#4d2973","width":3},"value":70},
+                },
+                number={"suffix":"/100","font":{"color":risk_color}},
+            ))
+            fig_gauge.update_layout(
+                paper_bgcolor="rgba(0,0,0,0)",
+                margin=dict(l=20,r=20,t=30,b=10),
+                height=260,
+            )
+            st.plotly_chart(fig_gauge, use_container_width=True)
 
-        # Gauge score
-        st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-        st.markdown("**Score de Riesgo Churn**")
-        fig_gauge = go.Figure(go.Indicator(
-            mode="gauge+number+delta",
-            value=int(row["Score Churn"]),
-            delta={"reference": 50},
-            gauge={
-                "axis": {"range": [0,100]},
-                "bar": {"color": risk_color},
-                "steps": [
-                    {"range":[0,40],  "color":"#d4edda"},
-                    {"range":[40,70], "color":"#fff3cd"},
-                    {"range":[70,100],"color":"#fde8e8"},
-                ],
-                "threshold": {"line":{"color":"#4d2973","width":3},"value":70},
-            },
-            number={"suffix":"/100","font":{"color":risk_color}},
-        ))
-        fig_gauge.update_layout(
-            paper_bgcolor="rgba(0,0,0,0)",
-            margin=dict(l=20,r=20,t=30,b=10),
-            height=220,
-        )
-        st.plotly_chart(fig_gauge, use_container_width=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    with info_col:
-        # Diagnóstico
-        st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-        st.markdown("#### 🩺 Diagnóstico")
+    # ── Diagnóstico ────────────────────────────────────────────
+    diag_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
+    diag_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Diagnóstico</p>'
+    diag_html += '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Análisis detallado del comercio seleccionado</p>'
+    for item in diagnostico:
+        diag_html += f'<div class="rec-item">{item}</div>'
+    diag_html += '</div>'
+    st.markdown(diag_html, unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
-        diag_por_riesgo = {
-            "Alto": [
-                f"Score de churn **{row['Score Churn']}/100** — nivel crítico.",
-                f"Se detectaron **{row['Alertas Activas']} alertas activas** en el período.",
-                f"Volumen de transacciones inusualmente elevado: **{row['Transacciones (30d)']} en 30d**.",
-                "Patrón de montos inconsistente con el perfil del sector.",
-                "Actividad concentrada en franjas horarias atípicas.",
-            ],
-            "Medio": [
-                f"Score de churn **{row['Score Churn']}/100** — nivel moderado.",
-                f"Se registraron **{row['Alertas Activas']} alertas** pendientes de revisión.",
-                f"Monto promedio de **${row['Monto Promedio ($)']}** con variabilidad alta.",
-                "Algunos patrones de transacción difieren del benchmark provincial.",
-                "Se recomienda monitoreo periódico.",
-            ],
-            "Bajo": [
-                f"Score de churn **{row['Score Churn']}/100** — dentro de parámetros normales.",
-                f"Solo **{row['Alertas Activas']} alertas** registradas, sin señales de riesgo.",
-                "Comportamiento transaccional consistente con el perfil del comercio.",
-                "Sin patrones anómalos en los últimos 12 meses.",
-                "Comercio clasificado como confiable en el modelo.",
-            ],
-        }
-
-        for item in diag_por_riesgo[row["Nivel de Riesgo"]]:
-            st.markdown(f"<div class='rec-item'>{item}</div>", unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-
-        # Recomendaciones
-        st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-        st.markdown("#### 💡 Recomendaciones / Acciones")
-
-        recs_por_riesgo = {
-            "Alto": [
-                "**Acción inmediata:** Escalar a equipo de cumplimiento.",
-                "Contactar al comercio para verificación de identidad.",
-                "Limitar temporalmente el límite de transacciones diarias.",
-                "Solicitar documentación de respaldo de las últimas 5 operaciones.",
-                "Activar monitoreo en tiempo real por 30 días.",
-            ],
-            "Medio": [
-                "**Revisión programada** en los próximos 7 días.",
-                "Comparar con benchmark de comercios similares en la provincia.",
-                "Configurar alertas automáticas ante nuevas anomalías.",
-                "Entrevista de seguimiento con el propietario.",
-                "Actualizar perfil de riesgo con nueva documentación.",
-            ],
-            "Bajo": [
-                "**Sin acción urgente** requerida por el momento.",
-                "Revisión de rutina en el próximo ciclo trimestral.",
-                "Considerar para programa de beneficios por buen historial.",
-                "Usar como referencia de perfil sano en el modelo.",
-                "Mantener actualizada la información de contacto.",
-            ],
-        }
-
-        for item in recs_por_riesgo[row["Nivel de Riesgo"]]:
-            st.markdown(f"<div class='rec-item'>{item}</div>", unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
+    # ── Acciones ───────────────────────────────────────────────
+    acc_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
+    acc_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Acciones Recomendadas</p>'
+    acc_html += '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Próximos pasos para el equipo comercial</p>'
+    for item in acciones:
+        acc_html += f'<div style="background:linear-gradient(90deg, #ece8f7 0%, transparent 100%);border-left:3px solid #a478d1;border-radius:6px;padding:12px 14px;margin-bottom:10px;font-family:Montserrat,sans-serif;font-size:.9rem;color:#4f5563;line-height:1.5;">{item}</div>'
+    acc_html += '</div>'
+    st.markdown(acc_html, unsafe_allow_html=True)
 
 else:
     st.info(" Selecciona una fila de la tabla para ver el diagnóstico detallado del comercio.")
