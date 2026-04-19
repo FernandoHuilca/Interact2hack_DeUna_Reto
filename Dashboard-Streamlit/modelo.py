@@ -88,6 +88,11 @@ st.markdown("""
 .stApp {
     background-color: var(--morado-claro);
     font-family: 'Montserrat', sans-serif;
+    color-scheme: light;
+}
+
+html, body, [data-testid="stAppViewContainer"] {
+    color-scheme: light !important;
 }
 
 /* ── HEADER ── */
@@ -213,6 +218,9 @@ div.block-container { padding-top: 0.6rem; }
 div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; }
 
 /* Fuerza la tabla a tema claro aunque Streamlit tome tema oscuro */
+div[data-testid="stDataFrame"] {
+    color-scheme: light !important;
+}
 div[data-testid="stDataFrame"] [data-testid="stDataFrameResizable"] {
     background: #ffffff !important;
 }
