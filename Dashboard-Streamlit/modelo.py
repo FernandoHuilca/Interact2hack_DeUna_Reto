@@ -3,12 +3,10 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
-import json
 import random
 import base64
 from pathlib import Path
 
-import joblib
 from diagnostico import generar_diagnostico
 
 @st.cache_data
@@ -219,6 +217,18 @@ div[data-baseweb="select"] > div:focus-within {
     padding: 20px 18px;
     box-shadow: 0 2px 10px rgba(77,41,115,.12);
     border-top: 4px solid #4d2973;
+}
+
+/* ── CHART CONTAINERS ── */
+.st-key-chart_card, .st-key-gauge_card {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 22px 22px 14px 22px !important;
+    box-shadow: 0 4px 20px rgba(77,41,115,.13) !important;
+}
+
+.st-key-chart_card > div, .st-key-gauge_card > div {
+    background: transparent !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -653,6 +663,91 @@ if selected_rows:
         nivel_riesgo=row_raw["nivel_riesgo"],
     )
 
+    st.markdown(f'<p class="section-title">Detalle: {row["Comercio"]}</p>',
+                unsafe_allow_html=True)
+
+    risk_color = {"Alto":"#e74c3c","Medio":"#fcb632","Bajo":"#64bda1"}[row["Nivel de Riesgo"]]
+
+    # Info general
+    d1, d2, d3, d4, d5 = st.columns(5)
+    for col, lbl, val in [
+        (d1, "Propietario", row["Propietario"]),
+        (d2, "Numero celular", row["Numero celular"]),
+        (d3, "Tipo comercio", row.get("TipoComercio", row["Comercio"].split()[0])),
+        (d4, "Dias sin transar", f"{row['dias_sin_transar']}"),
+        (d5, "Tickets no resueltos", str(int(row["Alertas Activas"]))),
+    ]:
+        col.markdown(f"""
+        <div class="kpi-card" style="border-top-color:{risk_color};">
+            <div class="kpi-value" style="color:{risk_color};font-size:1.5rem;">{val}</div>
+            <div class="kpi-label">{lbl}</div>
+        </div>""", unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # Gráficos: línea + gauge
+    chart_col, gauge_col = st.columns([3, 2])
+
+    with chart_col:
+        with st.container(key="chart_card"):
+            st.markdown('<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Actividad de los últimos 12 meses</p>', unsafe_allow_html=True)
+            st.markdown('<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Transacciones y monto promedio en los últimos 12 meses</p>', unsafe_allow_html=True)
+            
+            meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"]
+            base_tx = row["Transacciones (30d)"]
+            tx_hist = [max(5, int(base_tx * (0.7 + 0.6*random.random()))) for _ in range(12)]
+            amt_hist = [round(row["Monto Promedio ($)"] * (0.7 + 0.6*random.random()), 2) for _ in range(12)]
+
+            fig_line = go.Figure()
+            fig_line.add_trace(go.Bar(
+                x=meses, y=tx_hist, name="Transacciones",
+                marker_color="#a478d1", opacity=0.75, yaxis="y"))
+            fig_line.add_trace(go.Scatter(
+                x=meses, y=amt_hist, name="Monto Prom ($)",
+                mode="lines+markers", line=dict(color="#4d2973", width=2.5),
+                marker=dict(size=7), yaxis="y2"))
+            fig_line.update_layout(
+                yaxis=dict(title=dict(text="Transacciones", font=dict(color="#a478d1"))),
+                yaxis2=dict(title=dict(text="Monto Prom ($)", font=dict(color="#4d2973")),
+                            overlaying="y", side="right"),
+                legend=dict(orientation="h", y=1.1),
+                paper_bgcolor="rgba(0,0,0,0)",
+                plot_bgcolor="rgba(236,232,247,.5)",
+                margin=dict(l=10,r=10,t=30,b=10),
+                height=260,
+            )
+            st.plotly_chart(fig_line, use_container_width=True)
+
+    with gauge_col:
+        with st.container(key="gauge_card"):
+            st.markdown('<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Score de Riesgo Churn</p>', unsafe_allow_html=True)
+            st.markdown('<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Indicador de riesgo del comercio</p>', unsafe_allow_html=True)
+            
+            fig_gauge = go.Figure(go.Indicator(
+                mode="gauge+number+delta",
+                value=int(row["Score Churn"]),
+                delta={"reference": 50},
+                gauge={
+                    "axis": {"range": [0,100]},
+                    "bar": {"color": risk_color},
+                    "steps": [
+                        {"range":[0,40],  "color":"#d4edda"},
+                        {"range":[40,70], "color":"#fff3cd"},
+                        {"range":[70,100],"color":"#fde8e8"},
+                    ],
+                    "threshold": {"line":{"color":"#4d2973","width":3},"value":70},
+                },
+                number={"suffix":"/100","font":{"color":risk_color}},
+            ))
+            fig_gauge.update_layout(
+                paper_bgcolor="rgba(0,0,0,0)",
+                margin=dict(l=20,r=20,t=30,b=10),
+                height=260,
+            )
+            st.plotly_chart(fig_gauge, use_container_width=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # ── Diagnóstico ────────────────────────────────────────────
     diag_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
     diag_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Diagnóstico</p>'
@@ -661,6 +756,7 @@ if selected_rows:
         diag_html += f'<div class="rec-item">{item}</div>'
     diag_html += '</div>'
     st.markdown(diag_html, unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
     # ── Acciones ───────────────────────────────────────────────
     acc_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
