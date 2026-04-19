@@ -21,7 +21,24 @@ def hex_to_rgba(hex_color, alpha=0.15):
 
 @st.cache_data
 def cargar_datos():
-    filepath = Path.cwd() / 'data' / "predicciones_maestro (1).csv"
+    base_dir = Path(__file__).resolve().parent
+    repo_root = base_dir.parent
+
+    # Soporta ambos nombres de archivo que existen en el proyecto.
+    posibles_archivos = [
+        repo_root / 'data' / 'predicciones_maestro (1).csv',
+        repo_root / 'data' / 'predicciones_maestro.csv',
+        base_dir / 'data' / 'predicciones_maestro (1).csv',
+        base_dir / 'data' / 'predicciones_maestro.csv',
+    ]
+
+    filepath = next((p for p in posibles_archivos if p.exists()), None)
+    if filepath is None:
+        raise FileNotFoundError(
+            "No se encontro el archivo de datos. Se buscaron estas rutas: "
+            + ", ".join(str(p) for p in posibles_archivos)
+        )
+
     df = pd.read_csv(filepath)
     df.columns = df.columns.str.strip()
     return df
@@ -194,6 +211,23 @@ div.block-container { padding-top: 0.6rem; }
 
 /* dataframe scroll */
 div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; }
+
+/* Fuerza la tabla a tema claro aunque Streamlit tome tema oscuro */
+div[data-testid="stDataFrame"] [data-testid="stDataFrameResizable"] {
+    background: #ffffff !important;
+}
+div[data-testid="stDataFrame"] [role="grid"] {
+    --gdg-bg-cell: #ffffff !important;
+    --gdg-bg-cell-medium: #ffffff !important;
+    --gdg-bg-header: #f6f7fb !important;
+    --gdg-bg-header-has-focus: #ece8f7 !important;
+    --gdg-bg-header-hovered: #ece8f7 !important;
+    --gdg-text-dark: #1f2937 !important;
+    --gdg-text-medium: #4f5563 !important;
+    --gdg-border-color: #e6e8ef !important;
+    --gdg-horizontal-border-color: #eceff5 !important;
+    --gdg-accent-color: #4d2973 !important;
+}
 
 /* ── MULTISELECT TAGS (Filtros) ── */
 .stMultiSelect span[data-baseweb="tag"] {
@@ -793,7 +827,7 @@ if selected_rows:
         # ── Diagnóstico ────────────────────────────────────────────
         diag_html = '<div style="background:#FFFFFF;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'  
         diag_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Diagnóstico</p>'
-        rec_bg = hex_to_rgba(risk_color, 0.15)
+        rec_bg = "#ffffff"
         for item in diagnostico:
             diag_html += f'<div style="background:{rec_bg};border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:4px solid {risk_color};font-size:.9rem;color:var(--gris);font-family:Montserrat,sans-serif;">{item}</div>'
         diag_html += '</div>'
@@ -803,7 +837,7 @@ if selected_rows:
         # ── Acciones Recomendadas ──────────────────────────────────
         acc_html = '<div style="background:#FFFFFF;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
         acc_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Acciones Recomendadas</p>'
-        rec_bg = hex_to_rgba(risk_color, 0.15)
+        rec_bg = "#ffffff"
         for item in acciones:
             acc_html += f'<div style="background:{rec_bg};border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:4px solid {risk_color};font-size:.9rem;color:var(--gris);font-family:Montserrat,sans-serif;">{item}</div>'
         acc_html += '</div>'
