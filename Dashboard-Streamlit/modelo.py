@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -64,31 +63,6 @@ st.set_page_config(
     page_icon="🟣",
     layout="wide",
     initial_sidebar_state="collapsed",
-)
-
-# Fuerza vista tipo escritorio en pantallas pequenas.
-components.html(
-        """
-        <script>
-            (function () {
-                const desktopWidth = 1366;
-                const vw = Math.min(window.screen.width || 0, window.innerWidth || 0) || 390;
-                const isMobile = vw <= 900;
-                const fitScale = Math.max(0.22, Math.min(1, vw / desktopWidth));
-                const content = isMobile
-                    ? `width=${desktopWidth}, initial-scale=${fitScale}, minimum-scale=${fitScale}, maximum-scale=${fitScale}, user-scalable=no`
-                    : "width=device-width, initial-scale=1";
-                let viewport = window.parent.document.querySelector('meta[name="viewport"]');
-                if (!viewport) {
-                    viewport = window.parent.document.createElement("meta");
-                    viewport.name = "viewport";
-                    window.parent.document.head.appendChild(viewport);
-                }
-                viewport.setAttribute("content", content);
-            })();
-        </script>
-        """,
-        height=0,
 )
 
 # ─────────────────────────────────────────────
