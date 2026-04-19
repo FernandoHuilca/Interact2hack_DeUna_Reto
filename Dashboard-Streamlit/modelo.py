@@ -7,7 +7,6 @@ import random
 import time
 import base64
 from pathlib import Path
-import streamlit.components.v1 as components
 
 from diagnostico import generar_diagnostico
 
@@ -66,39 +65,11 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Forzar modo desktop para dispositivos móviles y asegurar buena vista
-components.html(
-    """
-    <script>
-    const viewport = window.parent.document.querySelector('meta[name="viewport"]');
-    if (viewport) {
-        // Al colocar solo el ancho fijo (ej. 1024 o 1200) sin initial-scale,
-        // el celular activará su lógica nativa de "Modo Escritorio" encajando
-        // todo el contenido horizontalmente en la pantalla vertical.
-        viewport.setAttribute('content', 'width=1200');
-    }
-    </script>
-    """,
-    height=0, width=0,
-)
-
 # ─────────────────────────────────────────────
 # GLOBAL CSS  (paleta + tipografía)
 # ─────────────────────────────────────────────
 st.markdown("""
 <style>
-/* Eliminar header/footer de Streamlit y configurar layout full-screen estético */
-header {visibility: hidden !important;}
-footer {visibility: hidden !important;}
-.stApp > header {background-color: transparent;}
-.block-container {
-    padding-top: 1rem !important;
-    padding-bottom: 2rem !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-    max-width: 100% !important;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 :root {
@@ -118,7 +89,6 @@ footer {visibility: hidden !important;}
     background-color: var(--morado-claro);
     font-family: 'Montserrat', sans-serif;
     color-scheme: light;
-    min-width: 1200px !important;
 }
 
 html, body, [data-testid="stAppViewContainer"] {
