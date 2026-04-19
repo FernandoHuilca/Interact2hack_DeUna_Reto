@@ -175,55 +175,73 @@ div.block-container { padding-top: 0.6rem; }
 
 /* dataframe scroll */
 div[data-testid="stDataFrame"] { border-radius: 12px; overflow: hidden; }
+
+/* ── MULTISELECT TAGS (Filtros) ── */
+.stMultiSelect span[data-baseweb="tag"] {
+    background-color: var(--morado-claro) !important;
+    border: 1.5px solid var(--morado-medio) !important;
+    color: var(--morado) !important;
+}
+.stMultiSelect span[data-baseweb="tag"] span {
+    color: var(--morado) !important;
+}
+.stMultiSelect span[data-baseweb="tag"] svg {
+    fill: var(--morado) !important;
+}
+
+/* ── BORDES DEL CONTENEDOR DE FILTROS ── */
+div[data-baseweb="select"] > div {
+    border-color: var(--morado-medio) !important;
+}
+div[data-baseweb="select"] > div:focus, 
+div[data-baseweb="select"] > div:focus-within {
+    border-color: var(--morado) !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
 
 # ─────────────────────────────────────────────
-# DATOS SINTÉTICOS
+# CARGA DE DATOS DESDE CSV
 # ─────────────────────────────────────────────
-PROVINCIAS = [
-    "Azuay","Bolívar","Cañar","Carchi","Chimborazo","Cotopaxi",
-    "El Oro","Esmeraldas","Galápagos","Guayas","Imbabura","Loja",
-    "Los Ríos","Manabí","Morona Santiago","Napo","Orellana",
-    "Pastaza","Pichincha","Santa Elena","Santo Domingo",
-    "Sucumbíos","Tungurahua","Zamora Chinchipe"
-]
+class DashboardDataLoader:
+    def __init__(self, csv_filename: str):
+        # Asumimos que data/ está al mismo nivel que Dashboard-Streamlit/
+        self.filepath = Path(__file__).resolve().parent.parent / "data" / csv_filename
+        
+    def get_data(self) -> pd.DataFrame:
+        if not self.filepath.exists():
+            st.error(f"No se encontró el archivo de datos: {self.filepath}")
+            return pd.DataFrame()
+            
+        df = pd.read_csv(self.filepath)
+        
+        # Mapeo de columnas del CSV al formato esperado por el dashboard
+        df_mapped = pd.DataFrame()
+        df_mapped["ID"] = df["id_comercio"].astype(str).str[:8] # ID corto para visualización
+        df_mapped["Comercio"] = df["tipo_negocio"] + " " + df["provincia"] # Nombre mock
+        df_mapped["TipoComercio"] = df["tipo_negocio"]
+        df_mapped["Provincia"] = df["provincia"]
+        df_mapped["Propietario"] = df["nombre_dueno"]
+        # Arreglar formato del número (pandas suele omitir el 0 inicial)
+        df_mapped["Numero celular"] = df["celular"].astype(str).apply(lambda x: '0' + x if not x.startswith('0') else x)
+        df_mapped["Nivel de Riesgo"] = df["nivel_riesgo"]
+        df_mapped["Score Churn"] = (df["prob_churn"] * 100).round(2)
+        df_mapped["dias_sin_transar"] = df["dias_sin_transar"]
+        df_mapped["Transacciones (30d)"] = df["transacciones_promedio"]
+        df_mapped["Monto Promedio ($)"] = df["ticket_promedio_usd"]
+        df_mapped["Alertas Activas"] = df["tickets_soporte"]
+        
+        # Para evitar usar 'random', dejamos la fecha final de corte como la última
+        df_mapped["Último Análisis"] = pd.Timestamp.today().normalize()
+        
+        return df_mapped
 
-random.seed(42)
-np.random.seed(42)
+loader = DashboardDataLoader("predicciones_maestro.csv")
+df_raw = loader.get_data()
 
-def gen_comercios(n=180):
-    tipos = ["Restaurante","Farmacia","Tienda","Supermercado","Ferretería",
-             "Ropa","Electrónica","Papelería","Panadería","Veterinaria"]
-    riesgos = np.random.choice(["Alto","Medio","Bajo"], n, p=[.25,.40,.35])
-    rows = []
-    for i in range(n):
-        prov = random.choice(PROVINCIAS)
-        r = riesgos[i]
-        tipo = random.choice(tipos)
-        score = {"Alto": random.randint(70,99),
-                 "Medio": random.randint(40,69),
-                 "Bajo": random.randint(5,39)}[r]
-        rows.append({
-            "ID": f"COM-{1000+i}",
-            "Comercio": f"{tipo} {random.choice(['Norte','Sur','Centro','Plaza','Real','Elite','Express'])}",
-            "TipoComercio": tipo,
-            "Provincia": prov,
-            "Propietario": random.choice(["Ana López","Carlos Ruiz","María Pérez","Juan Torres",
-                                           "Sofía Mora","Pedro Vega","Lucía Castro","Andrés Gil"]),
-            "Numero celular": f"09{random.randint(10000000, 99999999)}",
-            "Nivel de Riesgo": r,
-            "Score Churn": score,
-            "dias_sin_transar": random.randint(0, 45),
-            "Transacciones (30d)": random.randint(20, 800),
-            "Monto Promedio ($)": round(random.uniform(5, 420), 2),
-            "Alertas Activas": random.randint(0, 8),
-            "Último Análisis": pd.Timestamp("2025-01-01") + pd.to_timedelta(random.randint(0,364), unit="d"),
-        })
-    return pd.DataFrame(rows)
-
-df_raw = gen_comercios(180)
+# Obtenemos las provincias presentes en los datos
+PROVINCIAS = df_raw["Provincia"].dropna().unique().tolist() if not df_raw.empty else []
 
 # color semáforo por provincia
 def provincia_riesgo(df):
@@ -514,7 +532,7 @@ with filter_col:
 
     riesgo_sel = st.multiselect(
         "Nivel de Riesgo",
-        options=["Alto", "Medio", "Bajo"],
+        options=sorted(df_raw["Nivel de Riesgo"].dropna().unique().tolist()) if not df_raw.empty else ["Alto", "Medio", "Bajo"],
         default=[],
         placeholder="Todos los niveles",
     )

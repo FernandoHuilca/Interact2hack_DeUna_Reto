@@ -1,0 +1,501 @@
+id_comercio,nombre_dueno,celular,tamano_negocio,tipo_negocio,provincia,edad_propietario,genero,antiguedad_meses,transacciones_promedio,ticket_promedio_usd,movimientos_pichincha_mes,movimientos_comerciales_mes,movimientos_personales_mes,tickets_soporte,ticket_no_resuelto,tasa_disputas,saldo_cuenta_usd,dias_sin_transar,prob_churn,nivel_riesgo
+03db2a46-0ff8-479c-9cc1-448c018a9c81,Diego Castro,0935941061,Microempresa,Comercio Minorista,El Oro,19,Masculino,32,31,9.43,6,21,5,0,0,0.0,85.04,3,0.1123,Bajo
+db7c1f46-df52-42cd-b7ef-f73157bcec7c,Diego Castro,0961576868,Microempresa,Alimentación y Gastronomía,Pichincha,32,Masculino,17,148,2.1,14,115,19,0,0,0.0,27.19,1,0.1086,Bajo
+4d5d916d-a7af-43a7-8608-6ee8b782ddd2,Ana Torres,0945514831,Microempresa,Alimentación y Gastronomía,Tungurahua,24,Femenino,1,136,4.0,10,86,40,0,0,0.0,2.24,6,0.2039,Bajo
+1d7a713d-db0d-4556-bb08-eefb1789874b,Carmen Ríos,0903459144,Microempresa,Alimentación y Gastronomía,Guayas,29,Femenino,6,113,4.41,19,95,0,1,0,0.0,6.61,3,0.2225,Bajo
+d2bca8e2-452e-4f8f-8504-af466b459b55,Juan Gómez,0999337780,Microempresa,Comercio Minorista,Manabí,35,Masculino,15,53,4.94,4,33,16,0,0,0.0,9.02,1,0.071,Bajo
+6389ae05-4433-404e-b9e4-132828d05d06,Ana Torres,0994161047,Microempresa,Alimentación y Gastronomía,Tungurahua,20,Masculino,26,104,2.3,15,73,15,1,0,0.0,2.46,8,0.5433,Medio
+c9d2c2c3-5ff7-411a-b90b-e0541076bd2c,Ana Torres,0976583981,Mediana Empresa A,Alimentación y Gastronomía,Morona Santiago,26,Femenino,35,35,3.45,3,28,5,0,0,0.0,22.38,0,0.1332,Bajo
+92bb3a60-9004-468a-be63-c4d52cebfd98,Juan Gómez,0946319477,Microempresa,Moda y Estilo de Vida,Esmeraldas,18,Femenino,15,11,44.33,2,9,0,1,0,0.0175,4.42,4,0.5725,Medio
+6b31a318-489c-491c-ab7b-1c0279af24a5,María Pérez,0959100912,Microempresa,Moda y Estilo de Vida,Guayas,34,Masculino,21,28,29.66,4,21,3,0,0,0.0,12.61,3,0.3191,Bajo
+3e81f736-0170-40ef-95eb-23d7b25129f1,Pedro Ruiz,0963699001,Microempresa,Alimentación y Gastronomía,Pichincha,21,Femenino,33,42,5.93,2,28,12,0,0,0.0,3.49,1,0.039,Bajo
+27eaa44d-9dc1-4363-b85c-23b3275b1bee,Diego Castro,0953310642,Microempresa,Servicios Personales e Independientes,Guayas,31,Masculino,12,56,2.48,8,46,3,2,1,0.0,6.28,1,0.8968,Alto
+e856c353-c2ad-4865-80cf-36638288f2f1,Andrés Díaz,0924261426,Microempresa,Comercio Minorista,Imbabura,18,Masculino,31,23,9.71,3,16,5,2,0,0.0,59.15,0,0.0299,Bajo
+b40d080d-6401-4b07-9382-de3e22848d5c,Andrés Díaz,0961148442,Microempresa,Servicios Personales e Independientes,Guayas,38,Femenino,1,55,35.5,4,50,1,1,0,0.0,2.49,2,0.2257,Bajo
+033c60fb-2ef9-4aaf-92a1-95a0608e8bd5,María Pérez,0941091476,Microempresa,Alimentación y Gastronomía,Pichincha,30,Femenino,16,394,3.62,21,256,117,0,0,0.0,47.2,4,0.1307,Bajo
+847a492a-cbf7-425a-94af-a3a6f63fcdc3,Carmen Ríos,0924973847,Microempresa,Alimentación y Gastronomía,Esmeraldas,28,Masculino,29,149,1.5,16,90,44,0,0,0.0,7.77,7,0.606,Medio
+f3a5b009-26e3-405d-9d5d-64b0107ebb8b,Sofía Vega,0948427423,Microempresa,Alimentación y Gastronomía,Carchi,32,Masculino,36,53,1.5,5,42,6,0,0,0.0,305.85,7,0.136,Bajo
+325cd1f7-73f0-4ef7-943d-7d84f5d8b652,Ana Torres,0958283959,Microempresa,Servicios Personales e Independientes,Guayas,26,Femenino,8,36,31.36,5,34,0,0,0,0.0043,9.97,1,0.2529,Bajo
+09b151af-1f7e-4369-a405-c65b9a86608a,Diego Castro,0981386290,Microempresa,Comercio Minorista,Guayas,31,Masculino,13,39,9.98,5,33,1,0,0,0.0,36.39,1,0.0993,Bajo
+be8779b0-05ee-4d91-9881-6b27c985d333,Carmen Ríos,0956910616,Microempresa,Alimentación y Gastronomía,El Oro,20,Masculino,6,51,1.56,5,43,3,0,0,0.0,1.54,1,0.0676,Bajo
+4b3a0821-dc62-44f9-81fc-d601c8b536d9,Carmen Ríos,0971103134,Microempresa,Comercio Minorista,Pichincha,18,Femenino,11,36,29.21,6,25,5,0,0,0.0,243.05,0,0.033,Bajo
+4a0f9740-3a85-4d86-a2d7-0a2b9ec2b9ec,Ana Torres,0931244283,Pequeña Empresa,Comercio Minorista,Manabí,19,Femenino,16,122,2.77,22,92,8,0,0,0.0,2.0,0,0.0717,Bajo
+9d7b22ce-f1d2-455b-a178-73685943735f,Lucía Mora,0919150346,Microempresa,Comercio Minorista,Pichincha,18,Femenino,10,111,9.96,10,66,35,0,0,0.0,1.37,5,0.2398,Bajo
+0ba9a32e-fac3-4da2-bd3f-66ac286edb6b,Diego Castro,0958074789,Microempresa,Comercio Minorista,Manabí,19,Masculino,14,27,13.8,2,18,7,0,0,0.0,8.61,0,0.118,Bajo
+6761ee2e-14e4-483c-b9b7-d504a887daf4,Ana Torres,0953520583,Microempresa,Comercio Minorista,Pichincha,18,Femenino,24,25,17.79,4,18,3,0,0,0.0,3.11,0,0.0469,Bajo
+a8765e9d-7d4c-4b91-ae9b-131b65230737,Juan Gómez,0938967295,Microempresa,Servicios Personales e Independientes,Guayas,24,Masculino,21,15,9.64,3,11,1,0,0,0.0,5.38,7,0.6248,Medio
+f5d13e68-3b5d-4224-9f0e-b8b4b85eaba9,Sofía Vega,0982884009,Microempresa,Comercio Minorista,Pichincha,25,Femenino,27,154,1.5,31,110,13,2,0,0.0,35.97,1,0.1133,Bajo
+79415c1d-a969-4816-867c-bbf8583c8582,Juan Gómez,0995226018,Microempresa,Comercio Minorista,Cañar,29,Masculino,21,63,21.26,9,45,10,0,0,0.0,2.68,3,0.2983,Bajo
+023a4bbd-e760-4868-80b4-70a8192c6295,Carmen Ríos,0958452851,Microempresa,Comercio Minorista,Pichincha,24,Femenino,29,83,9.49,10,49,25,1,1,0.0,3.71,0,0.6034,Medio
+3637a69b-2ca3-40d4-a850-eb80cc93d1b4,Lucía Mora,0984056320,Microempresa,Comercio Minorista,Pichincha,33,Masculino,34,6,24.04,1,4,1,1,0,0.0,7.41,4,0.6206,Medio
+43abecb7-465a-4f51-af42-19ee824d82d9,María Pérez,0921766886,Microempresa,Comercio Minorista,Pichincha,29,Femenino,26,93,10.26,6,71,16,2,0,0.0,0.63,2,0.0869,Bajo
+a9b3d9e9-93cb-43fc-a693-e13022d9d86b,Andrés Díaz,0959641352,Microempresa,Comercio Minorista,Guayas,21,Masculino,26,84,67.72,7,50,27,0,0,0.0,44.88,1,0.1088,Bajo
+cc99881d-bd04-4bf9-b0ee-21f310378893,María Pérez,0914105659,Microempresa,Comercio Minorista,Esmeraldas,34,Masculino,4,74,9.66,13,62,0,0,0,0.0,35.44,0,0.0962,Bajo
+2c01a282-9781-4415-ac1b-1999512839a8,Sofía Vega,0939194462,Mediana Empresa B,Servicios Personales e Independientes,Guayas,31,Femenino,7,5,11.88,0,4,1,0,0,0.0,121.91,3,0.2494,Bajo
+7ad08e5c-52a9-406f-8cfe-3750d5d0e6a3,Lucía Mora,0922408884,Microempresa,Servicios Personales e Independientes,Pichincha,18,Femenino,25,26,14.92,2,20,4,0,0,0.0,4.09,0,0.0635,Bajo
+2a2e746a-4e51-4ee3-b23b-7ba7d16f143e,Diego Castro,0923688244,Microempresa,Moda y Estilo de Vida,Guayas,39,Femenino,30,11,15.37,2,6,3,1,0,0.0,2.2,1,0.1515,Bajo
+e8c34d4b-85f7-4ff8-91a4-46cc81e47ba3,Carlos López,0966150737,Microempresa,Servicios Personales e Independientes,Guayas,36,Masculino,32,57,36.01,3,51,3,0,0,0.0124,43.47,5,0.6735,Alto
+5f4e700e-c0cf-4232-8f62-2ec4c960d67f,Pedro Ruiz,0917438027,Microempresa,Alimentación y Gastronomía,Pichincha,34,Femenino,31,121,3.32,24,81,16,2,0,0.0,265.3,7,0.2306,Bajo
+b59f9276-6e43-469c-bc65-c8e30762e912,Andrés Díaz,0915825801,Microempresa,Alimentación y Gastronomía,Pichincha,18,Masculino,3,65,6.48,11,49,5,2,0,0.0017,26.69,1,0.2041,Bajo
+8c101277-9e0b-44ba-9971-2ea7f699bf93,Carlos López,0903073877,Microempresa,Comercio Minorista,Pichincha,18,Femenino,7,59,15.79,11,39,10,1,0,0.0,41.46,5,0.4447,Medio
+83b30286-27fe-45b5-a93e-e990312a4ad1,Diego Castro,0903093262,Microempresa,Alimentación y Gastronomía,Pichincha,29,Femenino,33,116,3.24,14,79,23,0,0,0.0,4.15,1,0.0507,Bajo
+7c8d2be0-921b-4ef8-9103-049e47ccc3e2,Ana Torres,0928749004,Microempresa,Alimentación y Gastronomía,Imbabura,28,Femenino,11,240,1.5,14,179,48,2,0,0.0,295.12,1,0.0626,Bajo
+03f6aa25-ad65-40cf-a98f-7d186618f0a4,Lucía Mora,0900396572,Microempresa,Comercio Minorista,Guayas,32,Femenino,20,375,3.1,33,261,81,1,0,0.0,34.57,7,0.4461,Medio
+d2dcee86-9f65-453a-9361-bf17188e1839,Andrés Díaz,0949520595,Microempresa,Servicios Personales e Independientes,Guayas,35,Femenino,18,1,59.93,0,1,0,1,0,0.0,47.7,2,0.1567,Bajo
+0cc8b994-78cd-40d3-906d-3064e280967c,María Pérez,0983642847,Microempresa,Alimentación y Gastronomía,Pichincha,32,Femenino,35,35,4.32,4,22,9,1,0,0.0,28.19,0,0.1282,Bajo
+d0455412-9517-4992-ae0f-b89192911e0e,Sofía Vega,0916649470,Microempresa,Comercio Minorista,Guayas,20,Masculino,25,16,7.57,1,13,2,0,0,0.0,5.91,5,0.6424,Medio
+e0731264-c5e9-47cf-8f5d-7dc026db6751,Andrés Díaz,0982043202,Microempresa,Comercio Minorista,Pichincha,28,Femenino,1,59,3.72,9,37,12,0,0,0.0,18.36,18,0.6246,Medio
+b08ee275-3cf4-4bf6-bb15-3cf03cbb5264,Ana Torres,0983445656,Microempresa,Servicios Personales e Independientes,Pichincha,30,Masculino,26,8,3.42,0,7,1,1,0,0.0,8.52,4,0.5351,Medio
+6941db87-9641-4814-92ff-76776cb15e8a,Carmen Ríos,0924520287,Mediana Empresa B,Alimentación y Gastronomía,Azuay,26,Masculino,6,53,3.09,8,41,4,0,0,0.0,2.87,4,0.2554,Bajo
+5eb272c3-bf4d-4ef4-8055-be10784fd23e,Sofía Vega,0974752592,Microempresa,Entretenimiento y Educación,Santo Domingo,24,Femenino,5,21,7.81,4,17,0,0,0,0.0,12.09,5,0.4434,Medio
+7edb9d65-1443-4753-be51-833359c0f43b,Carlos López,0990868927,Microempresa,Alimentación y Gastronomía,Tungurahua,28,Masculino,10,182,3.82,21,140,21,3,0,0.0052,17.62,6,0.4112,Medio
+bde4ddba-a26b-47b8-b844-622ee5c10973,Lucía Mora,0938165685,Microempresa,Entretenimiento y Educación,Pichincha,23,Femenino,32,12,79.52,2,9,1,0,0,0.0,14.15,3,0.4322,Medio
+03b063f1-a752-49f1-bca7-c89984068d42,Juan Gómez,0953113362,Microempresa,Servicios Personales e Independientes,Pichincha,34,Masculino,13,8,10.7,1,6,1,1,0,0.0,11.36,0,0.3978,Medio
+dc48a5fb-0262-4849-b492-093b2e8bb455,Ana Torres,0936351200,Microempresa,Alimentación y Gastronomía,Pichincha,23,Masculino,22,67,3.33,11,53,3,3,0,0.0,0.85,4,0.4128,Medio
+2f462625-a12d-4e67-8980-31ea56c97b10,Juan Gómez,0917634758,Microempresa,Entretenimiento y Educación,Guayas,32,Masculino,28,7,32.53,1,7,0,0,0,0.0,98.97,5,0.3214,Bajo
+eb313cfc-085b-4f8c-bd11-1994e1d39b14,Sofía Vega,0902869654,Microempresa,Alimentación y Gastronomía,Tungurahua,19,Femenino,18,189,4.64,29,126,34,2,0,0.0,33.79,2,0.1873,Bajo
+c899eba9-0028-4ad2-8e48-a8a83b97f265,Carmen Ríos,0929279527,Microempresa,Comercio Minorista,Carchi,31,Masculino,7,60,4.4,12,51,0,0,0,0.0,8.28,1,0.0764,Bajo
+bae450cf-bb83-4c07-b2b8-7063e4877df0,Juan Gómez,0977278799,Microempresa,Alimentación y Gastronomía,El Oro,26,Masculino,25,152,5.3,29,95,29,0,0,0.0,49.04,2,0.1461,Bajo
+b6517379-9943-42fd-bcd4-cc0d4709f9b7,Andrés Díaz,0948797170,Microempresa,Servicios Personales e Independientes,Pichincha,22,Femenino,31,2,42.96,0,2,0,0,0,0.0,29.22,1,0.1556,Bajo
+f513a6d4-69d2-40b7-8654-f019be0543be,Juan Gómez,0973157066,Microempresa,Alimentación y Gastronomía,Pichincha,18,Femenino,27,66,7.69,8,44,14,0,0,0.0,30.97,0,0.0792,Bajo
+1c5eb2f8-de36-4908-986e-02603a1b3f5a,Carlos López,0950321868,Microempresa,Moda y Estilo de Vida,Santo Domingo,29,Femenino,22,9,12.28,2,7,0,0,0,0.0,3.08,4,0.614,Medio
+d8fad999-681c-48a6-9c4b-db6015d19ca9,María Pérez,0901293234,Microempresa,Comercio Minorista,Sucumbíos,24,Masculino,9,43,28.98,4,34,4,1,0,0.0,51.79,12,0.6522,Alto
+d58c48eb-ac06-4154-a075-6e3e747a1527,Carlos López,0905003033,Microempresa,Alimentación y Gastronomía,Guayas,30,Masculino,13,92,4.94,18,62,12,0,0,0.0,0.98,1,0.0834,Bajo
+367219cc-6bf0-4e80-86ca-9d3213c4aef2,Juan Gómez,0993380274,Microempresa,Comercio Minorista,Guayas,20,Femenino,21,45,36.7,8,30,7,0,0,0.0,200.14,9,0.3682,Medio
+563c8ce2-53fe-43bc-9895-5f4ad20c756d,Sofía Vega,0975555340,Microempresa,Servicios Personales e Independientes,Pichincha,26,Masculino,35,26,15.74,2,22,2,1,0,0.0,34.9,3,0.2881,Bajo
+a32800e6-4c8f-44b5-ac77-ac12e4a37b5f,Diego Castro,0971290364,Microempresa,Alimentación y Gastronomía,Los Ríos,28,Femenino,1,123,2.89,8,84,31,0,0,0.0,92.45,14,0.6774,Alto
+660b50bc-d6dd-428c-aee2-e4452cf254f9,María Pérez,0955275477,Microempresa,Alimentación y Gastronomía,Guayas,35,Femenino,30,221,3.1,20,158,43,3,0,0.0,112.64,1,0.0625,Bajo
+6d264f00-9530-41ca-8bf3-a375006bd5d3,Diego Castro,0907048915,Microempresa,Alimentación y Gastronomía,Loja,20,Femenino,16,113,4.43,10,84,19,1,0,0.0,7.63,12,0.7171,Alto
+963bdaf4-1d45-4430-a801-f8574214a813,María Pérez,0910650255,Microempresa,Comercio Minorista,Los Ríos,23,Masculino,34,48,8.29,9,32,7,2,0,0.0,2.88,1,0.0938,Bajo
+b7c5c8a5-6dce-4cb4-ae4d-9cf98ce7d1cd,Juan Gómez,0959545462,Microempresa,Alimentación y Gastronomía,Cotopaxi,22,Femenino,6,183,4.87,10,112,62,1,0,0.0,3.77,4,0.1397,Bajo
+25420d60-7f6c-472a-925f-a5dd40085de1,Pedro Ruiz,0993481171,Microempresa,Comercio Minorista,Guayas,23,Masculino,30,22,15.99,2,18,2,0,0,0.0,0.94,0,0.1371,Bajo
+043c9cb4-12bc-461e-a329-47ba5e753c3e,Carmen Ríos,0913156533,Microempresa,Servicios Personales e Independientes,Esmeraldas,19,Masculino,14,4,22.5,1,4,0,3,0,0.0,21.48,1,0.5711,Medio
+27b6fd4e-e59e-487e-a026-405024d96a4a,Carlos López,0902848620,Microempresa,Servicios Personales e Independientes,Chimborazo,28,Femenino,32,25,46.01,4,21,0,0,0,0.0,3.63,6,0.4578,Medio
+317c5583-643e-4c3a-8ca1-2085bd22c072,Diego Castro,0955364722,Microempresa,Alimentación y Gastronomía,Guayas,29,Masculino,4,38,13.39,3,23,11,1,0,0.0,34.22,1,0.1523,Bajo
+87d0951a-27ac-4a1b-af6b-9cfca4ea00d0,Lucía Mora,0990020457,Microempresa,Alimentación y Gastronomía,Guayas,28,Masculino,19,138,4.88,25,99,14,0,0,0.0,22.93,0,0.1621,Bajo
+4053bef4-d23d-42c5-acaf-abfe7520106b,Juan Gómez,0920245943,Microempresa,Servicios Personales e Independientes,Manabí,22,Masculino,7,7,6.63,1,7,0,1,0,0.0,2.0,1,0.3648,Medio
+69debc20-7bd4-4aa0-ab0c-69e28ae10eb5,Andrés Díaz,0953034619,Microempresa,Moda y Estilo de Vida,Esmeraldas,33,Femenino,22,28,2.99,2,19,7,1,1,0.0,12.07,1,0.8137,Alto
+7f3ffbec-af85-47a1-83cd-dfa82d8d19f3,Diego Castro,0918209357,Microempresa,Alimentación y Gastronomía,Chimborazo,27,Masculino,36,500,5.16,37,300,163,0,0,0.0,1.07,3,0.2044,Bajo
+16178b52-7e07-4b38-807a-d7db580a451c,Ana Torres,0965293368,Microempresa,Comercio Minorista,Pichincha,21,Masculino,19,23,15.51,5,14,5,0,0,0.0,4.2,0,0.0436,Bajo
+f5b46b14-a6e9-4d1c-a157-ceb775cc9512,Carlos López,0974637348,Microempresa,Alimentación y Gastronomía,Imbabura,18,Masculino,14,126,8.22,10,78,38,4,0,0.0,3.85,7,0.5161,Medio
+27c34eac-d64d-466b-8361-15badaaae6eb,Ana Torres,0903573180,Microempresa,Servicios Personales e Independientes,Imbabura,20,Masculino,33,19,31.18,2,14,3,0,0,0.0,11.24,0,0.1505,Bajo
+2d9b5cd9-1dae-410a-a809-df3550f577f5,Sofía Vega,0920346011,Microempresa,Servicios Personales e Independientes,Santo Domingo,36,Femenino,10,9,55.79,1,7,1,0,0,0.0,102.14,5,0.3608,Medio
+71a48519-da82-481e-9c56-743605105696,Pedro Ruiz,0920311111,Microempresa,Entretenimiento y Educación,Esmeraldas,28,Femenino,19,5,6.2,0,4,1,0,0,0.0,23.16,4,0.5351,Medio
+5c3795ac-376b-4724-8a04-7f60e69537c4,Andrés Díaz,0904552769,Microempresa,Servicios Personales e Independientes,Pichincha,28,Masculino,26,35,2.42,4,32,0,0,0,0.0,28.54,1,0.0452,Bajo
+feffa769-dd6e-4ec4-8c77-1f7fd7590965,Diego Castro,0906273875,Microempresa,Comercio Minorista,Pichincha,29,Femenino,15,38,37.68,5,23,9,1,1,0.0,2.27,3,0.8005,Alto
+df9b82db-0a89-4e65-adbb-292ada2f9a67,Juan Gómez,0915244903,Microempresa,Alimentación y Gastronomía,Los Ríos,31,Femenino,26,177,6.96,20,105,53,1,0,0.0,11.77,3,0.1126,Bajo
+e07ecdd8-40ba-493d-9c69-958dce484c51,Lucía Mora,0930885397,Microempresa,Alimentación y Gastronomía,Pichincha,28,Femenino,31,31,6.48,3,20,8,3,0,0.0,16.03,4,0.4133,Medio
+f8cbeefc-9f05-4e5a-9d98-86f460ed239d,Sofía Vega,0914863102,Microempresa,Comercio Minorista,Guayas,22,Femenino,24,381,2.9,65,259,57,2,0,0.0,6.63,0,0.0237,Bajo
+fb9f764d-209e-48a5-9617-de29342f64ac,Carlos López,0971232261,Microempresa,Alimentación y Gastronomía,Cañar,19,Femenino,2,82,3.59,9,67,6,1,0,0.0,0.32,3,0.415,Medio
+f8d15e63-fea2-4b16-8384-8d2771ca7823,Juan Gómez,0994133880,Pequeña Empresa,Moda y Estilo de Vida,Manabí,27,Masculino,25,10,23.13,1,8,1,0,0,0.0075,2.87,11,0.8926,Alto
+be45ebd1-0ec2-4a6b-a5df-075dd481e155,Carmen Ríos,0997979494,Microempresa,Alimentación y Gastronomía,Bolívar,28,Femenino,3,226,2.91,13,161,52,2,0,0.0,2.58,2,0.1592,Bajo
+a4127b9d-d8e4-46ad-bcc1-e3855f494f99,Juan Gómez,0987287857,Microempresa,Alimentación y Gastronomía,Santo Domingo,19,Masculino,19,232,5.46,29,162,41,1,0,0.0,75.31,6,0.0782,Bajo
+79576a4c-ae7a-457e-b6e3-c12c328f7f72,Carmen Ríos,0938912112,Microempresa,Entretenimiento y Educación,Guayas,31,Masculino,9,20,16.79,3,17,0,1,0,0.0,43.01,1,0.1051,Bajo
+d48c8b45-52e5-4067-bc91-31f5b885fd44,Diego Castro,0993828964,Microempresa,Servicios Personales e Independientes,Cañar,18,Femenino,34,7,25.82,1,6,1,1,0,0.0,5.41,7,0.9472,Alto
+af38b935-1ed5-45bd-a0b4-532ff0306ae4,María Pérez,0904625901,Microempresa,Servicios Personales e Independientes,Azuay,36,Femenino,36,28,32.45,4,26,0,1,0,0.0077,45.16,1,0.2017,Bajo
+cadce290-b552-44c5-a6b7-d9cecd2091cd,María Pérez,0993845227,Microempresa,Comercio Minorista,Guayas,22,Femenino,16,117,6.58,22,79,16,0,0,0.0,54.85,3,0.1146,Bajo
+d6766609-440b-4a5a-8d71-26305bb77eed,María Pérez,0959725533,Microempresa,Comercio Minorista,El Oro,31,Masculino,31,22,20.99,3,16,3,1,0,0.0,2.97,1,0.1025,Bajo
+811af213-b8ed-4261-ae53-e38ed770a87a,Juan Gómez,0944398917,Microempresa,Comercio Minorista,Pichincha,29,Masculino,3,24,16.09,4,16,4,2,0,0.0,3.57,0,0.2598,Bajo
+0669ef93-3ec3-43e5-b377-87e5f21d8c53,Pedro Ruiz,0992744723,Microempresa,Moda y Estilo de Vida,El Oro,28,Masculino,35,41,41.52,3,27,10,0,0,0.0,12.58,1,0.1447,Bajo
+40e3b595-efde-4cae-8695-1e24a3b56b01,Juan Gómez,0994087405,Microempresa,Alimentación y Gastronomía,Pichincha,25,Femenino,30,54,6.64,10,33,11,1,0,0.0,12.85,1,0.1203,Bajo
+4eb52336-1887-4a8f-9e9b-31f9ef61e5f6,Juan Gómez,0906298481,Microempresa,Entretenimiento y Educación,Chimborazo,25,Femenino,23,10,6.5,1,9,0,0,0,0.0,20.56,1,0.1207,Bajo
+36ed6e3c-cc47-43dd-843a-d747c21a1a06,Diego Castro,0926899285,Microempresa,Comercio Minorista,Manabí,31,Masculino,30,64,7.88,9,42,14,1,0,0.0,7.76,5,0.5406,Medio
+f20527b9-1034-4cfb-a3a4-38a122439a4b,Juan Gómez,0932081719,Microempresa,Comercio Minorista,Azuay,24,Masculino,22,63,7.62,8,51,3,1,0,0.0,12.03,5,0.6332,Medio
+bfda72e2-7259-4daf-8594-0f5ce5b27c3c,Ana Torres,0964869870,Microempresa,Comercio Minorista,Azuay,22,Femenino,4,56,20.9,11,39,6,3,0,0.0,40.75,4,0.5452,Medio
+885220c0-c158-4e9f-a3e7-88fa78023942,Andrés Díaz,0991799953,Microempresa,Comercio Minorista,El Oro,35,Masculino,22,66,3.4,7,50,10,1,1,0.0,3.35,4,0.9228,Alto
+3360c9b6-b05a-4821-938e-0a571094bcb1,Lucía Mora,0955101234,Microempresa,Comercio Minorista,Guayas,25,Masculino,27,51,4.47,5,37,9,2,0,0.0,3.72,4,0.4996,Medio
+fa84b2d7-f437-48a6-80e3-dc5a1a58a5ed,Sofía Vega,0993397043,Microempresa,Comercio Minorista,Napo,28,Masculino,3,106,24.26,18,70,18,0,0,0.0,14.04,2,0.0929,Bajo
+b05c2dcb-2878-4b5b-9d54-85498fe3dd41,Ana Torres,0967402391,Microempresa,Entretenimiento y Educación,Galápagos,31,Femenino,5,8,25.2,0,7,1,2,0,0.0,21.13,5,0.777,Alto
+1b245308-fe70-4500-9578-911132786277,Pedro Ruiz,0916286923,Microempresa,Servicios Personales e Independientes,Esmeraldas,21,Masculino,13,43,85.79,6,33,4,1,0,0.0,4.58,1,0.1066,Bajo
+6c7af1f6-a49f-4ae6-b237-930bd2fbb073,María Pérez,0996411157,Microempresa,Servicios Personales e Independientes,Guayas,32,Masculino,10,25,17.13,4,21,0,1,0,0.0,43.7,4,0.4201,Medio
+35102f64-7278-4684-b119-13db2e6d80f0,Lucía Mora,0923811638,Microempresa,Servicios Personales e Independientes,Guayas,24,Masculino,25,8,9.89,1,6,1,0,0,0.0028,2.25,2,0.3013,Bajo
+4fe93cfc-b9b2-449f-bfba-50f79d74cd7e,Juan Gómez,0947385969,Microempresa,Alimentación y Gastronomía,Manabí,24,Masculino,23,28,6.21,4,22,1,1,0,0.0,41.44,4,0.445,Medio
+1e450fcd-eea8-48c1-aef6-94096fd3c584,María Pérez,0995272326,Microempresa,Alimentación y Gastronomía,Santo Domingo,29,Femenino,23,161,6.44,13,122,25,0,0,0.0,352.54,0,0.0544,Bajo
+278765e3-69d4-4f0d-a56d-5b72f141606d,Andrés Díaz,0977456519,Microempresa,Alimentación y Gastronomía,Orellana,30,Masculino,14,133,4.91,12,82,39,0,0,0.0,7.35,1,0.0762,Bajo
+0a92a16f-e5bf-48c9-b069-be7c80800f90,Pedro Ruiz,0980378807,Microempresa,Entretenimiento y Educación,Manabí,27,Masculino,2,16,11.01,2,12,2,1,0,0.0,18.8,1,0.2012,Bajo
+dedb0c96-04e7-4893-9577-f824bb0e4fd7,Carlos López,0968031796,Pequeña Empresa,Comercio Minorista,Guayas,18,Masculino,20,64,3.1,4,41,19,0,0,0.0,58.8,4,0.1457,Bajo
+f7b852f8-574c-49c5-827a-3748982ae3ee,Carmen Ríos,0970331386,Microempresa,Moda y Estilo de Vida,Carchi,18,Femenino,30,7,10.7,1,4,2,1,0,0.0,3.66,1,0.4303,Medio
+c29f2fc0-6181-466e-a371-eb3757132607,Carlos López,0922356519,Pequeña Empresa,Alimentación y Gastronomía,Azuay,28,Femenino,31,469,1.5,68,390,11,1,0,0.0,4.98,1,0.1364,Bajo
+f01ffd64-19ac-485f-98bb-3d09232ce6da,Lucía Mora,0997036862,Microempresa,Alimentación y Gastronomía,Esmeraldas,29,Femenino,29,128,3.24,18,91,19,1,0,0.0,162.22,2,0.0657,Bajo
+0ed6a7f4-05a5-43b1-95e9-e57d1276bfc8,Ana Torres,0905853451,Microempresa,Comercio Minorista,Guayas,22,Femenino,1,76,7.73,14,58,4,2,0,0.0,129.17,0,0.1025,Bajo
+650811b8-d996-424c-94f3-6cb955e09a16,Diego Castro,0937475962,Microempresa,Servicios Personales e Independientes,Cañar,19,Femenino,32,17,49.77,1,14,2,0,0,0.0,2.36,0,0.1924,Bajo
+72c7926a-ff34-4e72-8eb7-829a14a365e5,Diego Castro,0901980858,Microempresa,Comercio Minorista,Azuay,31,Femenino,8,61,6.86,7,41,13,0,0,0.0,10.11,0,0.0949,Bajo
+31298577-3b09-47e9-80f3-09164e1b7f71,Lucía Mora,0947007224,Microempresa,Entretenimiento y Educación,El Oro,28,Masculino,34,36,27.1,5,33,0,0,0,0.0,63.6,1,0.0354,Bajo
+10623508-8bcf-4f15-908d-bf29b0c26df4,Diego Castro,0965034979,Microempresa,Comercio Minorista,Los Ríos,32,Masculino,18,26,9.53,3,18,5,2,0,0.0,81.7,0,0.0335,Bajo
+f4c87b46-a6cb-4e72-a22d-4a41173a6c21,Diego Castro,0999603917,Microempresa,Comercio Minorista,Pichincha,28,Masculino,5,68,10.58,9,53,6,1,1,0.0,34.12,1,0.9364,Alto
+e98fc21a-1260-4d7c-bac6-ae787fc67ea1,Diego Castro,0982327517,Pequeña Empresa,Servicios Personales e Independientes,Azuay,23,Masculino,10,38,19.99,4,30,4,0,0,0.0,6.58,1,0.0855,Bajo
+a7b8dd61-bd77-4072-a4a5-f63d5dd309b6,Lucía Mora,0981799208,Microempresa,Alimentación y Gastronomía,Chimborazo,29,Femenino,28,114,2.99,17,95,3,0,0,0.0,138.31,1,0.0426,Bajo
+19ac441b-08de-4b17-afa7-20c5f45a81fe,Andrés Díaz,0926334220,Microempresa,Servicios Personales e Independientes,Guayas,18,Femenino,13,38,29.53,5,29,4,0,0,0.0,204.4,0,0.04,Bajo
+bfe7cd6b-188e-4ba4-b127-8f087c15763a,María Pérez,0944573679,Microempresa,Comercio Minorista,Zamora Chinchipe,36,Masculino,21,77,7.9,9,56,12,0,0,0.0,28.87,1,0.0713,Bajo
+bcd018b2-3d65-484c-ba53-c74c9e05627d,Juan Gómez,0941870532,Microempresa,Comercio Minorista,Carchi,25,Masculino,5,60,12.99,7,44,9,0,0,0.0,3.62,6,0.4465,Medio
+abc10f2d-756c-499e-b90c-bb63687c842a,Carlos López,0950026805,Microempresa,Servicios Personales e Independientes,Imbabura,26,Masculino,16,31,37.49,5,26,0,2,0,0.0,15.54,2,0.1225,Bajo
+70d7ef92-6208-4af9-814e-9b2f1fa1b568,Lucía Mora,0986653159,Microempresa,Alimentación y Gastronomía,Guayas,30,Masculino,27,94,1.5,15,66,13,0,0,0.0,10.25,5,0.2238,Bajo
+41c554de-c2ab-4d56-bd09-86742b42a1b5,Diego Castro,0929210856,Microempresa,Servicios Personales e Independientes,Tungurahua,29,Masculino,22,7,7.37,1,6,0,0,0,0.0,45.91,5,0.6116,Medio
+666c0146-7698-46f3-8e8a-3ddb02345cb9,Sofía Vega,0905442130,Microempresa,Comercio Minorista,El Oro,33,Femenino,2,15,2.82,2,10,2,0,0,0.0,2.16,3,0.4884,Medio
+6403aae9-c288-4794-9b15-e39fed9a3bee,Ana Torres,0941819681,Pequeña Empresa,Alimentación y Gastronomía,Guayas,30,Femenino,33,61,6.58,4,41,17,0,0,0.0,8.93,0,0.1352,Bajo
+598bf9cf-5097-44a2-b50f-b05e51694a98,Pedro Ruiz,0948173225,Microempresa,Comercio Minorista,Tungurahua,38,Masculino,1,30,10.87,5,19,6,0,0,0.0,31.21,3,0.4381,Medio
+3562c461-73c6-43a6-9b7c-041d82db0c75,Ana Torres,0915846139,Microempresa,Comercio Minorista,Guayas,27,Masculino,21,18,7.57,2,15,1,0,0,0.0,6.23,4,0.5019,Medio
+34c33261-e6f3-4c81-8e70-73c2a32a8795,Pedro Ruiz,0972589471,Pequeña Empresa,Alimentación y Gastronomía,Guayas,29,Femenino,24,52,1.5,5,30,16,1,0,0.0,18.4,3,0.2679,Bajo
+c2cdba9b-213c-47d5-aa0e-11ad8f9d68a5,María Pérez,0990290135,Microempresa,Alimentación y Gastronomía,Pichincha,35,Femenino,3,67,4.37,7,50,11,2,0,0.0,65.37,1,0.1312,Bajo
+8c304a27-da63-4807-b343-f36b1d0e4d91,Lucía Mora,0987839672,Pequeña Empresa,Servicios Personales e Independientes,Pichincha,33,Masculino,22,35,14.41,6,27,2,1,0,0.0,22.79,1,0.0418,Bajo
+0a57594b-b766-45ca-8636-92fc0f62ebf3,Ana Torres,0937954710,Microempresa,Alimentación y Gastronomía,Pichincha,28,Masculino,28,37,3.31,3,31,3,1,0,0.0,45.73,2,0.0694,Bajo
+acae9c29-edc8-4e4b-b0b8-1a6d8edc3b71,Ana Torres,0990564344,Microempresa,Comercio Minorista,Bolívar,30,Masculino,12,37,14.73,3,22,12,1,0,0.0,5.01,10,0.7373,Alto
+5d0f5a49-e8ed-4f66-8585-acab79edf824,Diego Castro,0912901595,Microempresa,Entretenimiento y Educación,Guayas,27,Femenino,5,9,92.36,2,8,0,1,0,0.0,4.38,1,0.3026,Bajo
+66c5de3d-88fe-4f34-81d8-f5d5192db5fd,Pedro Ruiz,0993236230,Microempresa,Comercio Minorista,El Oro,18,Masculino,12,41,2.95,4,28,9,2,0,0.0,12.18,1,0.0843,Bajo
+98550cd6-ac25-472c-b95f-3d1a856535d6,Sofía Vega,0990050674,Microempresa,Comercio Minorista,Cotopaxi,24,Femenino,16,69,8.99,7,44,18,0,0,0.0,35.36,2,0.1225,Bajo
+51b0efe2-d336-4926-a512-359b254d25a3,María Pérez,0953836394,Microempresa,Servicios Personales e Independientes,Pichincha,22,Femenino,16,46,69.19,9,39,0,0,0,0.0,10.4,3,0.1916,Bajo
+39e61760-3631-4a95-bbcf-fdb88442e08d,Sofía Vega,0931500119,Microempresa,Alimentación y Gastronomía,Pichincha,33,Femenino,16,117,1.55,11,80,26,1,0,0.0,28.11,5,0.2718,Bajo
+48a5055a-9c69-42d9-b955-dd5881dec74e,Diego Castro,0990623891,Microempresa,Alimentación y Gastronomía,Guayas,26,Femenino,22,23,6.65,2,17,4,0,0,0.0,1.95,4,0.4414,Medio
+888c3254-3589-49a9-b09c-b121af51baf2,Pedro Ruiz,0993579624,Microempresa,Alimentación y Gastronomía,Imbabura,27,Masculino,12,107,4.96,6,65,36,0,0,0.0,17.97,1,0.0811,Bajo
+9e75616a-31b1-4358-943c-ae371a6009e3,María Pérez,0963746745,Microempresa,Servicios Personales e Independientes,Pichincha,22,Masculino,27,93,14.09,12,76,5,0,0,0.0,64.4,4,0.1537,Bajo
+97938079-dabc-4117-9054-99db58964131,Andrés Díaz,0979983782,Microempresa,Servicios Personales e Independientes,Pastaza,24,Femenino,31,19,4.66,2,15,2,1,0,0.0,2.42,4,0.5175,Medio
+6e724ff6-4733-4f04-ab16-4f1ae2d27d4c,Pedro Ruiz,0953986478,Microempresa,Comercio Minorista,Los Ríos,18,Femenino,24,51,18.58,5,39,8,0,0,0.0,24.8,3,0.2213,Bajo
+1d267374-e91f-413a-8ca3-b241cd27e369,Lucía Mora,0944453424,Microempresa,Alimentación y Gastronomía,Los Ríos,31,Femenino,1,62,4.55,7,41,14,1,0,0.0,196.73,13,0.5627,Medio
+ca32fd9a-8b90-4103-9391-cd28ed7dff8a,Sofía Vega,0914046937,Microempresa,Alimentación y Gastronomía,Carchi,28,Masculino,34,226,1.5,31,167,28,1,0,0.0,25.59,2,0.1528,Bajo
+72496076-655d-492f-acf1-3b7b6de49e3c,Andrés Díaz,0916261797,Microempresa,Servicios Personales e Independientes,Loja,27,Femenino,4,107,24.21,16,87,4,1,0,0.0052,2.02,5,0.5982,Medio
+5c029196-9b87-463a-a823-d599f292966d,Juan Gómez,0930087989,Microempresa,Moda y Estilo de Vida,Azuay,31,Femenino,24,9,20.96,1,7,1,1,0,0.0,41.99,3,0.4432,Medio
+472cb34a-b2ae-4306-925a-9b0ba07ed0cf,Pedro Ruiz,0930105783,Microempresa,Comercio Minorista,Guayas,37,Femenino,33,23,7.56,3,18,2,1,1,0.0,7.65,8,0.9488,Alto
+a835fb61-a8e3-4785-b03e-7fb63cb7b7d3,Diego Castro,0994345961,Microempresa,Alimentación y Gastronomía,Pichincha,30,Masculino,4,54,5.66,10,37,7,2,0,0.0,13.98,4,0.3884,Medio
+4dd72e6c-403f-4d96-be09-4d816c60b068,Pedro Ruiz,0911723830,Microempresa,Entretenimiento y Educación,Cotopaxi,34,Masculino,2,11,3.61,1,9,0,1,0,0.0055,18.67,34,0.6742,Alto
+7d524960-dd83-4940-b02d-17653fa45679,Diego Castro,0928883524,Microempresa,Alimentación y Gastronomía,Azuay,32,Masculino,22,106,1.5,20,90,0,0,0,0.0,43.3,2,0.0987,Bajo
+fc9d16ed-470f-46a4-bfbd-a9e095575921,Carmen Ríos,0920554113,Microempresa,Servicios Personales e Independientes,Imbabura,30,Masculino,10,13,17.77,2,10,1,1,0,0.0,3.82,1,0.0896,Bajo
+874d5ede-5f30-4a7f-b8b2-f943ec9cfdbe,Juan Gómez,0985463546,Microempresa,Alimentación y Gastronomía,Loja,28,Masculino,4,101,6.06,16,81,4,0,0,0.0,4.64,4,0.1758,Bajo
+6261f38c-44b1-40f3-8680-4d60ae765ea4,Pedro Ruiz,0948196159,Microempresa,Alimentación y Gastronomía,Pichincha,30,Masculino,20,162,1.5,20,98,44,1,0,0.0,1.67,2,0.0748,Bajo
+8f57f606-3f04-440c-b814-225cc9a2c1ea,Diego Castro,0907815226,Microempresa,Comercio Minorista,Orellana,22,Masculino,4,20,23.06,2,16,2,1,0,0.0,2.59,6,0.6976,Alto
+bbd15be1-8a46-47bc-a1c6-91b2275bb599,Carmen Ríos,0975162776,Microempresa,Comercio Minorista,Guayas,22,Femenino,11,17,26.91,2,13,2,0,0,0.0,34.47,1,0.1717,Bajo
+8dbaffc4-745e-4f4a-a760-295a6c87c725,Carmen Ríos,0957963974,Pequeña Empresa,Comercio Minorista,Pichincha,18,Masculino,29,27,4.97,3,16,8,3,0,0.0,0.88,6,0.3781,Medio
+8346df29-31c2-4a90-adce-810eea22c712,Sofía Vega,0911927427,Microempresa,Alimentación y Gastronomía,Pichincha,35,Femenino,22,86,2.98,5,65,16,0,0,0.0,96.43,1,0.0155,Bajo
+089eca67-9ca8-4f3d-ac8c-df6be6a21b09,Ana Torres,0986109400,Microempresa,Moda y Estilo de Vida,Guayas,18,Masculino,25,11,60.05,2,7,2,0,0,0.0,2.44,2,0.2839,Bajo
+7edcb346-2f85-4765-87c1-146ccb8517e0,Diego Castro,0919006649,Microempresa,Alimentación y Gastronomía,Los Ríos,28,Femenino,31,55,2.72,8,33,14,0,0,0.0,20.67,1,0.1431,Bajo
+a5259d2f-8b97-4f1b-952d-5bad06ab3816,Lucía Mora,0956182716,Microempresa,Moda y Estilo de Vida,Guayas,19,Masculino,6,7,52.13,0,4,2,0,0,0.0,18.44,1,0.3771,Medio
+d975c08a-d1cd-4d85-9caa-63ffc779c25f,Ana Torres,0973207040,Microempresa,Alimentación y Gastronomía,Loja,31,Femenino,7,94,2.29,11,76,6,0,0,0.0,0.11,2,0.1069,Bajo
+59402394-2c6a-4bc2-83ac-1a13278943fb,Lucía Mora,0910620691,Pequeña Empresa,Comercio Minorista,Guayas,24,Masculino,14,51,6.62,3,39,9,1,0,0.0,0.85,2,0.1063,Bajo
+a04641c6-75b8-44b3-8b7b-63958c8929df,Carlos López,0953358491,Microempresa,Comercio Minorista,Pichincha,27,Masculino,34,38,2.58,2,25,11,0,0,0.0,0.33,3,0.2443,Bajo
+e59d572e-045a-43ae-901c-7693909a5b7b,Lucía Mora,0984005259,Microempresa,Servicios Personales e Independientes,Pichincha,28,Femenino,25,14,15.14,2,11,1,0,0,0.0,87.87,3,0.1128,Bajo
+70271370-59b4-46b4-935a-907e9f957ae2,Pedro Ruiz,0907798271,Microempresa,Alimentación y Gastronomía,Pichincha,24,Femenino,24,117,3.09,11,91,15,0,0,0.0,142.56,3,0.0795,Bajo
+4e2de2dc-ddf8-419a-acfe-17f609c955e3,Ana Torres,0910642176,Microempresa,Comercio Minorista,Pichincha,32,Masculino,36,104,6.02,13,86,5,0,0,0.0,541.61,2,0.0422,Bajo
+52fd35a3-8b49-4483-b350-0b7ea6af01ce,Juan Gómez,0935502439,Microempresa,Alimentación y Gastronomía,Guayas,23,Masculino,9,72,4.78,7,49,17,0,0,0.0,8.91,3,0.216,Bajo
+79a0dd2b-df08-472e-8681-0c76361ae86c,Pedro Ruiz,0960098189,Microempresa,Alimentación y Gastronomía,Tungurahua,31,Masculino,28,37,1.54,3,28,6,0,0,0.0,50.38,6,0.1739,Bajo
+9048cd96-f8b4-4c08-8d57-5c879b98d11e,Diego Castro,0959900254,Microempresa,Servicios Personales e Independientes,Pichincha,36,Masculino,24,50,26.47,5,41,4,0,0,0.0,13.25,0,0.0306,Bajo
+d5c86772-9fbc-422e-8288-a471a6797130,Ana Torres,0942511264,Microempresa,Moda y Estilo de Vida,Azuay,36,Femenino,9,53,50.4,6,43,4,2,0,0.0,11.78,3,0.2933,Bajo
+c47b3665-88af-4d3b-b442-14721bca27e8,Diego Castro,0938347802,Microempresa,Moda y Estilo de Vida,Pichincha,34,Femenino,30,46,31.97,6,38,2,2,0,0.0,48.29,1,0.0481,Bajo
+ac92eea3-3f9b-4806-b724-2dce44fab28e,Lucía Mora,0982645068,Microempresa,Comercio Minorista,Pichincha,23,Masculino,30,37,19.11,5,30,2,0,0,0.0,158.71,0,0.0277,Bajo
+3549b307-768c-4c5f-8a40-fe8015ec9756,Diego Castro,0928666312,Microempresa,Alimentación y Gastronomía,Manabí,18,Femenino,27,46,5.59,9,37,1,0,0,0.0,101.63,2,0.0508,Bajo
+a126ae28-0066-4d16-9762-ac95a96354d9,Carlos López,0946868913,Microempresa,Alimentación y Gastronomía,Orellana,33,Masculino,6,73,9.41,11,47,15,0,0,0.0,0.7,3,0.2006,Bajo
+fe08e939-72ad-47e3-8a8f-6be78e7c61ef,María Pérez,0956014339,Microempresa,Servicios Personales e Independientes,Sucumbíos,19,Masculino,24,10,21.61,1,9,0,0,0,0.0,6.06,2,0.1416,Bajo
+ac822976-bc86-46e3-95f0-4c6b75292c62,Andrés Díaz,0969978608,Microempresa,Entretenimiento y Educación,Loja,28,Femenino,15,14,47.46,3,11,0,0,0,0.0,68.01,8,0.4315,Medio
+84f846e8-698a-48c3-b2a7-3699d5755162,Andrés Díaz,0984301208,Microempresa,Servicios Personales e Independientes,Bolívar,42,Femenino,35,9,20.11,1,8,0,2,1,0.0,34.64,1,0.5951,Medio
+6f9bbcc2-785f-4945-a714-60ac655c5054,Ana Torres,0950534637,Microempresa,Alimentación y Gastronomía,Azuay,30,Masculino,27,121,5.1,8,93,20,3,0,0.0,4.43,3,0.2499,Bajo
+f97f7219-4aaa-4f4d-9c83-99d2d37b96fc,Carlos López,0930261375,Microempresa,Comercio Minorista,Chimborazo,32,Masculino,29,119,1.74,15,79,26,1,0,0.0,122.88,3,0.1531,Bajo
+78a1426a-4225-46ae-b62e-effd55c29982,Andrés Díaz,0936586322,Microempresa,Entretenimiento y Educación,Guayas,29,Femenino,23,2,10.39,0,2,0,1,0,0.0,12.89,1,0.2531,Bajo
+eeedb4b2-801f-48c5-bfc0-52e138ef3753,Pedro Ruiz,0904741934,Microempresa,Alimentación y Gastronomía,Guayas,26,Masculino,29,143,5.59,23,113,7,3,0,0.0,9.72,3,0.2077,Bajo
+0f64c4b9-de8e-4914-a9ff-868b095f6662,Juan Gómez,0908363173,Microempresa,Comercio Minorista,Cotopaxi,28,Masculino,13,115,4.48,22,75,18,1,0,0.0,77.06,5,0.1753,Bajo
+292cf5a0-baee-4389-b3a7-af603391570f,Andrés Díaz,0987213871,Microempresa,Moda y Estilo de Vida,Pichincha,29,Masculino,28,111,18.29,17,79,15,1,1,0.0,17.43,3,0.71,Alto
+ff6f70bf-c9e5-4d38-8ddf-e7198ed3cf49,Sofía Vega,0963955711,Microempresa,Comercio Minorista,Esmeraldas,38,Femenino,27,73,4.45,10,59,3,0,0,0.0,7.09,1,0.0995,Bajo
+84f5382f-5d63-4aee-94cf-fc4eb19ec863,Ana Torres,0925507753,Microempresa,Moda y Estilo de Vida,Los Ríos,18,Masculino,2,40,35.52,5,25,10,1,0,0.0,202.46,9,0.4954,Medio
+4894d404-6295-4ec6-8f2d-ffce988d73a9,Pedro Ruiz,0963766148,Microempresa,Servicios Personales e Independientes,Pichincha,34,Femenino,2,4,37.85,1,3,0,0,0,0.0,0.76,4,0.7345,Alto
+b7113140-f35d-4869-9fea-7599e3109dee,Diego Castro,0912119255,Microempresa,Comercio Minorista,Guayas,30,Masculino,15,48,52.08,3,39,6,1,1,0.0,18.51,3,0.8604,Alto
+9170344f-2d6a-4aeb-8adb-22131448d047,Sofía Vega,0995051283,Microempresa,Alimentación y Gastronomía,Guayas,34,Masculino,24,81,5.66,11,51,20,2,0,0.0,25.65,2,0.1708,Bajo
+cb7b972b-9ee3-4e78-9833-27404886074c,Andrés Díaz,0930047962,Microempresa,Alimentación y Gastronomía,Chimborazo,21,Masculino,18,117,2.19,21,70,26,1,0,0.0,3.64,2,0.049,Bajo
+afe56631-584a-47c1-9f4a-bc75359d26f4,Andrés Díaz,0967934410,Microempresa,Alimentación y Gastronomía,Pichincha,33,Femenino,7,55,8.21,9,36,10,0,0,0.0,42.79,1,0.0693,Bajo
+2f369a32-c7b7-4b8f-b7f8-1d24cb23249b,Carmen Ríos,0913779950,Microempresa,Moda y Estilo de Vida,Guayas,33,Masculino,32,77,20.07,7,62,8,1,0,0.0,96.54,3,0.1041,Bajo
+ea1f312f-c9cf-4345-8dd5-a3a9d4bb8176,Carmen Ríos,0966045067,Microempresa,Servicios Personales e Independientes,Guayas,29,Masculino,24,15,35.34,2,12,1,1,0,0.0,17.98,0,0.105,Bajo
+7b149ade-31cc-49bf-a111-286cf3974023,Pedro Ruiz,0934650245,Microempresa,Alimentación y Gastronomía,Pichincha,33,Femenino,18,205,1.5,22,156,27,0,0,0.0,28.63,1,0.0927,Bajo
+58965c3b-b8ab-4200-a494-7a79cdb1b94e,Ana Torres,0996623671,Microempresa,Servicios Personales e Independientes,Pichincha,27,Femenino,7,23,47.31,2,18,3,0,0,0.0,4.96,3,0.4577,Medio
+25a35b88-bdc2-48c6-829d-9e2dae8824cb,Carlos López,0956728557,Microempresa,Servicios Personales e Independientes,Morona Santiago,24,Femenino,5,5,33.7,1,4,0,0,0,0.0,5.0,4,0.7582,Alto
+b3f405a8-61a6-44c1-baa1-edab02b67723,María Pérez,0920209536,Microempresa,Entretenimiento y Educación,Pichincha,25,Masculino,10,7,5.9,0,7,0,1,0,0.0,2.77,1,0.4102,Medio
+dc1006d5-9259-4d1b-ae2e-1eb7a2cb27ef,Pedro Ruiz,0914154104,Pequeña Empresa,Servicios Personales e Independientes,Pichincha,30,Masculino,2,51,74.49,9,45,0,0,0,0.0,2.36,1,0.2176,Bajo
+0493db00-afcd-4ce9-9046-9ae52785414d,María Pérez,0924947179,Microempresa,Entretenimiento y Educación,El Oro,29,Masculino,10,17,10.41,2,15,0,0,0,0.0,54.02,7,0.6346,Medio
+b1a9c15b-a381-42a0-830f-100d279b290b,Carmen Ríos,0994368020,Microempresa,Comercio Minorista,Guayas,24,Femenino,11,25,11.37,2,16,7,0,0,0.0,22.79,7,0.7636,Alto
+a04451c6-9565-42d4-a3fa-28ef935ca125,Carlos López,0957213070,Microempresa,Alimentación y Gastronomía,Manabí,27,Femenino,26,148,5.73,21,114,12,1,0,0.0,27.32,5,0.3615,Medio
+24a08e55-d885-4c03-b999-f0f661fbff05,Carlos López,0982948101,Microempresa,Alimentación y Gastronomía,El Oro,22,Femenino,27,123,2.85,17,95,11,0,0,0.0,47.44,1,0.0914,Bajo
+5cfa38e9-b05a-4329-802e-eb665b31a5b6,Diego Castro,0955823429,Microempresa,Alimentación y Gastronomía,Santo Domingo,28,Masculino,22,131,1.63,15,87,29,0,0,0.0,21.74,4,0.2503,Bajo
+0bbc63ed-1baf-448d-b333-7ae556948bfe,Pedro Ruiz,0914790380,Microempresa,Comercio Minorista,Guayas,29,Masculino,8,21,10.56,3,18,0,1,0,0.0,12.87,2,0.1296,Bajo
+6393ea6a-1ce0-473a-abdc-838d7402733e,Lucía Mora,0982150316,Gran Empresa,Alimentación y Gastronomía,Guayas,26,Masculino,26,197,1.5,31,134,32,2,1,0.0,13.39,1,0.4728,Medio
+7dae2dce-f8cc-45c4-8b93-84c441436c57,Andrés Díaz,0908156071,Microempresa,Comercio Minorista,Pichincha,21,Masculino,18,124,8.8,20,79,26,0,0,0.0,2.21,0,0.0294,Bajo
+bd0c6f24-8990-4534-9841-50633fbd2ac4,Carmen Ríos,0941071733,Pequeña Empresa,Moda y Estilo de Vida,Tungurahua,34,Masculino,6,6,22.21,1,5,0,2,0,0.0,5.07,1,0.371,Medio
+a341f50d-39da-4b59-9b4c-88d01a92da42,Carmen Ríos,0953280483,Microempresa,Comercio Minorista,Guayas,31,Masculino,32,38,18.91,3,31,4,0,0,0.0,1.59,1,0.1475,Bajo
+cc10f834-fc17-4a17-8ac7-77a9fbcacc10,Pedro Ruiz,0927978019,Microempresa,Servicios Personales e Independientes,Guayas,38,Femenino,9,20,16.11,4,17,0,0,0,0.0,13.72,8,0.5665,Medio
+5cc68d3a-3a94-43fd-bfad-9dcb2233ac72,Ana Torres,0958335663,Microempresa,Alimentación y Gastronomía,Guayas,22,Femenino,31,180,1.56,24,148,9,0,0,0.0,4.51,7,0.6008,Medio
+668a8b7c-7f97-4ed3-8fed-567ded805b9b,María Pérez,0910851528,Microempresa,Entretenimiento y Educación,Pichincha,24,Masculino,3,12,48.22,2,9,1,3,1,0.0013,4.47,0,0.4744,Medio
+49ee5679-3521-4779-8f98-5c0577875268,Diego Castro,0958549902,Microempresa,Alimentación y Gastronomía,Napo,34,Masculino,36,106,1.5,12,63,30,0,0,0.0059,111.02,5,0.3792,Medio
+f6a040e9-4e2b-40dc-91ac-6ad5c378ba20,Diego Castro,0930395389,Microempresa,Alimentación y Gastronomía,Cotopaxi,31,Masculino,7,141,7.78,25,100,17,2,1,0.0,2.0,2,0.5922,Medio
+a1913fb1-2df4-430c-ad4c-c6a9ae1c1c29,Juan Gómez,0981367485,Microempresa,Alimentación y Gastronomía,Pichincha,30,Masculino,13,47,1.5,9,30,8,0,0,0.0,197.59,13,0.2827,Bajo
+983d54a1-a0f4-4cb9-aeb0-2e372d217513,Pedro Ruiz,0947467854,Microempresa,Servicios Personales e Independientes,Guayas,22,Femenino,24,65,4.55,10,48,8,0,0,0.0,78.85,1,0.0352,Bajo
+4f129573-bf0a-4a3e-a380-0dd427a36aee,Sofía Vega,0993349607,Microempresa,Alimentación y Gastronomía,Guayas,26,Femenino,36,49,1.5,3,37,9,0,0,0.0,4.97,2,0.115,Bajo
+53b0ada8-b3f0-4142-b5dc-36082d9b9605,Lucía Mora,0946702736,Microempresa,Servicios Personales e Independientes,Pastaza,22,Masculino,3,184,7.31,33,140,11,0,0,0.0,5.87,0,0.1494,Bajo
+f98e6bb1-abec-4868-a0c7-5e7b4db54786,Juan Gómez,0983784566,Microempresa,Moda y Estilo de Vida,Esmeraldas,36,Femenino,29,12,88.35,2,10,0,1,1,0.0,5.4,1,0.4045,Medio
+ef0f6101-7801-43fb-a9dd-766ee6adc355,Juan Gómez,0945232868,Microempresa,Comercio Minorista,Pichincha,29,Femenino,7,55,15.23,5,45,4,0,0,0.0,3.07,6,0.4224,Medio
+065b85a3-04b7-4f52-8670-ec09de00055c,Sofía Vega,0979827128,Microempresa,Servicios Personales e Independientes,Orellana,39,Femenino,13,27,15.02,4,22,1,0,0,0.0,0.53,17,0.5071,Medio
+329ab167-0e41-4b82-a39e-00d67da208a8,Diego Castro,0974190696,Microempresa,Comercio Minorista,Guayas,33,Masculino,18,29,4.61,4,19,6,0,0,0.0,36.93,0,0.0982,Bajo
+7a0e6f05-fa45-468f-8b10-36b5ecca6821,Diego Castro,0987897192,Microempresa,Entretenimiento y Educación,Pichincha,25,Masculino,33,11,11.31,1,9,1,0,0,0.0,9.53,2,0.1107,Bajo
+70f3c679-4fe7-4ed0-9f0e-560d502c68c0,Andrés Díaz,0941982545,Microempresa,Servicios Personales e Independientes,Guayas,38,Femenino,10,45,20.77,3,33,9,0,0,0.0,2.97,1,0.1221,Bajo
+6de225c6-e28d-4889-889a-7f395ecab6f1,Juan Gómez,0930326395,Microempresa,Comercio Minorista,Imbabura,28,Femenino,26,54,11.98,3,45,5,0,0,0.0,39.4,4,0.4018,Medio
+189c8035-3d5c-4bbb-b91b-de30306edd9e,Lucía Mora,0957982911,Microempresa,Comercio Minorista,Pichincha,34,Femenino,3,40,9.85,2,24,14,2,0,0.0,5.74,1,0.1392,Bajo
+ba0fd443-1040-4e6e-bb1e-aad8877fe142,Pedro Ruiz,0966542065,Pequeña Empresa,Alimentación y Gastronomía,Guayas,23,Femenino,33,82,3.43,15,56,10,0,0,0.0,47.25,6,0.2059,Bajo
+5d79ad1e-3c9f-42f7-b5ec-5093560b6302,Ana Torres,0930453042,Microempresa,Comercio Minorista,Manabí,33,Masculino,14,52,1.5,4,33,15,2,0,0.0022,34.14,0,0.1588,Bajo
+a591b4b5-72e1-42f7-ac26-5eb7ffaa650f,Pedro Ruiz,0987952172,Microempresa,Comercio Minorista,Guayas,33,Femenino,27,66,10.5,6,44,17,0,0,0.0014,5.58,3,0.5661,Medio
+9c40e369-431c-4ac9-b773-361cb855976e,Sofía Vega,0982166121,Microempresa,Alimentación y Gastronomía,Pichincha,22,Masculino,5,27,1.5,4,16,6,3,0,0.0,5.63,1,0.0587,Bajo
+2d21dd2d-35e5-4a71-b2c0-7bfd1b27c9dc,Carmen Ríos,0971278484,Microempresa,Alimentación y Gastronomía,Pichincha,24,Masculino,19,322,5.88,31,213,78,0,0,0.0,2.33,2,0.0445,Bajo
+b01d75a1-56d3-4b2c-97a3-75b84e5e434d,Diego Castro,0988966563,Microempresa,Alimentación y Gastronomía,Guayas,31,Femenino,6,65,3.21,11,55,0,2,0,0.0,8.7,1,0.1433,Bajo
+ba71e779-ccce-4889-a908-95efdc127676,Juan Gómez,0912789138,Microempresa,Servicios Personales e Independientes,Guayas,31,Femenino,28,3,32.12,0,3,0,0,0,0.0,3.32,0,0.2819,Bajo
+0ef68b59-c7c0-4666-b39b-f128eb3db3fd,Sofía Vega,0993547243,Microempresa,Alimentación y Gastronomía,Guayas,37,Masculino,8,65,1.5,7,42,16,1,0,0.0,13.4,0,0.0879,Bajo
+42613f61-f580-45be-809e-b242c7a6c702,Carmen Ríos,0987750431,Microempresa,Servicios Personales e Independientes,Santo Domingo,18,Femenino,3,23,16.27,2,19,2,1,1,0.0013,25.48,1,0.5762,Medio
+ff5c13d0-9d31-4116-a47a-f307b266a0cc,Sofía Vega,0961261376,Microempresa,Comercio Minorista,Guayas,26,Masculino,15,108,4.07,6,79,22,0,0,0.0,32.98,6,0.3392,Bajo
+2993869d-06e5-4697-9880-0c13cfe2c69c,Juan Gómez,0984083712,Microempresa,Comercio Minorista,Pichincha,18,Masculino,16,30,17.48,3,25,2,2,1,0.0,1.68,3,0.6294,Medio
+675261f9-25f3-4bd4-b671-88e9768492e8,María Pérez,0921893244,Microempresa,Comercio Minorista,Galápagos,20,Masculino,17,82,2.71,7,57,18,1,0,0.0,20.91,4,0.3351,Bajo
+7ac26506-b87e-4bbd-b210-91eeda6bebca,Andrés Díaz,0995078457,Microempresa,Alimentación y Gastronomía,Santo Domingo,24,Masculino,32,248,6.95,12,181,55,2,0,0.0,4.64,1,0.1315,Bajo
+40b9c8a9-b3f4-4147-88c0-9050ce654987,Ana Torres,0927292496,Microempresa,Servicios Personales e Independientes,Manabí,31,Femenino,34,41,47.25,4,32,5,0,0,0.0,18.78,0,0.0911,Bajo
+0f257aa4-8145-4a45-9be2-6e3b6e2f47f5,Sofía Vega,0917812374,Microempresa,Alimentación y Gastronomía,Guayas,19,Masculino,30,217,1.5,22,183,12,1,0,0.0057,3.71,0,0.112,Bajo
+753cb454-1d65-44a9-bd09-92da37fb0666,Andrés Díaz,0988483960,Microempresa,Comercio Minorista,Manabí,28,Masculino,17,44,5.39,5,34,5,1,1,0.0,62.46,15,0.8042,Alto
+28cc2945-8e4e-4fb1-8e3f-cf560903565f,Carlos López,0973083000,Mediana Empresa B,Alimentación y Gastronomía,Guayas,30,Masculino,10,200,2.0,30,116,54,1,0,0.0041,6.42,1,0.1007,Bajo
+01cc2e5a-c43d-491b-8759-b0959d926710,María Pérez,0917369711,Microempresa,Comercio Minorista,Manabí,28,Femenino,23,51,18.73,6,37,8,1,0,0.0,28.69,8,0.7581,Alto
+5e2566ef-1e48-4bce-a99a-72e580242c38,Lucía Mora,0911179984,Microempresa,Servicios Personales e Independientes,Pichincha,23,Femenino,3,19,10.61,1,15,3,1,0,0.0,4.47,5,0.6477,Medio
+94ac3e48-65b0-4bab-97b2-9ddaad04ecbb,Sofía Vega,0947456849,Pequeña Empresa,Alimentación y Gastronomía,Guayas,29,Masculino,20,81,4.8,13,63,4,0,0,0.0,12.9,3,0.2447,Bajo
+1a302304-50d8-414f-83d0-78481c5b4d3f,María Pérez,0967400084,Microempresa,Comercio Minorista,Guayas,30,Masculino,16,7,11.26,0,5,1,1,0,0.0,4.14,0,0.431,Medio
+fe4bbc55-900a-497a-935c-bb5e2175effc,Lucía Mora,0969179892,Pequeña Empresa,Entretenimiento y Educación,Loja,26,Masculino,14,7,7.08,0,5,1,0,0,0.0,5.46,2,0.3224,Bajo
+e8927df2-85af-41d4-88e9-7ed4a108e78d,Carlos López,0930891368,Microempresa,Alimentación y Gastronomía,Guayas,29,Masculino,30,28,23.88,4,18,6,1,0,0.0,2.27,1,0.1293,Bajo
+6aba70b5-af32-4be8-994f-14dfcaee8bd8,Carmen Ríos,0919955571,Microempresa,Alimentación y Gastronomía,Sucumbíos,32,Masculino,36,112,3.16,18,86,7,1,0,0.0,31.19,2,0.1386,Bajo
+09836976-c261-45e8-96c6-1de8b1e89784,Andrés Díaz,0920215199,Microempresa,Alimentación y Gastronomía,Loja,18,Masculino,20,303,1.66,38,245,20,0,0,0.0,67.72,2,0.0286,Bajo
+babc2a44-e025-43bc-b1a9-f14b1031f7a9,Pedro Ruiz,0965845893,Microempresa,Alimentación y Gastronomía,Guayas,34,Femenino,26,58,1.5,3,44,11,1,0,0.0,5.94,1,0.1301,Bajo
+efd5fb59-2d86-466a-84d1-191639af9b14,Carlos López,0970642122,Microempresa,Entretenimiento y Educación,Esmeraldas,33,Masculino,27,19,16.69,2,14,3,1,0,0.0,2.4,6,0.5833,Medio
+fd6afe26-4e1d-48c7-99cd-cff86bf0b6c0,Carmen Ríos,0906081467,Microempresa,Comercio Minorista,Guayas,21,Femenino,31,52,13.93,9,42,1,2,0,0.0,11.49,7,0.6951,Alto
+81ea85d8-25a4-4866-8fe1-7f0048fe5691,Lucía Mora,0913118695,Gran Empresa,Servicios Personales e Independientes,Cañar,35,Masculino,3,252,30.47,29,201,22,0,0,0.0,1.86,1,0.1616,Bajo
+fe11aa12-969c-4014-8e2c-1317af92db79,Diego Castro,0935318554,Microempresa,Comercio Minorista,Pichincha,24,Masculino,3,140,11.33,11,106,23,0,0,0.0,117.82,6,0.4643,Medio
+c6d40456-8046-425f-b59c-87be995bcc73,Pedro Ruiz,0926299268,Microempresa,Comercio Minorista,Pichincha,24,Femenino,13,13,14.94,2,8,2,1,0,0.0,1.53,12,0.7206,Alto
+a711331f-ac7c-4cbe-a00c-711284b9e997,Juan Gómez,0903610543,Microempresa,Comercio Minorista,Imbabura,27,Masculino,28,61,8.05,12,46,3,1,0,0.0,177.87,4,0.1539,Bajo
+b41986f4-69c5-4173-a4fc-4c5f472cf5c6,Juan Gómez,0940317416,Microempresa,Moda y Estilo de Vida,Guayas,34,Masculino,26,20,16.27,1,15,4,0,0,0.0,37.71,10,0.7561,Alto
+cccbad4d-f83d-4af1-a48a-f3e81a6cd294,Carmen Ríos,0920129980,Microempresa,Alimentación y Gastronomía,El Oro,20,Masculino,36,159,1.5,14,107,38,1,0,0.0,124.34,3,0.0964,Bajo
+0032a3bd-f7ea-4736-bae4-1653ac8d8455,Carlos López,0970115906,Microempresa,Comercio Minorista,Manabí,25,Femenino,11,35,5.47,6,27,2,0,0,0.0,18.06,0,0.08,Bajo
+b38d0766-2224-421c-b1d3-49083abf910c,Diego Castro,0909624301,Microempresa,Alimentación y Gastronomía,Pichincha,34,Masculino,35,55,2.16,7,35,13,2,0,0.0,10.94,1,0.0684,Bajo
+3effd28f-c130-4d78-8f90-e1328e41398d,Carlos López,0905921776,Microempresa,Alimentación y Gastronomía,Pichincha,28,Masculino,10,27,5.53,4,20,2,0,0,0.0,329.34,1,0.0161,Bajo
+eebd1386-aa9d-47b4-990b-9f643275fd45,Carlos López,0935372170,Microempresa,Comercio Minorista,Guayas,25,Femenino,4,26,30.95,4,21,1,0,0,0.0,10.25,0,0.066,Bajo
+1e940e58-e7b5-4daf-bc7a-cc2acd7ad244,Lucía Mora,0904295931,Microempresa,Alimentación y Gastronomía,Tungurahua,23,Masculino,33,109,3.89,8,72,30,1,0,0.0,34.39,3,0.2942,Bajo
+6bddaf25-6358-4b62-ad78-099810ab1e19,Andrés Díaz,0948692583,Microempresa,Moda y Estilo de Vida,Pichincha,18,Masculino,17,23,10.29,4,15,3,1,1,0.0,26.68,0,0.4845,Medio
+e691c673-59f0-42c1-a667-5fefdb3f369a,Ana Torres,0941037870,Microempresa,Comercio Minorista,Guayas,25,Masculino,10,71,11.11,8,42,21,0,0,0.0,8.78,9,0.7819,Alto
+520de93a-17ab-40d9-834c-a87812564df5,Andrés Díaz,0901924791,Microempresa,Moda y Estilo de Vida,Santo Domingo,32,Femenino,24,3,54.39,0,2,0,1,0,0.0,19.15,0,0.1027,Bajo
+d4a28b09-5bde-48f2-8cf7-14b9171beca7,Pedro Ruiz,0949420289,Microempresa,Alimentación y Gastronomía,Pichincha,33,Masculino,24,31,6.45,5,23,3,1,0,0.0,11.64,5,0.4468,Medio
+c771d3e4-2008-436b-acd4-bd834903daf9,Juan Gómez,0979273734,Microempresa,Servicios Personales e Independientes,El Oro,18,Masculino,4,22,19.09,2,17,3,0,0,0.0,16.83,12,0.7413,Alto
+a5b352ce-5f43-4348-822b-1bc5e6f57cfc,Sofía Vega,0909420468,Microempresa,Alimentación y Gastronomía,Guayas,23,Masculino,35,81,1.5,11,66,4,0,0,0.0,8.07,2,0.046,Bajo
+8d85cf71-617f-4a5e-ab7b-3521435dd11a,Carlos López,0952617279,Microempresa,Comercio Minorista,Los Ríos,33,Masculino,31,80,7.33,5,47,27,0,0,0.0,184.15,6,0.1697,Bajo
+805fa921-2a83-4c86-a042-f90b3f8f615e,Diego Castro,0931576730,Microempresa,Servicios Personales e Independientes,Santo Domingo,24,Femenino,30,181,6.22,23,146,12,1,0,0.0,22.52,0,0.1248,Bajo
+ac9d7fa9-7427-4486-b39f-be66a0431e0f,Ana Torres,0972335892,Microempresa,Alimentación y Gastronomía,Pichincha,18,Femenino,31,69,2.26,6,48,15,0,0,0.0,3.8,1,0.0252,Bajo
+f843b8d9-16f5-4fa7-9ad2-8a57d79b02c4,Ana Torres,0936783009,Microempresa,Comercio Minorista,Guayas,25,Femenino,19,142,15.36,14,120,9,1,0,0.0,3.84,0,0.0877,Bajo
+0b8ccdb6-b3ad-4202-ab74-4dab711e4f42,María Pérez,0934811268,Mediana Empresa A,Comercio Minorista,Azuay,23,Masculino,24,17,16.72,1,11,5,0,0,0.0,153.26,2,0.0572,Bajo
+ab481b10-e238-4f5c-876b-06336da4f192,Sofía Vega,0960818518,Microempresa,Alimentación y Gastronomía,Pichincha,30,Femenino,17,267,1.5,24,195,48,1,0,0.0,25.14,6,0.179,Bajo
+6e5847ba-4f35-4ca8-8e9b-ea71d09b393b,Juan Gómez,0918461958,Microempresa,Entretenimiento y Educación,Guayas,30,Femenino,28,17,54.92,2,14,1,1,0,0.0,34.55,4,0.4722,Medio
+4ae44f32-26fe-4f78-a07b-cb8874075e28,Pedro Ruiz,0905875441,Microempresa,Alimentación y Gastronomía,Cañar,29,Femenino,13,42,1.78,6,25,11,1,0,0.0,3.6,2,0.1826,Bajo
+382244cf-257a-43b6-a7b6-bce93a3097fb,Pedro Ruiz,0960832995,Microempresa,Comercio Minorista,Guayas,26,Femenino,26,52,28.62,5,34,13,0,0,0.0,22.3,2,0.1455,Bajo
+9770231f-5d2b-47dd-9b5a-b64ab5c08e4b,Lucía Mora,0910086008,Microempresa,Comercio Minorista,Santo Domingo,19,Masculino,20,27,22.27,2,23,2,0,0,0.0,31.35,3,0.4014,Medio
+60316260-53d2-4077-808d-396c2d0b3a1f,María Pérez,0996205476,Microempresa,Alimentación y Gastronomía,Loja,19,Femenino,20,210,5.09,16,165,29,1,1,0.0,1.96,1,0.4711,Medio
+41be0fc8-6257-417b-83d8-3250d01a8fd6,Andrés Díaz,0900643315,Microempresa,Alimentación y Gastronomía,Manabí,18,Masculino,11,92,3.12,15,58,19,1,1,0.0,22.07,3,0.5156,Medio
+51bfcc06-50e0-4537-9998-b4051ab4d798,Ana Torres,0952108843,Microempresa,Alimentación y Gastronomía,Cotopaxi,35,Masculino,34,116,1.5,7,68,41,3,0,0.0,16.36,9,0.4089,Medio
+fb9e20cc-597a-40d0-994d-86bfb3b4f0fb,Andrés Díaz,0934862782,Microempresa,Comercio Minorista,Pichincha,36,Femenino,17,36,21.68,4,22,10,1,0,0.0,14.48,0,0.0679,Bajo
+15be4651-6fa4-436b-8610-0310a8040fb3,Juan Gómez,0939895997,Microempresa,Comercio Minorista,Pichincha,27,Femenino,24,132,3.11,23,91,18,0,0,0.0,20.16,2,0.0556,Bajo
+fc2ade06-a5fc-4c17-9669-bc38fe3f6706,Lucía Mora,0975807376,Microempresa,Alimentación y Gastronomía,Guayas,23,Masculino,18,26,3.96,1,21,4,0,0,0.0,29.65,0,0.1273,Bajo
+b5c79d6a-7dc6-4d2a-bfac-5cce27131618,Andrés Díaz,0910800736,Microempresa,Moda y Estilo de Vida,Guayas,31,Masculino,13,15,30.73,2,10,3,1,1,0.0,0.73,0,0.6706,Alto
+6c103969-2767-4d23-962d-3df84d808fa2,María Pérez,0940891432,Microempresa,Moda y Estilo de Vida,Pichincha,33,Masculino,10,13,10.85,1,11,1,1,0,0.0,22.11,1,0.0809,Bajo
+1b7f3437-dc4b-4b67-92e4-cba4f3450f56,María Pérez,0925356684,Microempresa,Moda y Estilo de Vida,Imbabura,27,Femenino,18,21,14.06,2,13,6,0,0,0.0,5.99,0,0.1229,Bajo
+88dcf579-5de7-447a-9f0b-a7e5837dfd61,Juan Gómez,0945378540,Microempresa,Servicios Personales e Independientes,El Oro,26,Femenino,3,15,36.63,1,12,1,0,0,0.0,3.05,10,0.8763,Alto
+4f5f74a2-116f-406a-9354-f701eee438de,Juan Gómez,0977665216,Microempresa,Alimentación y Gastronomía,Pichincha,35,Femenino,24,230,4.92,46,150,34,3,0,0.0,31.27,2,0.2073,Bajo
+3671d2de-d1d8-439a-b23d-15110be483f5,Juan Gómez,0949506965,Microempresa,Servicios Personales e Independientes,Tungurahua,26,Femenino,20,23,7.08,4,17,1,0,0,0.0,64.08,10,0.4437,Medio
+3b1ffaae-5e5b-463b-80d4-c28e9a7a77a5,Andrés Díaz,0956449743,Microempresa,Comercio Minorista,Pichincha,32,Femenino,23,52,1.5,7,32,13,1,0,0.0,54.19,0,0.0531,Bajo
+5bb86347-0106-4e14-ae10-b64cb3679890,María Pérez,0951013309,Microempresa,Alimentación y Gastronomía,Pichincha,23,Femenino,34,258,1.96,36,191,31,1,0,0.0,17.49,1,0.0482,Bajo
+cbd3c149-966f-4556-b6bd-acc4bdb7208b,Carlos López,0966766745,Microempresa,Alimentación y Gastronomía,Esmeraldas,31,Masculino,5,51,3.72,8,33,10,0,0,0.0,61.48,13,0.5666,Medio
+2ecb56d2-57f9-433a-b150-97943722ff9d,Andrés Díaz,0928773209,Microempresa,Comercio Minorista,Pichincha,31,Masculino,24,64,19.58,11,39,15,0,0,0.0,6.38,3,0.2406,Bajo
+ea729d9c-e717-4327-a383-5485ed32ebc4,Diego Castro,0962298193,Microempresa,Alimentación y Gastronomía,Pichincha,31,Masculino,30,69,3.38,4,47,18,1,0,0.0,5.48,0,0.0737,Bajo
+520c45b4-c870-48ba-8195-15b97445e746,Juan Gómez,0988944690,Microempresa,Alimentación y Gastronomía,Napo,32,Masculino,30,130,3.48,8,83,39,0,0,0.0,58.24,2,0.0983,Bajo
+3eb892a0-d7e8-42cd-bac2-20a5035c5546,Lucía Mora,0900599376,Microempresa,Servicios Personales e Independientes,Chimborazo,33,Femenino,15,8,26.15,1,8,0,0,0,0.0,7.14,9,0.9142,Alto
+aef194d4-be00-4567-bf61-a2220c91455b,Ana Torres,0939356518,Microempresa,Moda y Estilo de Vida,Pichincha,26,Masculino,23,26,39.31,5,21,0,2,1,0.0,184.89,1,0.1917,Bajo
+4df3750d-b1c9-4a48-b6b2-7744d811919d,Carmen Ríos,0911629644,Microempresa,Comercio Minorista,Los Ríos,40,Masculino,4,79,6.42,12,56,11,0,0,0.0,15.24,3,0.2622,Bajo
+fbc7d451-a51e-491f-89c1-b67de32136ef,Carmen Ríos,0911581242,Pequeña Empresa,Servicios Personales e Independientes,Manabí,30,Masculino,15,9,22.9,2,7,0,0,0,0.0,7.4,0,0.3021,Bajo
+f7729530-4fe8-4b9a-8f56-a7656c408e2d,Carmen Ríos,0966979286,Microempresa,Alimentación y Gastronomía,Los Ríos,24,Masculino,30,71,5.44,9,43,19,0,0,0.0,10.69,6,0.2693,Bajo
+0467a509-0ec5-47c3-9bad-8798afa65838,Juan Gómez,0991388998,Microempresa,Alimentación y Gastronomía,Imbabura,32,Masculino,1,108,6.07,13,90,6,1,0,0.0,2.75,2,0.1359,Bajo
+a80e385c-db7a-4167-81ec-183280911789,Lucía Mora,0973490777,Microempresa,Moda y Estilo de Vida,Pichincha,35,Femenino,4,38,47.19,3,25,10,1,0,0.0,3.41,1,0.1308,Bajo
+49a9d00d-5525-477e-a079-0075efb3a702,Carlos López,0903506827,Microempresa,Servicios Personales e Independientes,Pichincha,31,Masculino,19,19,25.93,1,15,3,1,0,0.0,5.47,1,0.1078,Bajo
+9137f570-549d-4779-932c-27f581c28d60,Lucía Mora,0993857984,Microempresa,Comercio Minorista,Pichincha,31,Masculino,8,43,5.92,3,25,15,1,0,0.0,12.41,2,0.1058,Bajo
+ba43103d-6f67-41f5-9411-1a9b348f0ba3,Diego Castro,0932121130,Microempresa,Alimentación y Gastronomía,Pichincha,27,Femenino,16,16,16.8,3,11,3,1,0,0.0,3.67,1,0.0605,Bajo
+40779d5d-e5a1-4994-b31b-b7d43dd5824b,Ana Torres,0959692511,Microempresa,Alimentación y Gastronomía,Bolívar,18,Femenino,36,92,3.68,8,60,24,0,0,0.0,7.34,6,0.2114,Bajo
+12963902-3bd1-47c4-b258-98d3fb552803,Pedro Ruiz,0998284522,Microempresa,Servicios Personales e Independientes,Chimborazo,33,Femenino,5,73,15.85,13,69,0,0,0,0.0,7.79,1,0.1028,Bajo
+8281de3e-3923-4a63-8151-1fd2d34d2c1e,Juan Gómez,0984947164,Microempresa,Alimentación y Gastronomía,Guayas,23,Femenino,22,64,10.65,4,54,5,0,0,0.0,8.44,2,0.1023,Bajo
+2f91d51e-af2b-483c-8ce6-6a4b79f8439a,María Pérez,0908274040,Microempresa,Comercio Minorista,Pichincha,29,Femenino,9,37,7.45,4,22,11,0,0,0.0,15.39,4,0.3918,Medio
+806a8bb5-cfa3-4b14-9c5b-e492b5bfbb68,Juan Gómez,0987144275,Microempresa,Servicios Personales e Independientes,Santo Domingo,22,Femenino,23,11,16.85,1,9,1,0,0,0.0,13.04,2,0.0667,Bajo
+a926feca-7e91-4c3e-9bb0-067e7bddc430,Sofía Vega,0908062090,Microempresa,Entretenimiento y Educación,Santo Domingo,32,Masculino,14,4,10.49,0,3,1,0,0,0.0125,7.48,12,0.8915,Alto
+7abaca00-ed44-487a-ac87-b39dbb781ebf,Andrés Díaz,0934531451,Microempresa,Alimentación y Gastronomía,Pichincha,28,Masculino,23,78,12.46,14,49,15,0,0,0.0,68.13,1,0.0843,Bajo
+3940d069-d03d-4b29-b934-0a0e5bd62d68,Carlos López,0942198852,Microempresa,Moda y Estilo de Vida,Pichincha,35,Masculino,7,13,15.4,2,11,0,0,0,0.0,14.29,1,0.0649,Bajo
+2a245c38-34bc-4298-bd1b-9e7ff721e71c,Ana Torres,0929976418,Microempresa,Servicios Personales e Independientes,Cañar,23,Femenino,6,7,8.75,1,5,1,1,0,0.0,40.99,1,0.249,Bajo
+210b7041-b562-4d69-a5df-1bb694fd792f,Diego Castro,0983959296,Microempresa,Comercio Minorista,Guayas,22,Femenino,23,9,22.17,1,6,2,1,0,0.0,31.14,1,0.2757,Bajo
+896f2324-84e7-4b20-b903-19fb2bfac164,María Pérez,0969456831,Microempresa,Servicios Personales e Independientes,Guayas,21,Masculino,27,24,50.47,1,21,2,1,0,0.0,17.48,4,0.502,Medio
+f4a7a64b-168d-436c-86b0-5653bbb780ac,Ana Torres,0995591006,Microempresa,Entretenimiento y Educación,Pichincha,22,Masculino,7,8,3.17,1,7,0,0,0,0.0,4.58,1,0.2027,Bajo
+dff628f3-a3ec-4053-8be6-265e06c1918e,Carmen Ríos,0982905204,Microempresa,Comercio Minorista,Pastaza,27,Femenino,6,28,17.62,2,22,4,0,0,0.0,13.9,2,0.1775,Bajo
+25375b06-0f80-4972-83d4-3995c2ae9646,Sofía Vega,0906870585,Microempresa,Alimentación y Gastronomía,Pichincha,18,Femenino,35,95,1.5,13,57,25,0,0,0.0,33.47,4,0.1473,Bajo
+cb2ebc3a-34e5-4c2a-8a3d-33567ebdab8b,Carmen Ríos,0967855627,Microempresa,Alimentación y Gastronomía,Guayas,31,Masculino,34,152,1.5,10,101,41,0,0,0.0,56.93,2,0.1313,Bajo
+b0387678-3de1-4804-aa23-a5820804cbba,María Pérez,0911900772,Microempresa,Alimentación y Gastronomía,Los Ríos,24,Femenino,24,92,3.54,10,74,8,0,0,0.0,26.6,3,0.2329,Bajo
+cce1b412-d7cb-4b8d-8ba1-0138af8a78d5,Juan Gómez,0949501333,Microempresa,Comercio Minorista,Esmeraldas,18,Femenino,7,7,4.49,1,6,0,0,0,0.0,93.51,2,0.1174,Bajo
+13b00083-0b2d-4b24-938f-fb0a5ef1c779,Juan Gómez,0909857573,Pequeña Empresa,Servicios Personales e Independientes,Pichincha,37,Femenino,4,17,45.31,1,14,1,0,0,0.0,152.39,0,0.0616,Bajo
+debd82e6-78eb-47aa-9643-e7b2d7109857,Sofía Vega,0949645738,Microempresa,Comercio Minorista,Azuay,39,Femenino,20,5,8.58,1,4,0,0,0,0.0,1.42,2,0.284,Bajo
+9dc52b39-c90e-405c-812a-f7540c7d803c,Lucía Mora,0963871276,Microempresa,Comercio Minorista,Bolívar,31,Femenino,30,24,57.22,4,19,1,0,0,0.0,35.4,5,0.442,Medio
+6458e48b-ef52-4652-b121-7608d3792375,Pedro Ruiz,0950434738,Microempresa,Comercio Minorista,Manabí,31,Masculino,3,68,23.86,8,41,19,1,0,0.0054,8.28,5,0.7374,Alto
+089ad6f9-f8c2-4049-9e30-cc4967b12810,Lucía Mora,0960360013,Microempresa,Comercio Minorista,Imbabura,26,Femenino,24,48,31.45,3,32,13,0,0,0.0,58.77,1,0.0329,Bajo
+ae990345-132b-4b21-9718-647396d79fe5,Carmen Ríos,0936686754,Microempresa,Servicios Personales e Independientes,Pichincha,28,Masculino,14,13,49.21,2,10,2,1,1,0.0,17.1,2,0.7409,Alto
+6f9399b0-31e0-43e0-a5d4-c3a14cb4aacb,Carlos López,0970607702,Microempresa,Servicios Personales e Independientes,Pichincha,33,Masculino,25,12,19.13,1,10,1,0,0,0.0,6.22,2,0.0952,Bajo
+54ebae39-4cb9-4573-a42d-a3793f19cc0a,Carmen Ríos,0985905930,Microempresa,Alimentación y Gastronomía,Guayas,21,Masculino,1,113,4.85,11,79,22,0,0,0.0,4.22,7,0.7233,Alto
+1a67d87f-ebfb-413c-9977-959a86b2595d,Diego Castro,0936633942,Microempresa,Servicios Personales e Independientes,Pichincha,31,Femenino,25,49,47.26,9,46,0,0,0,0.0,106.23,2,0.0567,Bajo
+894eed7a-7c5c-4a9a-8125-4e63b7221727,Carlos López,0904311275,Microempresa,Alimentación y Gastronomía,Pichincha,41,Masculino,4,87,4.6,6,71,10,0,0,0.0,12.97,1,0.0384,Bajo
+03ddbdc2-0694-4aeb-801c-b01be5cd5d5a,Pedro Ruiz,0949814168,Microempresa,Comercio Minorista,Esmeraldas,34,Masculino,18,37,13.36,5,24,8,1,0,0.0,19.03,2,0.1138,Bajo
+df78a485-709f-4d42-b184-a8e444e8f4df,Juan Gómez,0911130468,Microempresa,Comercio Minorista,Manabí,24,Femenino,16,88,13.6,17,73,0,0,0,0.0,4.39,0,0.0501,Bajo
+42dfcaf2-a6d0-486d-871b-0d994103d02f,Juan Gómez,0933141787,Microempresa,Comercio Minorista,Pichincha,28,Masculino,9,303,2.94,23,235,46,0,0,0.0,2.35,1,0.0354,Bajo
+aa995fc8-9a87-4e48-8ebd-80114c85f934,Carlos López,0911904345,Microempresa,Servicios Personales e Independientes,Guayas,28,Masculino,18,15,29.32,1,14,0,1,0,0.0,7.12,4,0.5084,Medio
+a066eaee-ca66-4d0a-a55d-f2933992ba5d,Pedro Ruiz,0991898905,Microempresa,Servicios Personales e Independientes,Los Ríos,32,Femenino,36,28,4.11,3,22,3,0,0,0.0,57.53,7,0.3906,Medio
+ae710629-395f-4865-8e91-ac3055bb4d90,Andrés Díaz,0956050776,Microempresa,Alimentación y Gastronomía,Imbabura,31,Femenino,2,95,5.84,6,78,12,1,0,0.0169,32.28,0,0.2318,Bajo
+957d4aa4-567c-4994-88cd-d5b14cbeb1b5,Pedro Ruiz,0954941299,Microempresa,Servicios Personales e Independientes,Guayas,38,Femenino,9,5,5.91,1,4,0,1,0,0.0,12.7,1,0.2226,Bajo
+4bc704bc-06b0-4f76-a128-6d2c614df50e,Pedro Ruiz,0948645711,Microempresa,Servicios Personales e Independientes,Guayas,34,Femenino,32,53,29.52,9,46,0,0,0,0.0,16.18,10,0.5822,Medio
+40f5e7f0-7582-43ea-85ab-8c97cb0473f5,María Pérez,0979227285,Microempresa,Alimentación y Gastronomía,Guayas,23,Masculino,26,158,3.93,26,126,6,1,0,0.0,3.91,1,0.0744,Bajo
+3d833e00-0668-4ffb-ba5a-9a71b2b53848,Sofía Vega,0981283146,Microempresa,Alimentación y Gastronomía,Chimborazo,26,Femenino,35,57,2.65,10,39,9,0,0,0.0,37.03,0,0.1324,Bajo
+a7c13560-6ece-4743-9793-8ef4f65f908a,Diego Castro,0969759087,Microempresa,Entretenimiento y Educación,Pichincha,22,Masculino,18,16,3.41,2,14,0,1,0,0.0,121.1,3,0.0928,Bajo
+8018215d-89e1-4cb2-8f62-8b5c33714cab,María Pérez,0926273922,Pequeña Empresa,Comercio Minorista,Pastaza,35,Masculino,35,19,1.5,1,15,3,0,0,0.0,1.25,6,0.3899,Medio
+63717947-b97c-44a2-8eae-cee567ac892a,Carlos López,0970943748,Microempresa,Comercio Minorista,Pichincha,24,Femenino,5,177,2.04,35,114,28,0,0,0.0,4.79,1,0.024,Bajo
+9127f711-a5fb-4381-83da-4e5c051375f6,Lucía Mora,0913698198,Microempresa,Moda y Estilo de Vida,Chimborazo,38,Masculino,29,17,53.25,1,12,4,1,0,0.0,7.41,1,0.0738,Bajo
+0bf0b92a-8ed7-496a-8eff-261970399d26,Juan Gómez,0935623205,Microempresa,Alimentación y Gastronomía,Guayas,30,Femenino,1,105,7.82,18,65,22,0,0,0.0,15.08,2,0.0868,Bajo
+7e67c9b6-5d8a-4179-892f-a5e8554f7203,Carmen Ríos,0925442978,Microempresa,Alimentación y Gastronomía,Chimborazo,25,Femenino,20,112,2.81,11,78,24,1,1,0.0,13.56,2,0.7279,Alto
+92a1ff41-d7d9-4a82-af06-0e2e137b3191,Lucía Mora,0946593674,Microempresa,Moda y Estilo de Vida,Galápagos,28,Masculino,4,26,51.26,2,18,6,0,0,0.0,61.33,1,0.0781,Bajo
+463804b0-f459-4cb8-b791-7605f4ce3034,Lucía Mora,0919031605,Microempresa,Moda y Estilo de Vida,Pichincha,25,Masculino,4,5,35.58,1,4,0,0,0,0.0,1.14,4,0.6918,Alto
+de272498-ed87-493f-9c18-640e5daca145,Lucía Mora,0985854471,Microempresa,Servicios Personales e Independientes,Tungurahua,29,Masculino,23,30,22.64,4,23,4,0,0,0.0,14.04,5,0.5166,Medio
+eda5735e-c1fd-4ef7-923e-5436bbdc8204,Carlos López,0951312449,Pequeña Empresa,Comercio Minorista,Guayas,38,Masculino,3,87,9.24,4,71,12,0,0,0.0,7.13,3,0.3663,Medio
+637dd6dc-0b75-4631-9f84-cae49da37245,Diego Castro,0995973448,Pequeña Empresa,Alimentación y Gastronomía,Los Ríos,18,Masculino,14,219,1.5,27,139,52,1,0,0.0,9.03,0,0.0215,Bajo
+192d32cb-8124-4cf9-83b3-f3fcc729463a,Pedro Ruiz,0955957359,Pequeña Empresa,Moda y Estilo de Vida,Orellana,24,Masculino,14,7,45.07,1,5,1,2,0,0.004,76.37,4,0.5123,Medio
+249214ee-806f-4d90-9a13-6d2336da5c37,Carmen Ríos,0964441473,Microempresa,Alimentación y Gastronomía,Manabí,25,Masculino,34,291,3.5,49,215,27,1,1,0.0,49.75,2,0.3035,Bajo
+75657448-d775-4d08-a42a-78a45549840e,Ana Torres,0960759736,Microempresa,Alimentación y Gastronomía,Azuay,22,Masculino,23,96,4.64,10,57,28,1,0,0.0,1.32,3,0.2148,Bajo
+93ce8826-bb7d-4833-adfd-259808fcc549,Andrés Díaz,0944270933,Microempresa,Servicios Personales e Independientes,Chimborazo,30,Femenino,10,24,26.23,5,18,1,0,0,0.0,8.69,4,0.3751,Medio
+756dcdb7-50ae-4353-b927-3a49ac525cce,Juan Gómez,0970865086,Microempresa,Alimentación y Gastronomía,Guayas,32,Masculino,26,69,3.07,14,52,4,0,0,0.0,1.81,2,0.0694,Bajo
+cc5b65a4-2e66-4edb-9698-4f49167deb10,Carlos López,0992514622,Microempresa,Moda y Estilo de Vida,Pichincha,29,Masculino,7,5,57.38,1,4,1,1,0,0.0,22.68,0,0.2512,Bajo
+fb4a5f36-9231-4177-bea3-c37217abc68b,Pedro Ruiz,0972080711,Microempresa,Moda y Estilo de Vida,Tungurahua,28,Masculino,18,17,14.06,3,13,1,0,0,0.0,11.71,7,0.5385,Medio
+598efc7a-00d0-42fd-8af2-c8f3d6e6dccb,Diego Castro,0905788764,Microempresa,Servicios Personales e Independientes,Manabí,22,Femenino,25,19,20.17,3,18,0,2,0,0.0,4.36,4,0.5353,Medio
+687d38da-97f7-44fe-a679-2f324c18a9f9,Diego Castro,0973797160,Microempresa,Comercio Minorista,Azuay,26,Femenino,10,44,14.94,2,33,9,0,0,0.0,3.5,4,0.4524,Medio
+0177d7a2-ea2f-49fe-a5d4-0666695e4d38,Andrés Díaz,0916489796,Microempresa,Comercio Minorista,Tungurahua,18,Masculino,21,135,2.16,12,82,41,0,0,0.0,11.78,4,0.2281,Bajo
+d7a899f0-f354-490b-ad0c-bddbdf0a1249,Ana Torres,0927064030,Mediana Empresa A,Servicios Personales e Independientes,Guayas,29,Femenino,11,23,28.68,2,17,3,1,0,0.0,10.67,5,0.6665,Alto
+8c7a15f7-c221-4d4a-8a89-12b0d801641e,Juan Gómez,0945326389,Microempresa,Alimentación y Gastronomía,Manabí,31,Femenino,17,77,4.21,9,56,12,0,0,0.0,6.29,2,0.1015,Bajo
+43dbb563-e544-4df3-882a-1b5c7cc00156,Andrés Díaz,0990741833,Microempresa,Servicios Personales e Independientes,Guayas,21,Femenino,14,25,8.78,3,20,2,0,0,0.0,37.73,2,0.142,Bajo
+3ef6e7f1-2214-498c-9aa3-ec8810dcb385,Diego Castro,0984424252,Microempresa,Alimentación y Gastronomía,Pichincha,21,Femenino,8,116,3.07,21,70,25,3,1,0.0,3.19,1,0.5908,Medio
+8c2377e5-b6ad-4fb6-9d36-f5a54641dff5,Carlos López,0902988564,Microempresa,Alimentación y Gastronomía,Azuay,29,Masculino,7,208,8.86,29,167,12,1,0,0.0,28.1,5,0.2536,Bajo
+a15198c9-3d26-413b-8198-1e1b0255d6f7,Ana Torres,0940819266,Microempresa,Servicios Personales e Independientes,Pichincha,36,Masculino,34,5,18.7,0,4,1,0,0,0.0,3.02,0,0.4197,Medio
+7f16ecfb-a1ca-4a71-8be0-1495fb1cc4a1,Ana Torres,0981039938,Microempresa,Comercio Minorista,Pichincha,43,Masculino,5,40,13.18,2,24,14,0,0,0.0,10.68,1,0.071,Bajo
+a72f254b-e7c0-4814-a343-440b0614eba4,Pedro Ruiz,0923740855,Microempresa,Alimentación y Gastronomía,Tungurahua,23,Femenino,17,59,3.29,4,40,15,1,1,0.0,76.07,2,0.3919,Medio
+87f1e65d-188d-49f6-b1a6-613c1367f040,Juan Gómez,0954266353,Microempresa,Alimentación y Gastronomía,Chimborazo,26,Femenino,5,99,4.82,6,81,12,1,0,0.0,41.44,10,0.6891,Alto
+3a52b016-7e90-465a-b18d-0580c9e093c8,Carmen Ríos,0930450858,Microempresa,Comercio Minorista,Esmeraldas,33,Masculino,29,48,8.81,6,37,5,0,0,0.0,32.73,0,0.1089,Bajo
+48a12a5f-9ede-4a82-aec8-06e4763793bc,María Pérez,0937754439,Microempresa,Alimentación y Gastronomía,Guayas,19,Masculino,4,49,3.82,4,40,4,0,0,0.0,84.32,3,0.1013,Bajo
+018cd683-6128-43c2-8ad6-1cb2c7cb14f9,Diego Castro,0951927777,Microempresa,Comercio Minorista,Pichincha,27,Masculino,12,61,6.96,9,44,8,0,0,0.0,192.2,1,0.1143,Bajo
+c8510843-056d-4c79-91be-0cda5d10852d,Carlos López,0927828562,Microempresa,Comercio Minorista,Esmeraldas,20,Femenino,16,46,10.64,4,28,14,0,0,0.0,21.83,0,0.1315,Bajo
+73a0e3d9-e1b5-4b36-89aa-5e56e5a09186,Carmen Ríos,0909039986,Mediana Empresa A,Alimentación y Gastronomía,Guayas,19,Masculino,32,134,1.55,17,112,5,1,1,0.0,3.27,2,0.4711,Medio
+4b41e56e-4b72-4aa9-b91a-4a065176ea2a,Carlos López,0944291797,Microempresa,Servicios Personales e Independientes,Guayas,22,Femenino,2,21,29.26,2,16,3,0,0,0.0,19.04,2,0.2743,Bajo
+178dfb9e-0a4d-4e20-8490-d1cbbcc306de,Ana Torres,0997250286,Microempresa,Comercio Minorista,Pichincha,25,Masculino,36,104,15.26,11,62,31,1,0,0.0,72.15,1,0.0954,Bajo
+249a9961-0e10-4dd3-9526-631bb488c33e,Juan Gómez,0972292544,Microempresa,Servicios Personales e Independientes,Pichincha,33,Femenino,27,10,9.28,1,8,1,1,1,0.0,5.0,2,0.862,Alto
+5db41848-cf64-428e-b2b1-86928219cb15,Juan Gómez,0930928748,Microempresa,Comercio Minorista,Cotopaxi,35,Masculino,27,329,2.19,21,223,85,0,0,0.0,1.45,12,0.533,Medio
+ba78857e-361e-4146-8a69-cecaafae34c0,Pedro Ruiz,0954828600,Microempresa,Moda y Estilo de Vida,Azuay,27,Masculino,23,22,24.3,2,13,7,2,0,0.0,39.64,1,0.1083,Bajo
+35eb7079-5f0b-4e08-b72a-49631387ff51,Carlos López,0916505342,Microempresa,Comercio Minorista,Imbabura,33,Femenino,33,25,4.12,3,20,2,2,0,0.0,201.17,1,0.0327,Bajo
+88a218a1-5f61-436b-b608-6385469e2ebb,Pedro Ruiz,0939972714,Microempresa,Servicios Personales e Independientes,Tungurahua,30,Masculino,22,8,31.98,1,6,1,0,0,0.0,1.47,1,0.1984,Bajo
+a56999a2-4e85-405b-845e-8a7af94d0cf1,Juan Gómez,0964567131,Microempresa,Servicios Personales e Independientes,Pichincha,23,Masculino,9,18,31.8,3,17,0,2,0,0.0,11.41,1,0.0551,Bajo
+7b1db315-4025-4ced-92fc-50dbdd918d96,Carmen Ríos,0957800914,Microempresa,Servicios Personales e Independientes,Pichincha,30,Masculino,5,8,34.86,1,7,0,1,0,0.0,10.69,5,0.8001,Alto
+eeacf8fb-b078-4a9a-a1af-0458449af35d,Diego Castro,0960333017,Microempresa,Alimentación y Gastronomía,Carchi,26,Femenino,31,114,4.61,18,90,6,0,0,0.0,30.12,10,0.8667,Alto
+d2aa3608-ea74-4fda-9509-f9c765cc6a14,Juan Gómez,0911108136,Microempresa,Alimentación y Gastronomía,Pichincha,32,Masculino,20,188,2.01,10,150,28,0,0,0.0,63.47,7,0.3336,Bajo
+efe9266b-10c3-4210-a5a3-9dde330a9f7b,Carlos López,0955153448,Microempresa,Comercio Minorista,Pichincha,24,Femenino,14,8,27.68,1,6,0,2,0,0.0,1.82,1,0.2923,Bajo
+9fe66668-11a9-452a-a3f6-811fc8af54ec,Carlos López,0993567003,Microempresa,Servicios Personales e Independientes,Chimborazo,26,Femenino,29,66,37.92,5,53,8,0,0,0.0,30.41,8,0.7143,Alto
+abdf5007-b6f8-4715-9c2f-1fd3a4c70faa,Andrés Díaz,0922159588,Microempresa,Servicios Personales e Independientes,Azuay,28,Femenino,21,7,26.67,1,6,0,1,0,0.0,86.37,12,0.4697,Medio
+e6ecd0e5-3952-4e8e-87d6-9933c2cf471d,Diego Castro,0968374370,Microempresa,Servicios Personales e Independientes,Loja,18,Masculino,15,9,15.96,0,8,0,0,0,0.0,2.9,1,0.4787,Medio
+c4fa005a-0022-4aa4-84dc-718478858088,Sofía Vega,0964204707,Microempresa,Entretenimiento y Educación,Sucumbíos,32,Masculino,1,9,40.56,1,7,1,0,0,0.0,10.06,10,0.8524,Alto
+8b753878-3c78-49d9-8a66-ca76d612b32d,María Pérez,0924469180,Microempresa,Alimentación y Gastronomía,Pichincha,22,Masculino,18,53,3.5,8,44,1,1,1,0.0,1.6,1,0.83,Alto
+9acd182d-98e8-455a-8c3d-4f160a99cdbd,Juan Gómez,0989457011,Microempresa,Alimentación y Gastronomía,Loja,18,Femenino,29,30,6.4,5,19,6,0,0,0.0,45.24,9,0.7418,Alto
+a557d211-ea38-43c8-b815-8201736e968c,Carmen Ríos,0997747361,Microempresa,Comercio Minorista,Pichincha,23,Masculino,34,247,12.26,22,196,29,1,0,0.0,1.57,8,0.5163,Medio
+ebad0764-c506-46d9-8d77-75bbe71be49d,Ana Torres,0927294109,Microempresa,Servicios Personales e Independientes,Pichincha,21,Femenino,8,6,32.23,0,6,0,2,0,0.0,11.37,1,0.3391,Bajo
+f85c09dd-0a9d-4105-9c70-a976eeba8099,Lucía Mora,0923687310,Microempresa,Alimentación y Gastronomía,Chimborazo,19,Femenino,32,189,6.29,28,136,24,0,0,0.0,1.77,4,0.1512,Bajo
+2bd387ce-d80a-40e0-a328-4c8b0a050d96,Diego Castro,0954013246,Microempresa,Comercio Minorista,Guayas,21,Femenino,32,47,21.52,4,37,6,1,0,0.0,0.65,6,0.5631,Medio
+5970fbca-f2eb-4151-bea1-97f608c7dc1b,Juan Gómez,0955947287,Microempresa,Alimentación y Gastronomía,Bolívar,28,Femenino,11,51,12.87,4,30,17,0,0,0.0,8.17,2,0.1946,Bajo
+437da0cc-8bd4-42ff-9888-2afb64ed7882,Sofía Vega,0916422906,Microempresa,Comercio Minorista,Guayas,29,Masculino,35,81,4.62,9,61,11,1,0,0.0,10.49,10,0.7012,Alto
+d16f712c-1b38-453e-a3c0-b176f93a387e,Carmen Ríos,0950685363,Microempresa,Alimentación y Gastronomía,Chimborazo,18,Femenino,13,84,4.89,10,60,14,0,0,0.0,10.18,5,0.3019,Bajo
+143b2989-9a89-4f4f-a0ee-6b2f9021c741,María Pérez,0947220022,Microempresa,Servicios Personales e Independientes,Napo,19,Femenino,31,12,1.76,1,10,0,0,0,0.0,3.92,3,0.4179,Medio
+602a2174-84bc-495e-a720-981be1b065f1,Lucía Mora,0979361230,Microempresa,Alimentación y Gastronomía,El Oro,23,Masculino,24,434,6.94,75,295,64,0,0,0.0,19.98,11,0.6302,Medio
+e2c69a7a-b752-4001-ac0e-87aca8bae2b2,Andrés Díaz,0922523872,Microempresa,Servicios Personales e Independientes,Galápagos,18,Masculino,8,4,44.11,1,3,0,1,0,0.0,3.58,7,0.868,Alto
+e24cd50d-f5cd-46bf-b08c-4e0b2ebc5f3f,Juan Gómez,0958371988,Microempresa,Alimentación y Gastronomía,Guayas,18,Masculino,10,47,6.95,5,32,10,0,0,0.0,0.51,0,0.0882,Bajo
+59eca814-b7bd-4ab1-963f-55a9ecd96d92,Ana Torres,0945833452,Microempresa,Servicios Personales e Independientes,Loja,36,Masculino,11,163,16.38,27,133,3,0,0,0.0,16.21,8,0.4816,Medio
+0bb99d0c-c782-47d5-af4b-9ab14b7bf10c,Carmen Ríos,0913844467,Microempresa,Comercio Minorista,Tungurahua,38,Masculino,8,31,5.84,2,22,8,1,0,0.0,13.25,1,0.0513,Bajo
+7870ba19-000b-4c64-b8ad-db3cf2e1a60d,Sofía Vega,0926567297,Microempresa,Alimentación y Gastronomía,Pichincha,31,Masculino,17,67,9.54,4,47,16,0,0,0.0316,5.22,3,0.6245,Medio
+fabfc5a0-a885-473c-bcd1-a43039a448e1,Ana Torres,0930623426,Microempresa,Comercio Minorista,Esmeraldas,22,Masculino,25,27,6.43,2,17,7,0,0,0.0,71.42,0,0.0224,Bajo
+071059cb-700e-4c6e-9567-538397f73cf9,María Pérez,0903144179,Microempresa,Servicios Personales e Independientes,Pichincha,22,Femenino,7,34,14.61,7,29,0,1,0,0.0,1.83,0,0.0602,Bajo
+9e8f4b89-64d4-4974-bb51-356bbc604495,Diego Castro,0992777218,Microempresa,Moda y Estilo de Vida,Azuay,30,Masculino,16,6,54.44,1,5,0,0,0,0.0,3.37,1,0.2226,Bajo
+36eef4d9-3253-4d30-bdb6-a03918259865,Carmen Ríos,0934286397,Microempresa,Alimentación y Gastronomía,Pichincha,27,Femenino,14,76,5.19,10,50,16,0,0,0.0,146.59,0,0.0646,Bajo
+0ed1800b-84f5-4dac-95dd-cc0cf9fcfa41,Ana Torres,0987845546,Microempresa,Alimentación y Gastronomía,Pichincha,29,Femenino,33,165,2.7,24,99,42,0,0,0.0,145.82,0,0.0318,Bajo
+cebc31f1-e86a-4f0b-abb8-59e75af74ad1,Juan Gómez,0992486245,Microempresa,Servicios Personales e Independientes,Chimborazo,25,Masculino,19,13,25.91,1,11,1,0,0,0.0,3.07,1,0.1787,Bajo
+8080dbea-a343-4cf8-b585-e13325a7b43e,Juan Gómez,0911467706,Microempresa,Comercio Minorista,Pichincha,28,Femenino,13,24,9.77,4,16,4,0,0,0.0,17.03,2,0.0664,Bajo
+d2f1c96c-2f28-4086-995c-817232aea833,Sofía Vega,0930230795,Microempresa,Servicios Personales e Independientes,Azuay,26,Femenino,19,23,4.27,4,20,0,0,0,0.0,6.39,0,0.0797,Bajo
+4ab5d02c-b773-4d80-a3e7-03b4fa81087c,Ana Torres,0962330503,Microempresa,Alimentación y Gastronomía,Azuay,31,Femenino,28,76,13.18,6,58,12,0,0,0.0,5.75,14,0.6646,Alto
+7534824a-179e-4d68-ba60-b342e7cea59e,Juan Gómez,0975150245,Microempresa,Comercio Minorista,Guayas,32,Masculino,13,11,16.99,2,9,0,2,0,0.0,6.2,2,0.1232,Bajo
+856305ce-2b73-4c1d-81fd-866f5b95fb56,Pedro Ruiz,0957584161,Microempresa,Servicios Personales e Independientes,El Oro,19,Masculino,25,13,30.59,2,12,0,1,0,0.0,1.3,6,0.5558,Medio
+25ddbc30-72e8-470f-aff2-82493d48f47e,Juan Gómez,0985956727,Microempresa,Moda y Estilo de Vida,Manabí,34,Masculino,36,25,2.48,3,15,7,0,0,0.0,2.93,8,0.4561,Medio
+6da70187-ed3e-4eac-8879-953fa06d5359,Andrés Díaz,0930778448,Pequeña Empresa,Alimentación y Gastronomía,Pichincha,36,Masculino,21,107,3.48,12,64,31,0,0,0.0,21.81,1,0.0678,Bajo
+8a3b24b4-a597-4628-8c02-aeba742b32c8,Andrés Díaz,0974757553,Microempresa,Comercio Minorista,Azuay,32,Femenino,15,29,18.17,4,23,1,1,0,0.0,10.08,3,0.3573,Medio
+88a88c26-0b68-43f7-8d32-2b245594eb38,Andrés Díaz,0926337642,Microempresa,Servicios Personales e Independientes,Guayas,22,Masculino,5,4,3.21,1,3,0,0,0,0.0,30.95,2,0.251,Bajo
+25077b54-a799-43ef-857f-7bedf13d5c4c,María Pérez,0939946420,Microempresa,Comercio Minorista,Pichincha,40,Femenino,25,34,6.75,6,21,7,2,0,0.0,5.17,2,0.0639,Bajo
+ce13cc1f-c5d4-4991-b323-8232b359661f,Ana Torres,0915141397,Microempresa,Alimentación y Gastronomía,Pichincha,19,Masculino,23,59,3.3,9,36,14,0,0,0.0,265.87,2,0.0503,Bajo
+bf0e6dd6-015f-42c2-ada3-0b2fe80add59,Ana Torres,0918230023,Microempresa,Moda y Estilo de Vida,Manabí,35,Femenino,12,17,42.81,3,11,3,0,0,0.0,4.27,0,0.0548,Bajo
+12f55f8c-c717-4824-8417-193ff2dd0382,Andrés Díaz,0961161597,Microempresa,Alimentación y Gastronomía,Pichincha,26,Femenino,7,153,4.53,8,93,52,0,0,0.0,4.04,3,0.0811,Bajo
+4606b2b8-3fde-4fd4-994f-03b480bcbd7b,Ana Torres,0985133650,Microempresa,Comercio Minorista,Guayas,23,Femenino,14,75,9.9,11,52,12,1,1,0.0,1.09,0,0.5938,Medio
+fd3710da-dd8e-4b1e-bb59-814559113b89,Diego Castro,0920434767,Microempresa,Servicios Personales e Independientes,Pichincha,26,Femenino,8,26,51.48,2,25,0,0,0,0.0,2.36,4,0.4669,Medio
+a042e228-4824-4dbb-92d7-f8b245e9d542,Diego Castro,0989176927,Microempresa,Comercio Minorista,Guayas,26,Masculino,24,34,35.33,6,25,3,0,0,0.0,12.21,1,0.0873,Bajo
+e90915f7-1ea0-495c-80a0-b078329c9f2b,Andrés Díaz,0973524944,Microempresa,Alimentación y Gastronomía,Pichincha,29,Femenino,31,118,2.46,21,99,0,1,0,0.0,14.33,7,0.4944,Medio
+bddd5575-bbc5-47d6-8122-a1fd9c3fc2f3,Andrés Díaz,0953896621,Microempresa,Alimentación y Gastronomía,Pichincha,31,Masculino,23,151,17.51,23,92,37,1,0,0.0,59.49,1,0.0908,Bajo
+4aea44ca-0224-43a5-ba65-93f72288918a,María Pérez,0949044357,Microempresa,Moda y Estilo de Vida,Pichincha,18,Masculino,12,11,6.19,1,7,2,1,0,0.0,52.89,3,0.3264,Bajo
+222b4545-bb33-4321-b2f3-f285b3be0407,Ana Torres,0939833521,Microempresa,Servicios Personales e Independientes,Guayas,33,Masculino,33,9,22.29,1,7,1,0,0,0.0,235.51,2,0.2146,Bajo
+d6ca77a4-644b-4381-89e6-fb1f290f68bd,Pedro Ruiz,0965834023,Microempresa,Comercio Minorista,Guayas,25,Femenino,23,67,16.88,4,42,21,0,0,0.0,55.64,2,0.0437,Bajo
+35ee10d6-ca4a-4665-b2fa-1309acc8976c,Lucía Mora,0936295324,Microempresa,Comercio Minorista,Tungurahua,35,Femenino,3,28,7.74,3,17,8,1,0,0.0,5.91,5,0.674,Alto
+df2139e2-2ea6-4430-9ec1-3997b457447b,Carmen Ríos,0924883549,Microempresa,Comercio Minorista,Tungurahua,28,Femenino,8,14,18.16,3,8,3,0,0,0.0,1.59,10,0.517,Medio
+8306842f-9cd0-47fb-9790-69b9a81fda45,Lucía Mora,0935576861,Microempresa,Moda y Estilo de Vida,Napo,29,Masculino,35,24,13.05,4,20,1,1,0,0.0,0.93,2,0.1299,Bajo
+35bb8fe8-3afc-4a66-9345-d91bd942473f,Sofía Vega,0941663521,Microempresa,Servicios Personales e Independientes,Guayas,35,Femenino,12,14,6.58,1,11,2,0,0,0.0,26.22,3,0.2762,Bajo
+55cc9930-2b75-42c0-8e68-be5baa2f586c,Ana Torres,0969153154,Microempresa,Entretenimiento y Educación,Guayas,26,Femenino,32,14,21.36,2,11,0,0,0,0.0,10.14,4,0.4238,Medio
+b760d158-d701-41b0-a8d5-cf1914b11e49,María Pérez,0943725689,Microempresa,Servicios Personales e Independientes,Cotopaxi,19,Femenino,28,9,15.75,1,8,1,0,0,0.0,21.91,10,0.9434,Alto
+fb8278f2-9560-4ce1-ab6a-889aaddf6443,Carlos López,0927204394,Microempresa,Alimentación y Gastronomía,Pichincha,31,Masculino,36,66,3.4,6,56,5,0,0,0.0,14.46,1,0.0409,Bajo
+8547b8a5-36f2-4dae-8d25-e3d5378c95c5,Carlos López,0992390323,Microempresa,Comercio Minorista,Pastaza,23,Masculino,11,8,3.48,1,6,1,0,0,0.0066,45.02,2,0.286,Bajo
+6a267139-0a95-44b4-b99f-f8084f77bde2,Diego Castro,0941886460,Microempresa,Entretenimiento y Educación,Guayas,25,Masculino,32,13,20.85,1,12,0,4,0,0.0,124.34,2,0.08,Bajo
+c969d7a4-89ab-44af-8d21-7080729fb7b8,Carlos López,0977960471,Microempresa,Alimentación y Gastronomía,Zamora Chinchipe,36,Femenino,12,248,2.3,25,148,75,0,0,0.0,32.37,0,0.0873,Bajo
+6f6cd97c-4b23-4dfb-8525-9a0d0d1162d1,Lucía Mora,0943231597,Microempresa,Alimentación y Gastronomía,Bolívar,32,Masculino,15,244,4.87,19,161,64,0,0,0.0,9.22,3,0.159,Bajo
+ae85b1df-e1dc-4ae6-8d78-8a4de0a43ab5,Ana Torres,0905328422,Pequeña Empresa,Comercio Minorista,Pichincha,24,Masculino,34,11,48.05,2,7,2,0,0,0.0,17.18,2,0.2471,Bajo
+6a2e6abd-3389-4304-b407-557c14656090,Carlos López,0921314528,Microempresa,Servicios Personales e Independientes,Orellana,31,Masculino,34,81,9.95,11,71,0,0,0,0.0,2.55,2,0.1385,Bajo
+3b170d5a-d079-4327-a590-e7c3279ac4b5,Pedro Ruiz,0955314420,Microempresa,Moda y Estilo de Vida,Azuay,37,Masculino,10,8,9.12,1,5,2,1,0,0.0,18.88,2,0.2868,Bajo
+65f5e79c-d74e-486c-9aed-3cfc96776481,Juan Gómez,0912634155,Microempresa,Comercio Minorista,Santo Domingo,23,Masculino,7,37,22.15,7,28,1,0,0,0.0,1.61,5,0.4771,Medio
+c95cff18-ca26-41a3-b759-b6a559d3b92a,Pedro Ruiz,0951555032,Microempresa,Comercio Minorista,Guayas,27,Masculino,12,13,16.69,2,10,2,0,0,0.0,126.25,7,0.418,Medio
+085955af-d417-4544-b183-da423befc363,Pedro Ruiz,0964013324,Microempresa,Comercio Minorista,Pichincha,36,Masculino,5,65,7.14,10,47,8,1,0,0.0,3.44,0,0.0852,Bajo
+0c16c0e8-87c3-4433-8b5c-b6f253984ad9,Carlos López,0970328538,Microempresa,Servicios Personales e Independientes,Manabí,27,Femenino,24,22,75.26,4,16,2,0,0,0.01,53.66,5,0.5846,Medio
+ed24a8cf-a2d8-4b2e-afa3-10da6960dea3,Carmen Ríos,0953851288,Microempresa,Alimentación y Gastronomía,Imbabura,29,Masculino,23,87,1.6,5,64,18,0,0,0.0,132.27,0,0.0343,Bajo
+5f48bc9a-40b5-47ee-a472-604ca216ecef,Andrés Díaz,0997489372,Microempresa,Servicios Personales e Independientes,Guayas,20,Masculino,8,89,3.29,8,81,0,0,0,0.0,17.75,3,0.1642,Bajo
+6d3849d7-a0a8-4af4-84d6-24a56795c930,Pedro Ruiz,0955845606,Microempresa,Comercio Minorista,Guayas,19,Femenino,32,21,20.86,4,16,1,0,0,0.0,30.73,4,0.3541,Medio
+ca0c79eb-0176-4efb-9311-107b7df93a76,Ana Torres,0985678004,Microempresa,Alimentación y Gastronomía,Guayas,34,Femenino,28,47,2.65,8,34,5,1,0,0.0,222.22,7,0.2062,Bajo
+106d709d-476a-409e-8d0a-12fc8d53d62d,Lucía Mora,0927441250,Pequeña Empresa,Moda y Estilo de Vida,Pichincha,21,Femenino,13,8,18.36,1,6,1,2,0,0.0,92.71,3,0.3086,Bajo
+3674465c-e077-43ff-a885-67187bd16fdd,María Pérez,0935573858,Microempresa,Alimentación y Gastronomía,El Oro,34,Masculino,16,71,1.74,13,48,10,2,0,0.0,13.02,6,0.4152,Medio
+5930ce9f-e5aa-4ae0-8cb7-0f1288b92a9e,Juan Gómez,0923149022,Microempresa,Moda y Estilo de Vida,Guayas,26,Femenino,29,75,29.57,9,62,4,1,0,0.0,1.65,0,0.0793,Bajo
+122344b4-1f7f-4a86-8e59-585cd577a7c9,Lucía Mora,0986797299,Microempresa,Alimentación y Gastronomía,Guayas,33,Masculino,17,114,1.5,12,90,12,0,0,0.0,3.72,7,0.4621,Medio
+2d075f5f-ea40-4c0d-8d6a-a267146d2474,Diego Castro,0922944930,Microempresa,Servicios Personales e Independientes,Sucumbíos,26,Masculino,18,11,23.2,1,10,0,0,0,0.0,12.31,5,0.5118,Medio
+73c4fb7e-803b-40d3-b0fd-8e290a515225,Juan Gómez,0934887844,Microempresa,Entretenimiento y Educación,Pichincha,27,Femenino,13,33,4.59,3,24,6,0,0,0.0,39.08,3,0.2592,Bajo
+94d5e4e3-085b-4ed3-b0ad-e5f1e76f86c0,Pedro Ruiz,0917709959,Microempresa,Comercio Minorista,Cotopaxi,28,Masculino,10,29,8.22,5,19,5,1,0,0.0,7.24,1,0.1227,Bajo
+644364b2-ce67-4f78-829e-d00438d2f2b3,Andrés Díaz,0930778336,Microempresa,Comercio Minorista,El Oro,33,Femenino,28,27,26.1,2,20,6,0,0,0.0,4.58,3,0.3558,Medio
+c5e1426e-ffa8-4e25-be17-c86caac4be10,Pedro Ruiz,0981568622,Microempresa,Entretenimiento y Educación,Guayas,34,Masculino,22,70,39.07,13,56,2,0,0,0.0,25.32,4,0.2826,Bajo
+822378cc-bee1-4d5a-8a79-b6887fe01958,Ana Torres,0912441496,Microempresa,Servicios Personales e Independientes,Cotopaxi,18,Femenino,1,12,25.63,2,10,0,2,0,0.0,39.48,15,0.7375,Alto
+4d82e792-cd85-457e-acd8-d5487182db66,Sofía Vega,0921261682,Microempresa,Moda y Estilo de Vida,Pichincha,21,Femenino,13,8,18.18,1,5,2,1,1,0.0,8.46,1,0.8139,Alto
+ffa13b02-aae3-435a-87b6-48910db8ee9c,Carlos López,0901725592,Microempresa,Alimentación y Gastronomía,Santo Domingo,30,Femenino,22,40,2.78,4,26,10,2,1,0.0,52.5,1,0.6532,Alto
+f8dc301a-636b-457a-8c17-3ec33db95841,Carlos López,0929659648,Microempresa,Moda y Estilo de Vida,Orellana,30,Femenino,6,28,20.19,2,20,7,1,0,0.0,9.46,0,0.1039,Bajo
+7a47ab0b-73da-45d9-a23b-c77a6fdbc5ca,Lucía Mora,0964140595,Pequeña Empresa,Moda y Estilo de Vida,Guayas,24,Masculino,33,25,54.53,4,15,6,2,0,0.0,2.49,8,0.6301,Medio
+621ec30d-ad09-47b9-b3a1-3f61b9a79dff,Ana Torres,0948358345,Microempresa,Servicios Personales e Independientes,Guayas,21,Masculino,31,22,15.6,4,20,0,1,0,0.0,3.77,2,0.1176,Bajo
+55ad1116-de44-44a5-b83d-40f67cac020f,Juan Gómez,0916505586,Microempresa,Alimentación y Gastronomía,Cañar,36,Masculino,19,39,1.5,4,23,13,0,0,0.0,24.21,1,0.1219,Bajo
+f47670f2-e96a-454a-8a45-93d8bf3de16c,Carmen Ríos,0918305945,Pequeña Empresa,Moda y Estilo de Vida,Guayas,24,Masculino,33,8,9.03,0,6,1,0,0,0.0,127.44,2,0.1748,Bajo
+c623d9ae-7507-4a20-9c04-99ef9c300c44,María Pérez,0930747568,Microempresa,Alimentación y Gastronomía,Guayas,31,Masculino,10,103,5.92,7,68,27,2,0,0.0,1.9,1,0.1262,Bajo
+17b3fcac-4544-4e68-829a-45db9a7a59fb,Diego Castro,0964981404,Microempresa,Comercio Minorista,El Oro,28,Masculino,22,128,2.67,12,91,25,0,0,0.0,2.83,1,0.072,Bajo
+687c74fd-b19f-4e32-818c-19d55d37117f,Carlos López,0926942324,Microempresa,Alimentación y Gastronomía,Azuay,26,Femenino,9,91,1.5,5,59,27,0,0,0.0,30.21,1,0.1406,Bajo
+b60ed10e-d250-4595-bd06-22f0ede89771,Lucía Mora,0966361758,Microempresa,Comercio Minorista,Guayas,31,Masculino,16,41,15.75,4,34,2,1,0,0.0,100.5,5,0.2315,Bajo
+7c0f31b5-9662-4063-8931-7bd6c8273dae,Lucía Mora,0979124345,Microempresa,Servicios Personales e Independientes,Guayas,22,Femenino,5,9,4.97,1,8,0,1,0,0.0,38.28,2,0.1651,Bajo
+3fb1ba77-8705-432c-a4d5-8c6d779f13fd,Diego Castro,0988783072,Microempresa,Comercio Minorista,Bolívar,18,Femenino,16,126,1.5,21,77,28,0,0,0.0,5.68,0,0.0389,Bajo
+87c9fd95-ee4a-4a06-b835-53d26089f84a,Ana Torres,0954093502,Microempresa,Comercio Minorista,Manabí,30,Masculino,8,132,18.01,16,98,18,0,0,0.0,2.5,3,0.1888,Bajo
+f7cc67dd-1f19-4964-b1b9-af934d84746e,Andrés Díaz,0900149655,Microempresa,Servicios Personales e Independientes,Galápagos,18,Femenino,18,4,31.68,1,3,0,0,0,0.0,75.7,2,0.19,Bajo
+eb25c129-1c74-411a-a306-14a7e03626ca,Juan Gómez,0937270852,Microempresa,Alimentación y Gastronomía,Pichincha,27,Masculino,15,85,3.68,12,49,23,1,0,0.0,3.6,1,0.1141,Bajo
+931d542c-f846-4609-96f2-251de34eadb0,María Pérez,0911446593,Microempresa,Servicios Personales e Independientes,Manabí,31,Femenino,28,12,23.04,2,10,0,0,0,0.0,46.37,1,0.1106,Bajo
+8d762143-5a4a-4eae-a56e-7a07453a3f87,Carlos López,0921215277,Pequeña Empresa,Alimentación y Gastronomía,Cotopaxi,27,Femenino,24,195,3.34,13,124,58,0,0,0.0,31.25,1,0.2842,Bajo
+cb662f4a-3cfa-432b-b6d1-e4bb41e0ab76,Carlos López,0945227198,Microempresa,Alimentación y Gastronomía,Manabí,29,Femenino,19,145,3.68,21,107,17,3,0,0.0,5.58,1,0.1048,Bajo
+36587531-abce-4ab5-b90a-1a9a71716bb0,Juan Gómez,0935794043,Microempresa,Alimentación y Gastronomía,Pastaza,36,Femenino,26,116,2.02,6,79,31,0,0,0.0084,7.06,1,0.0647,Bajo
+0414e334-6c5c-4d3c-897b-1cda9e735f01,Ana Torres,0998036620,Microempresa,Servicios Personales e Independientes,Manabí,24,Femenino,34,40,25.69,6,32,2,0,0,0.0,32.56,1,0.056,Bajo
