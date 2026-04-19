@@ -115,6 +115,10 @@ st.markdown("""
     text-align: center;
     box-shadow: 0 2px 10px rgba(77,41,115,.12);
     border-top: 4px solid var(--morado);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .kpi-value {
     font-family: 'Lilita One', cursive;
@@ -399,15 +403,15 @@ bajo  = (df_raw["Nivel de Riesgo"] == "Bajo").sum()
 alertas_total = df_raw["Alertas Activas"].sum()
 score_prom = df_raw["Score Churn"].mean()
 capital_en_riesgo = 7 * (alto + medio)
-temperatura_portafolio = df_raw["dias_sin_transar"].mean()
+inactividad_media_dias = df_raw["dias_sin_transar"].mean()
 
 k1, k2, k3, k4, k5 = st.columns(5)
 for col, val, lbl, color in [
     (k1, total,          "Total Comercios",    "#4d2973"),
     (k2, f"${capital_en_riesgo:,.0f}", "Capital en Riesgo", "#e74c3c"),
     (k3, int(alertas_total), "Tickets de Soporte", "#a478d1"),
-    (k4, f"{temperatura_portafolio:.1f} días", "Temperatura", "#fcb632"),
-    (k5, f"{score_prom:.1f}", "Churn Promedio", "#4f5563"),
+    (k4, f"{inactividad_media_dias:.1f} días", "Promedio de días sin transar", "#fcb632"),
+    (k5, f"{score_prom:.1f}", "Churn Promedio", "#040405"),
 ]:
     col.markdown(f"""
     <div class="kpi-card" style="border-top-color:{color};">
@@ -585,6 +589,13 @@ with filter_col:
             placeholder="Todos los niveles",
         )
 
+        tipo_negocio_sel = st.multiselect(
+            "Tipo de Negocio",
+            options=sorted(df_raw["TipoComercio"].dropna().unique().tolist()) if not df_raw.empty else [],
+            default=[],
+            placeholder="Todos los tipos de comercio",
+        )
+
         score_range = st.slider("Score Churn", 0, 100, (0, 100))
 
         st.markdown("<br>", unsafe_allow_html=True)
@@ -595,6 +606,8 @@ with filter_col:
             filtros_activos.append(f"**{len(provincias_sel)}** provincia(s)")
         if riesgo_sel:
             filtros_activos.append(f"Riesgo: {', '.join(riesgo_sel)}")
+        if tipo_negocio_sel:
+            filtros_activos.append(f"Tipo: {', '.join(tipo_negocio_sel)}")
         if score_range != (0, 100):
             filtros_activos.append(f"Score: {score_range[0]}–{score_range[1]}")
 
@@ -619,6 +632,8 @@ if provincias_sel:
     df_filtered = df_filtered[df_filtered["Provincia"].isin(provincias_sel)]
 if riesgo_sel:
     df_filtered = df_filtered[df_filtered["Nivel de Riesgo"].isin(riesgo_sel)]
+if tipo_negocio_sel:
+    df_filtered = df_filtered[df_filtered["TipoComercio"].isin(tipo_negocio_sel)]
 df_filtered = df_filtered[
     df_filtered["Score Churn"].between(score_range[0], score_range[1])
 ]
