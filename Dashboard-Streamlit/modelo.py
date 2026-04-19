@@ -4,6 +4,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import random
+import time
 import base64
 from pathlib import Path
 
@@ -26,6 +27,16 @@ def cargar_datos():
     return df
 
 recursos = cargar_datos()
+
+# ─────────────────────────────────────────────
+# INICIALIZAR SESSION STATE PARA ROBOT
+# ─────────────────────────────────────────────
+if "robot_aparecio_en" not in st.session_state:
+    st.session_state.robot_aparecio_en = None
+if "ultimo_comercio" not in st.session_state:
+    st.session_state.ultimo_comercio = None
+if "robot_fadeout" not in st.session_state:
+    st.session_state.robot_fadeout = False
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
@@ -679,6 +690,12 @@ if selected_rows:
 
     risk_color = {"Alto":"#e74c3c","Medio":"#fcb632","Bajo":"#64bda1"}[row["Nivel de Riesgo"]]
 
+    # Reset del timer del robot si cambió el comercio seleccionado
+    if original_idx != st.session_state.ultimo_comercio:
+        st.session_state.robot_aparecio_en = time.time()
+        st.session_state.ultimo_comercio = original_idx
+        st.session_state.robot_fadeout = False
+
     # Info general
     d1, d2, d3, d4, d5 = st.columns(5)
     for col, lbl, val in [
@@ -777,8 +794,116 @@ if selected_rows:
         acc_html += '</div>'
         st.markdown(acc_html, unsafe_allow_html=True)
 
+    # ── Robot GIF - Globo de diálogo tipo cómic ──
+    # Calcula el tiempo transcurrido desde que apareció el robot
+    tiempo_transcurrido = time.time() - st.session_state.robot_aparecio_en if st.session_state.robot_aparecio_en else 0
+    
+    # Solo muestra el robot si han pasado menos de 5 segundos O si está en fase de desvanecimiento
+    if tiempo_transcurrido < 5 or (tiempo_transcurrido >= 5 and not st.session_state.robot_fadeout):
+        gif_path = Path.cwd() / "Dashboard-Streamlit" / "Images" / "emo-robot-happy-discord.gif"
+        if gif_path.exists():
+            with open(gif_path, "rb") as f:
+                gif_bytes = f.read()
+            gif_base64 = base64.b64encode(gif_bytes).decode()
+            
+            # Determina si aplicar clase de desvanecimiento
+            fadeout_class = "robot-bubble-fadeout" if tiempo_transcurrido >= 5 else ""
+            
+            st.markdown(f"""
+            <style>
+            .robot-bubble {{
+                position: fixed;
+                bottom: 40px;
+                right: 20px;
+                z-index: 9999;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 10px;
+                animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), float 3s ease-in-out infinite 0.5s;
+                transform-origin: bottom right;
+            }}
+            @keyframes popIn {{
+                from {{
+                    transform: scale(0);
+                    opacity: 0;
+                }}
+                to {{
+                    transform: scale(1);
+                    opacity: 1;
+                }}
+            }}
+            @keyframes float {{
+                0%, 100% {{ transform: translateY(0px); }}
+                50% {{ transform: translateY(-10px); }}
+            }}
+            @keyframes popOut {{
+                from {{
+                    transform: scale(1);
+                    opacity: 1;
+                }}
+                to {{
+                    transform: scale(0);
+                    opacity: 0;
+                }}
+            }}
+            .robot-bubble-fadeout {{
+                animation: popOut 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+            }}
+            .robot-bubble-content {{
+                background: #FFFFFF;
+                border: 2px solid #4d2973;
+                border-radius: 18px;
+                padding: 12px;
+                position: relative;
+                box-shadow: 0 6px 24px rgba(77,41,115,.28);
+            }}
+            .robot-bubble-content::after {{
+                content: '';
+                position: absolute;
+                bottom: -14px;
+                right: 55px;
+                width: 0;
+                height: 0;
+                border-left: 14px solid transparent;
+                border-top: 14px solid #FFFFFF;
+                filter: drop-shadow(-1px 1px 1px rgba(77,41,115,.3));
+            }}
+            .robot-text {{
+                font-family: Montserrat, sans-serif;
+                font-size: 0.85rem;
+                color: #4d2973;
+                font-weight: 600;
+                line-height: 1.2;
+                margin: 0;
+            }}
+            .robot-gif {{
+                width: 190px;
+                height: 190px;
+            }}
+            </style>
+            <div class="robot-bubble {fadeout_class}">
+                <div class="robot-bubble-content">
+                    <p class="robot-text">¡Hola! Estos son mis diagnósticos<br>y recomendaciones para ti</p>
+                </div>
+                <img src="data:image/gif;base64,{gif_base64}" class="robot-gif" alt="robot">
+            </div>
+            """, unsafe_allow_html=True)
+            
+            # Si acaba de entrar en fase de desvanecimiento, espera a que termine la animación
+            if tiempo_transcurrido >= 5 and not st.session_state.robot_fadeout:
+                st.session_state.robot_fadeout = True
+                time.sleep(0.5)
+                st.rerun()
+            elif tiempo_transcurrido < 5:
+                # Espera el tiempo restante y luego fuerza rerun para que desaparezca
+                segundos_restantes = 5 - tiempo_transcurrido
+                time.sleep(segundos_restantes)
+                st.rerun()
+
 else:
     st.info(" Selecciona una fila de la tabla para ver el diagnóstico detallado del comercio.")
+
 
 
 # ─────────────────────────────────────────────
