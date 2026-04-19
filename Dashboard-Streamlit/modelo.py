@@ -12,7 +12,7 @@ from pathlib import Path
 # PAGE CONFIG
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="De Una Dashboard - Outlier",
+    page_title="De Una Dashboard - Churn",
     page_icon="🟣",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -186,17 +186,21 @@ def gen_comercios(n=180):
     for i in range(n):
         prov = random.choice(PROVINCIAS)
         r = riesgos[i]
+        tipo = random.choice(tipos)
         score = {"Alto": random.randint(70,99),
                  "Medio": random.randint(40,69),
                  "Bajo": random.randint(5,39)}[r]
         rows.append({
             "ID": f"COM-{1000+i}",
-            "Comercio": f"{random.choice(tipos)} {random.choice(['Norte','Sur','Centro','Plaza','Real','Elite','Express'])}",
+            "Comercio": f"{tipo} {random.choice(['Norte','Sur','Centro','Plaza','Real','Elite','Express'])}",
+            "TipoComercio": tipo,
             "Provincia": prov,
             "Propietario": random.choice(["Ana López","Carlos Ruiz","María Pérez","Juan Torres",
                                            "Sofía Mora","Pedro Vega","Lucía Castro","Andrés Gil"]),
+            "Numero celular": f"09{random.randint(10000000, 99999999)}",
             "Nivel de Riesgo": r,
-            "Score Outlier": score,
+            "Score Churn": score,
+            "dias_sin_transar": random.randint(0, 45),
             "Transacciones (30d)": random.randint(20, 800),
             "Monto Promedio ($)": round(random.uniform(5, 420), 2),
             "Alertas Activas": random.randint(0, 8),
@@ -280,16 +284,16 @@ header_html = (
     '<p style="font-family:Lilita One,cursive;font-weight:400;'
     'font-size:1.9rem;color:#64bda1;margin:0;line-height:1.1;letter-spacing:.5px;">Deuna Dashboard</p>'
     '<p style="font-family:Montserrat,sans-serif;font-weight:500;font-size:0.88rem;color:#ece8f7;margin:4px 0 0 0;letter-spacing:.04em;">'
-    'Módulo Outlier · Detección de Riesgo Comercial</p>'
+    'Detección de Riesgo Comercial</p>'
     '</div>'
     '</div>'
     '<div style="background:#1a0a2e;border:2px solid #a478d1;border-radius:10px;'
     'padding:8px 18px;text-align:center;line-height:1.2;">'
     '<span style="font-family:Montserrat,sans-serif;font-weight:800;font-size:0.95rem;'
-    'color:#a478d1;letter-spacing:2px;display:block;">OUTLIER</span>'
+    'color:#a478d1;letter-spacing:2px;display:block;">INTERACT</span>'
     '<span style="font-family:Montserrat,sans-serif;font-weight:900;font-size:1.4rem;'
     'color:#64bda1;letter-spacing:1px;display:block;">2HACK</span>'
-    '<span style="font-family:Montserrat,sans-serif;font-size:0.65rem;color:#ece8f7;letter-spacing:1px;">HACKATHON 2025</span>'
+    '<span style="font-family:Montserrat,sans-serif;font-size:0.65rem;color:#ece8f7;letter-spacing:1px;">HACKATHON 2026</span>'
     '</div>'
     '</div>'
 )
@@ -299,7 +303,7 @@ st.markdown(header_html, unsafe_allow_html=True)
 # ─────────────────────────────────────────────
 # SECCIÓN 1 — RESUMEN EJECUTIVO
 # ─────────────────────────────────────────────
-st.markdown('<p class="section-title">Resumen Ejecutivo</p>', unsafe_allow_html=True)
+st.markdown('<p class="section-title">Resumen Ejecutivo - Historico</p>', unsafe_allow_html=True)
 
 # KPIs
 total = len(df_raw)
@@ -307,16 +311,17 @@ alto  = (df_raw["Nivel de Riesgo"] == "Alto").sum()
 medio = (df_raw["Nivel de Riesgo"] == "Medio").sum()
 bajo  = (df_raw["Nivel de Riesgo"] == "Bajo").sum()
 alertas_total = df_raw["Alertas Activas"].sum()
-score_prom = df_raw["Score Outlier"].mean()
+score_prom = df_raw["Score Churn"].mean()
+capital_en_riesgo = 7 * (alto + medio)
+temperatura_portafolio = df_raw["dias_sin_transar"].mean()
 
-k1, k2, k3, k4, k5, k6 = st.columns(6)
+k1, k2, k3, k4, k5 = st.columns(5)
 for col, val, lbl, color in [
     (k1, total,          "Total Comercios",    "#4d2973"),
-    (k2, alto,           "Riesgo Alto 🔴",     "#e74c3c"),
-    (k3, medio,          "Riesgo Medio 🟡",    "#fcb632"),
-    (k4, bajo,           "Riesgo Bajo 🟢",     "#64bda1"),
-    (k5, int(alertas_total), "Alertas Activas","#a478d1"),
-    (k6, f"{score_prom:.1f}", "Score Promedio","#4f5563"),
+    (k2, f"${capital_en_riesgo:,.0f}", "Capital en Riesgo", "#e74c3c"),
+    (k3, int(alertas_total), "Tickets de Soporte", "#a478d1"),
+    (k4, f"{temperatura_portafolio:.1f} días", "Temperatura", "#fcb632"),
+    (k5, f"{score_prom:.1f}", "Churn Promedio", "#4f5563"),
 ]:
     col.markdown(f"""
     <div class="kpi-card" style="border-top-color:{color};">
@@ -354,10 +359,10 @@ with map_col:
         lat="lat", lon="lon",
         color="Nivel de Riesgo",
         color_discrete_map={"Alto": "#e74c3c", "Medio": "#fcb632", "Bajo": "#64bda1"},
-        size="Score Outlier",
+        size="Score Churn",
         size_max=14,
         hover_name="Comercio",
-        hover_data={"Provincia": True, "Score Outlier": True,
+        hover_data={"Provincia": True, "Score Churn": True,
                     "Nivel de Riesgo": True, "lat": False, "lon": False},
         mapbox_style="carto-positron",
         zoom=5.4,
@@ -376,12 +381,16 @@ with map_col:
         ),
         height=420,
     )
+    st.markdown(
+        '<div style="height:10px;border-top:1px solid #ece8f7;margin:6px 0 12px 0;"></div>',
+        unsafe_allow_html=True
+    )
     st.plotly_chart(fig_map, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with pie_col:
     st.markdown(
-        '<div style="background:#ffffff;border-radius:16px;padding:26px 24px 22px 24px;'
+        '<div style="background:#ffffff;border-radius:16px;padding:30px 28px 24px 28px;'
         'box-shadow:0 4px 20px rgba(77,41,115,.13);">'
         '<p style="font-family:Lilita One,cursive;font-weight:400;'
         'font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">&#9685; Distribución de Riesgo</p>'
@@ -390,7 +399,12 @@ with pie_col:
         unsafe_allow_html=True
     )
 
-    donut_c, metrics_c = st.columns([1, 1], gap="small")
+    st.markdown(
+        '<div style="height:12px;border-top:1px solid #ece8f7;margin:2px 0 14px 0;"></div>',
+        unsafe_allow_html=True
+    )
+
+    donut_c, metrics_c = st.columns([1.2, 0.8], gap="medium")
 
     with donut_c:
         total_pie = alto + medio + bajo
@@ -426,25 +440,20 @@ with pie_col:
         )
         fig_pie.update_layout(
             showlegend=False,
-            margin=dict(l=0, r=0, t=10, b=10),
+            margin=dict(l=8, r=8, t=18, b=12),
             paper_bgcolor="rgba(236,232,247,0.45)",
             plot_bgcolor="rgba(0,0,0,0)",
-            height=250,
+            height=305,
         )
         st.plotly_chart(fig_pie, use_container_width=True)
 
     with metrics_c:
-        llamadas_hoy   = alto
-        costo_inaccion = alto * 142
-        precision_modelo = 91.4
-
         st.markdown("<br>", unsafe_allow_html=True)
 
         metricas = [
-            (" Cantidad riesgo alto",   f"{alto}",              "#e74c3c"),
-            (" Llamadas sugeridas HOY",  f"{llamadas_hoy}",      "#4d2973"),
-            (" Costo inacción (est.)",  f"${costo_inaccion:,}", "#fcb632"),
-            (" Precisión del modelo",   f"{precision_modelo}%", "#64bda1"),
+            (" Total comercio alto",  f"{alto}",  "#e74c3c"),
+            (" Total comercio medio", f"{medio}", "#fcb632"),
+            (" Total comercio bajo",  f"{bajo}",  "#64bda1"),
         ]
         for label, valor, color in metricas:
             st.markdown(
@@ -495,7 +504,7 @@ with filter_col:
         placeholder="Todos los niveles",
     )
 
-    score_range = st.slider("Score Outlier", 0, 100, (0, 100))
+    score_range = st.slider("Score Churn", 0, 100, (0, 100))
 
     st.markdown("<br>", unsafe_allow_html=True)
 
@@ -530,7 +539,7 @@ if provincias_sel:
 if riesgo_sel:
     df_filtered = df_filtered[df_filtered["Nivel de Riesgo"].isin(riesgo_sel)]
 df_filtered = df_filtered[
-    df_filtered["Score Outlier"].between(score_range[0], score_range[1])
+    df_filtered["Score Churn"].between(score_range[0], score_range[1])
 ]
 
 with table_col:
@@ -541,22 +550,38 @@ with table_col:
     )
 
     # ── TABLA ──
-    display_cols = ["ID","Comercio","Provincia","Propietario",
-                    "Nivel de Riesgo","Score Outlier",
-                    "Transacciones (30d)","Monto Promedio ($)","Alertas Activas"]
+    display_df = df_filtered.reset_index(drop=True).copy()
+    display_df["TipoComercio"] = display_df["Comercio"].str.split().str[0]
+    display_df = display_df.rename(columns={
+        "TipoComercio": "Tipo comercio",
+        "Nivel de Riesgo": "Nivel de riesgo",
+        "Score Churn": "Score churn",
+        "Alertas Activas": "Ticket no resuelto",
+        "Transacciones (30d)": "Numero de Transacciones",
+    })
+
+    display_cols = [
+        "Tipo comercio",
+        "Provincia",
+        "Propietario",
+        "Nivel de riesgo",
+        "Score churn",
+        "Ticket no resuelto",
+        "Numero de Transacciones",
+    ]
 
     event = st.dataframe(
-        df_filtered[display_cols].reset_index(drop=True),
+        display_df[display_cols],
         use_container_width=True,
         hide_index=True,
         on_select="rerun",
         selection_mode="single-row",
         column_config={
-            "Score Outlier": st.column_config.ProgressColumn(
-                "Score Outlier", min_value=0, max_value=100, format="%d"),
-            "Alertas Activas": st.column_config.NumberColumn(
-                "Alertas Activas", help="Alertas en los últimos 30 días"),
-            "Nivel de Riesgo": st.column_config.TextColumn("Nivel de Riesgo"),
+            "Score churn": st.column_config.ProgressColumn(
+                "Score churn", min_value=0, max_value=100, format="%d"),
+            "Ticket no resuelto": st.column_config.NumberColumn(
+                "Ticket no resuelto", help="Tickets pendientes de resolución"),
+            "Nivel de riesgo": st.column_config.TextColumn("Nivel de riesgo"),
         },
         height=380,
     )
@@ -577,12 +602,13 @@ if selected_rows:
     badge_cls  = f"badge-{row['Nivel de Riesgo'].lower()}"
 
     # Info general
-    d1, d2, d3, d4 = st.columns(4)
+    d1, d2, d3, d4, d5 = st.columns(5)
     for col, lbl, val in [
-        (d1, "ID", row["ID"]),
-        (d2, "Provincia", row["Provincia"]),
-        (d3, "Score Outlier", f"{row['Score Outlier']} / 100"),
-        (d4, "Nivel de Riesgo", row["Nivel de Riesgo"]),
+        (d1, "Propietario", row["Propietario"]),
+        (d2, "Numero celular", row["Numero celular"]),
+        (d3, "Tipo comercio", row.get("TipoComercio", row["Comercio"].split()[0])),
+        (d4, "Dias sin transar", f"{row['dias_sin_transar']}"),
+        (d5, "Tickets no resueltos", row["Alertas Activas"]),
     ]:
         col.markdown(f"""
         <div class="kpi-card" style="border-top-color:{risk_color};">
@@ -626,10 +652,10 @@ if selected_rows:
 
         # Gauge score
         st.markdown('<div class="detail-card">', unsafe_allow_html=True)
-        st.markdown("**Score de Riesgo Outlier**")
+        st.markdown("**Score de Riesgo Churn**")
         fig_gauge = go.Figure(go.Indicator(
             mode="gauge+number+delta",
-            value=int(row["Score Outlier"]),
+            value=int(row["Score Churn"]),
             delta={"reference": 50},
             gauge={
                 "axis": {"range": [0,100]},
@@ -658,21 +684,21 @@ if selected_rows:
 
         diag_por_riesgo = {
             "Alto": [
-                f"Score de outlier **{row['Score Outlier']}/100** — nivel crítico.",
+                f"Score de churn **{row['Score Churn']}/100** — nivel crítico.",
                 f"Se detectaron **{row['Alertas Activas']} alertas activas** en el período.",
                 f"Volumen de transacciones inusualmente elevado: **{row['Transacciones (30d)']} en 30d**.",
                 "Patrón de montos inconsistente con el perfil del sector.",
                 "Actividad concentrada en franjas horarias atípicas.",
             ],
             "Medio": [
-                f"Score de outlier **{row['Score Outlier']}/100** — nivel moderado.",
+                f"Score de churn **{row['Score Churn']}/100** — nivel moderado.",
                 f"Se registraron **{row['Alertas Activas']} alertas** pendientes de revisión.",
                 f"Monto promedio de **${row['Monto Promedio ($)']}** con variabilidad alta.",
                 "Algunos patrones de transacción difieren del benchmark provincial.",
                 "Se recomienda monitoreo periódico.",
             ],
             "Bajo": [
-                f"Score de outlier **{row['Score Outlier']}/100** — dentro de parámetros normales.",
+                f"Score de churn **{row['Score Churn']}/100** — dentro de parámetros normales.",
                 f"Solo **{row['Alertas Activas']} alertas** registradas, sin señales de riesgo.",
                 "Comportamiento transaccional consistente con el perfil del comercio.",
                 "Sin patrones anómalos en los últimos 12 meses.",
@@ -726,6 +752,6 @@ else:
 st.markdown("""
 <div style="text-align:center; color:#a478d1; font-size:.8rem; margin-top:40px; padding:16px;
             border-top:1px solid #ece8f7;">
-    De Una · Módulo Outlier &nbsp;|&nbsp; Detección de Riesgo Comercial &nbsp;|&nbsp; 2025
+    De Una · Módulo Churn &nbsp;|&nbsp; Detección de Riesgo Comercial &nbsp;|&nbsp; Outliers Hackathon 2026<br>
 </div>
 """, unsafe_allow_html=True)
