@@ -5,6 +5,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 import json
 import random
+import base64
+from pathlib import Path
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
@@ -21,7 +23,7 @@ st.set_page_config(
 # ─────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 :root {
     --morado:       #4d2973;
@@ -36,7 +38,10 @@ st.markdown("""
 }
 
 /* fondo general */
-.stApp { background-color: var(--morado-claro); }
+.stApp {
+    background-color: var(--morado-claro);
+    font-family: 'Montserrat', sans-serif;
+}
 
 /* ── HEADER ── */
 .header-bar {
@@ -57,17 +62,16 @@ st.markdown("""
     border: 3px solid var(--morado-medio);
 }
 .header-title {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 700;
+    font-family: 'Lilita One', cursive;
+    font-weight: 400;
     font-size: 2.4rem;
     color: var(--blanco);
     line-height: 1.1;
     margin: 0;
 }
 .header-sub {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
     color: var(--morado-medio);
     font-size: 1rem;
     margin-top: 4px;
@@ -83,13 +87,13 @@ st.markdown("""
     border-top: 4px solid var(--morado);
 }
 .kpi-value {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 700;
+    font-family: 'Lilita One', cursive;
+    font-weight: 400;
     font-size: 2.2rem;
     color: var(--morado);
 }
 .kpi-label {
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     color: var(--gris);
     margin-top: 4px;
@@ -100,9 +104,8 @@ st.markdown("""
 
 /* ── SECTION TITLES ── */
 .section-title {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 700;
+    font-family: 'Lilita One', cursive;
+    font-weight: 400;
     font-size: 1.5rem;
     color: var(--morado);
     border-left: 5px solid var(--morado-medio);
@@ -133,12 +136,13 @@ st.markdown("""
     margin-bottom: 16px;
 }
 .detail-card h4 {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
+    font-family: 'Lilita One', cursive;
+    font-weight: 400;
     color: var(--morado);
     margin-bottom: 10px;
 }
 .rec-item {
+    font-family: 'Montserrat', sans-serif;
     background: var(--morado-claro);
     border-radius: 8px;
     padding: 10px 14px;
@@ -250,31 +254,42 @@ PROV_COORDS = {
 
 COLOR_MAP = {"Alto": "#e74c3c", "Medio": "#fcb632", "Bajo": "#64bda1"}
 
+
+def get_logo_base64() -> str:
+    logo_path = Path(__file__).resolve().parent / "Images" / "Deuna!_icono.svg.png"
+    if not logo_path.exists():
+        return ""
+    return base64.b64encode(logo_path.read_bytes()).decode("utf-8")
+
 # ─────────────────────────────────────────────
 # HEADER
 # ─────────────────────────────────────────────
+logo_base64 = get_logo_base64()
+logo_html = (
+    f'<img class="header-logo" src="data:image/png;base64,{logo_base64}" alt="Deuna logo">'
+    if logo_base64 else
+    '<div class="header-logo" style="display:flex;align-items:center;justify-content:center;'
+    'background:#4d2973;color:#64bda1;font-family:Lilita One,cursive;font-size:1.7rem;">d!</div>'
+)
+
 header_html = (
     '<div class="header-bar" style="justify-content:space-between;align-items:center;">'
     '<div style="display:flex;align-items:center;gap:18px;">'
-    '<div style="background:#4d2973;border:3px solid #a478d1;border-radius:14px;'
-    'width:68px;height:68px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">'
-    '<span style="font-family:Playfair Display,serif;font-style:italic;font-weight:900;'
-    'font-size:2rem;color:#64bda1;letter-spacing:-2px;line-height:1;">d!</span>'
-    '</div>'
+    f'{logo_html}'
     '<div>'
-    '<p style="font-family:Playfair Display,serif;font-style:italic;font-weight:700;'
-    'font-size:1.9rem;color:#64bda1;margin:0;line-height:1.1;letter-spacing:.5px;">DeUna Dashboard</p>'
-    '<p style="font-family:sans-serif;font-size:0.88rem;color:#ece8f7;margin:4px 0 0 0;letter-spacing:.04em;">'
+    '<p style="font-family:Lilita One,cursive;font-weight:400;'
+    'font-size:1.9rem;color:#64bda1;margin:0;line-height:1.1;letter-spacing:.5px;">Deuna Dashboard</p>'
+    '<p style="font-family:Montserrat,sans-serif;font-weight:500;font-size:0.88rem;color:#ece8f7;margin:4px 0 0 0;letter-spacing:.04em;">'
     'Módulo Outlier · Detección de Riesgo Comercial</p>'
     '</div>'
     '</div>'
     '<div style="background:#1a0a2e;border:2px solid #a478d1;border-radius:10px;'
     'padding:8px 18px;text-align:center;line-height:1.2;">'
-    '<span style="font-family:Courier New,monospace;font-weight:900;font-size:0.95rem;'
+    '<span style="font-family:Montserrat,sans-serif;font-weight:800;font-size:0.95rem;'
     'color:#a478d1;letter-spacing:2px;display:block;">OUTLIER</span>'
-    '<span style="font-family:Courier New,monospace;font-weight:900;font-size:1.4rem;'
+    '<span style="font-family:Montserrat,sans-serif;font-weight:900;font-size:1.4rem;'
     'color:#64bda1;letter-spacing:1px;display:block;">2HACK</span>'
-    '<span style="font-size:0.65rem;color:#ece8f7;letter-spacing:1px;">HACKATHON 2025</span>'
+    '<span style="font-family:Montserrat,sans-serif;font-size:0.65rem;color:#ece8f7;letter-spacing:1px;">HACKATHON 2025</span>'
     '</div>'
     '</div>'
 )
@@ -318,9 +333,9 @@ with map_col:
     st.markdown(
         '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;'
         'box-shadow:0 4px 20px rgba(77,41,115,.13);">'
-        '<p style="font-family:Playfair Display,serif;font-style:italic;font-weight:700;'
+        '<p style="font-family:Lilita One,cursive;font-weight:400;'
         'font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Mapa de Riesgo Nacional</p>'
-        '<p style="font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">'
+        '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">'
         'Distribución geográfica de comercios por nivel de riesgo</p>',
         unsafe_allow_html=True
     )
@@ -368,9 +383,9 @@ with pie_col:
     st.markdown(
         '<div style="background:#ffffff;border-radius:16px;padding:26px 24px 22px 24px;'
         'box-shadow:0 4px 20px rgba(77,41,115,.13);">'
-        '<p style="font-family:Playfair Display,serif;font-style:italic;font-weight:700;'
+        '<p style="font-family:Lilita One,cursive;font-weight:400;'
         'font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">&#9685; Distribución de Riesgo</p>'
-        '<p style="font-size:.78rem;color:#a478d1;margin:0 0 16px 0;letter-spacing:.05em;">'
+        '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 16px 0;letter-spacing:.05em;">'
         'Total de comercios analizados</p>',
         unsafe_allow_html=True
     )
@@ -400,7 +415,7 @@ with pie_col:
         fig_pie.add_annotation(
             text=f"<b>{total_pie}</b>",
             x=0.5, y=0.56,
-            font=dict(size=28, color="#4d2973", family="Playfair Display"),
+            font=dict(size=28, color="#4d2973", family="Lilita One"),
             showarrow=False,
         )
         fig_pie.add_annotation(
@@ -434,8 +449,8 @@ with pie_col:
         for label, valor, color in metricas:
             st.markdown(
                 f'<div style="margin-bottom:14px;">'
-                f'<p style="font-size:.78rem;color:#a478d1;margin:0;letter-spacing:.04em;">{label}</p>'
-                f'<p style="font-family:Playfair Display,serif;font-style:italic;font-weight:700;'
+                f'<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0;letter-spacing:.04em;">{label}</p>'
+                f'<p style="font-family:Lilita One,cursive;font-weight:400;'
                 f'font-size:1.45rem;color:{color};margin:2px 0 0 0;line-height:1.1;">{valor}</p>'
                 f'<div style="height:3px;width:40px;background:{color};border-radius:99px;margin-top:4px;'
                 f'opacity:.5;"></div>'
@@ -459,8 +474,8 @@ with filter_col:
     <div style="background:white; border-radius:14px; padding:20px 18px;
                 box-shadow:0 2px 10px rgba(77,41,115,.12);
                 border-top:4px solid #4d2973;">
-        <p style="font-family:'Playfair Display',serif; font-style:italic;
-                  font-weight:700; color:#4d2973; font-size:1.1rem; margin-bottom:16px;">
+        <p style="font-family:'Lilita One',cursive;
+                  font-weight:400; color:#4d2973; font-size:1.1rem; margin-bottom:16px;">
               Filtros
         </p>
     </div>
