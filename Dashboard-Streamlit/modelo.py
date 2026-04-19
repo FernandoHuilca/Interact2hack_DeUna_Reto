@@ -9,9 +9,18 @@ from pathlib import Path
 
 from diagnostico import generar_diagnostico
 
+# ─────────────────────────────────────────────
+# FUNCIONES AUXILIARES
+# ─────────────────────────────────────────────
+def hex_to_rgba(hex_color, alpha=0.15):
+    """Convierte color hex a rgba con opacidad"""
+    hex_color = hex_color.lstrip('#')
+    rgb = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+    return f"rgba({rgb[0]},{rgb[1]},{rgb[2]},{alpha})"
+
 @st.cache_data
 def cargar_datos():
-    filepath = Path(__file__).resolve().parent.parent / "data" / "predicciones_maestro (1).csv"
+    filepath = Path.cwd() / 'data' / "predicciones_maestro (1).csv"
     df = pd.read_csv(filepath)
     df.columns = df.columns.str.strip()
     return df
@@ -153,11 +162,11 @@ st.markdown("""
 }
 .rec-item {
     font-family: 'Montserrat', sans-serif;
-    background: var(--morado-claro);
+    background: {risk_color};
     border-radius: 8px;
     padding: 10px 14px;
     margin-bottom: 8px;
-    border-left: 4px solid var(--morado-medio);
+    border-left: 4px solid {risk_color};
     font-size: .9rem;
     color: var(--gris);
 }
@@ -239,8 +248,8 @@ div[data-baseweb="select"] > div:focus-within {
 # ─────────────────────────────────────────────
 class DashboardDataLoader:
     def __init__(self, csv_filename: str):
-        # Asumimos que data/ está al mismo nivel que Dashboard-Streamlit/
-        self.filepath = Path(__file__).resolve().parent.parent / "data" / csv_filename
+        # Usa rutas relativas desde config.py
+        self.filepath = Path.cwd() / 'data' / csv_filename
         
     def get_data(self) -> pd.DataFrame:
         if not self.filepath.exists():
@@ -270,7 +279,7 @@ class DashboardDataLoader:
         
         return df_mapped
 
-loader = DashboardDataLoader("predicciones_maestro.csv")
+loader = DashboardDataLoader("predicciones_maestro (1).csv")
 df_raw = loader.get_data()
 
 # Obtenemos las provincias presentes en los datos
@@ -419,7 +428,7 @@ with map_col:
         map_df["lat"] = map_df["lat"] + rng.normal(0, 0.18, len(map_df))
         map_df["lon"] = map_df["lon"] + rng.normal(0, 0.18, len(map_df))
 
-        fig_map = px.scatter_mapbox(
+        fig_map = px.scatter_map(
             map_df,
             lat="lat", lon="lon",
             color="Nivel de Riesgo",
@@ -429,7 +438,7 @@ with map_col:
             hover_name="Comercio",
             hover_data={"Provincia": True, "Score Churn": True,
                         "Nivel de Riesgo": True, "lat": False, "lon": False},
-            mapbox_style="carto-positron",
+            map_style="carto-positron",
             zoom=5.4,
             center={"lat": -1.83, "lon": -78.18},
         )
@@ -450,7 +459,7 @@ with map_col:
             '<div style="height:10px;border-top:1px solid #ece8f7;margin:6px 0 12px 0;"></div>',
             unsafe_allow_html=True
         )
-        st.plotly_chart(fig_map, use_container_width=True)
+        st.plotly_chart(fig_map, width='stretch')
 
 with pie_col:
     with st.container(key="pie_card"):
@@ -508,7 +517,7 @@ with pie_col:
                 plot_bgcolor="rgba(0,0,0,0)",
                 height=305,
             )
-            st.plotly_chart(fig_pie, use_container_width=True)
+            st.plotly_chart(fig_pie, width='stretch')
 
         with metrics_c:
             st.markdown("<br>", unsafe_allow_html=True)
@@ -655,8 +664,10 @@ selected_rows = event.selection.rows if event.selection else []
 # ── En la sección de detalle del comercio seleccionado ─────────
 if selected_rows:
     idx = selected_rows[0]
-    row = df_filtered.reset_index(drop=True).iloc[idx]
-    row_raw = recursos.iloc[idx]
+    # Obtener el índice original del comercio en df_filtered (antes de los índices filtrados)
+    original_idx = df_filtered.index[idx]
+    row = df_filtered.iloc[original_idx]
+    row_raw = recursos.iloc[original_idx]
 
     diagnostico, acciones, factores = generar_diagnostico(
         row=row_raw.to_dict(),
@@ -685,13 +696,13 @@ if selected_rows:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # Gráficos: línea + gauge
-    chart_col, gauge_col = st.columns([3, 2])
+    # Disposición: columna izquierda [3] gráficos | columna derecha [2] diagnóstico + acciones
+    chart_col, info_col = st.columns([3, 2])
 
     with chart_col:
+        # ── Gráfico: Actividad de los últimos 12 meses ──
         with st.container(key="chart_card"):
             st.markdown('<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Actividad de los últimos 12 meses</p>', unsafe_allow_html=True)
-            st.markdown('<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Transacciones y monto promedio en los últimos 12 meses</p>', unsafe_allow_html=True)
             
             meses = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"]
             base_tx = row["Transacciones (30d)"]
@@ -707,28 +718,28 @@ if selected_rows:
                 mode="lines+markers", line=dict(color="#4d2973", width=2.5),
                 marker=dict(size=7), yaxis="y2"))
             fig_line.update_layout(
-                yaxis=dict(title=dict(text="Transacciones", font=dict(color="#a478d1"))),
+                xaxis=dict(tickfont=dict(color="#4f5563")),
+                yaxis=dict(title=dict(text="Transacciones", font=dict(color="#a478d1")), tickfont=dict(color="#4f5563")),
                 yaxis2=dict(title=dict(text="Monto Prom ($)", font=dict(color="#4d2973")),
-                            overlaying="y", side="right"),
+                            overlaying="y", side="right", tickfont=dict(color="#4f5563")),
                 legend=dict(orientation="h", y=1.1),
                 paper_bgcolor="rgba(0,0,0,0)",
                 plot_bgcolor="rgba(236,232,247,.5)",
                 margin=dict(l=10,r=10,t=30,b=10),
                 height=260,
             )
-            st.plotly_chart(fig_line, use_container_width=True)
+            st.plotly_chart(fig_line, width='stretch')
 
-    with gauge_col:
+        # ── Gauge: Score de Riesgo Churn ──
         with st.container(key="gauge_card"):
             st.markdown('<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Score de Riesgo Churn</p>', unsafe_allow_html=True)
-            st.markdown('<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Indicador de riesgo del comercio</p>', unsafe_allow_html=True)
             
             fig_gauge = go.Figure(go.Indicator(
                 mode="gauge+number+delta",
                 value=int(row["Score Churn"]),
                 delta={"reference": 50},
                 gauge={
-                    "axis": {"range": [0,100]},
+                    "axis": {"range": [0,100], "tickfont": {"color": "#4f5563"}},
                     "bar": {"color": risk_color},
                     "steps": [
                         {"range":[0,40],  "color":"#d4edda"},
@@ -744,28 +755,27 @@ if selected_rows:
                 margin=dict(l=20,r=20,t=30,b=10),
                 height=260,
             )
-            st.plotly_chart(fig_gauge, use_container_width=True)
+            st.plotly_chart(fig_gauge, width='stretch')
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    with info_col:
+        # ── Diagnóstico ────────────────────────────────────────────
+        diag_html = '<div style="background:#FFFFFF;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'  
+        diag_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Diagnóstico</p>'
+        rec_bg = hex_to_rgba(risk_color, 0.15)
+        for item in diagnostico:
+            diag_html += f'<div style="background:{rec_bg};border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:4px solid {risk_color};font-size:.9rem;color:var(--gris);font-family:Montserrat,sans-serif;">{item}</div>'
+        diag_html += '</div>'
+        st.markdown(diag_html, unsafe_allow_html=True)
+        st.markdown("<br>", unsafe_allow_html=True)
 
-    # ── Diagnóstico ────────────────────────────────────────────
-    diag_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
-    diag_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Diagnóstico</p>'
-    diag_html += '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Análisis detallado del comercio seleccionado</p>'
-    for item in diagnostico:
-        diag_html += f'<div class="rec-item">{item}</div>'
-    diag_html += '</div>'
-    st.markdown(diag_html, unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    # ── Acciones ───────────────────────────────────────────────
-    acc_html = '<div style="background:#ffffff;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
-    acc_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Acciones Recomendadas</p>'
-    acc_html += '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 14px 0;letter-spacing:.05em;">Próximos pasos para el equipo comercial</p>'
-    for item in acciones:
-        acc_html += f'<div style="background:linear-gradient(90deg, #ece8f7 0%, transparent 100%);border-left:3px solid #a478d1;border-radius:6px;padding:12px 14px;margin-bottom:10px;font-family:Montserrat,sans-serif;font-size:.9rem;color:#4f5563;line-height:1.5;">{item}</div>'
-    acc_html += '</div>'
-    st.markdown(acc_html, unsafe_allow_html=True)
+        # ── Acciones Recomendadas ──────────────────────────────────
+        acc_html = '<div style="background:#FFFFFF;border-radius:16px;padding:22px 22px 14px 22px;box-shadow:0 4px 20px rgba(77,41,115,.13);">'
+        acc_html += '<p style="font-family:Lilita One,cursive;font-weight:400;font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">Acciones Recomendadas</p>'
+        rec_bg = hex_to_rgba(risk_color, 0.15)
+        for item in acciones:
+            acc_html += f'<div style="background:{rec_bg};border-radius:8px;padding:10px 14px;margin-bottom:8px;border-left:4px solid {risk_color};font-size:.9rem;color:var(--gris);font-family:Montserrat,sans-serif;">{item}</div>'
+        acc_html += '</div>'
+        st.markdown(acc_html, unsafe_allow_html=True)
 
 else:
     st.info(" Selecciona una fila de la tabla para ver el diagnóstico detallado del comercio.")
