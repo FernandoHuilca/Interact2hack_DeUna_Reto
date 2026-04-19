@@ -301,43 +301,31 @@ div[data-baseweb="select"] > div:focus-within {
 
 
 # ─────────────────────────────────────────────
-# CARGA DE DATOS DESDE CSV
+# CARGA DE DATOS DESDE CSV - Mapeo de columnas
 # ─────────────────────────────────────────────
-class DashboardDataLoader:
-    def __init__(self, csv_filename: str):
-        # Usa rutas relativas desde config.py
-        self.filepath = Path.cwd() / 'data' / csv_filename
-        
-    def get_data(self) -> pd.DataFrame:
-        if not self.filepath.exists():
-            st.error(f"No se encontró el archivo de datos: {self.filepath}")
-            return pd.DataFrame()
-            
-        df = pd.read_csv(self.filepath)
-        
-        # Mapeo de columnas del CSV al formato esperado por el dashboard
-        df_mapped = pd.DataFrame()
-        df_mapped["ID"] = df["id_comercio"].astype(str).str[:8] # ID corto para visualización
-        df_mapped["Comercio"] = df["tipo_negocio"] + " " + df["provincia"] # Nombre mock
-        df_mapped["TipoComercio"] = df["tipo_negocio"]
-        df_mapped["Provincia"] = df["provincia"]
-        df_mapped["Propietario"] = df["nombre_dueno"]
-        # Arreglar formato del número (pandas suele omitir el 0 inicial)
-        df_mapped["Numero celular"] = df["celular"].astype(str).apply(lambda x: '0' + x if not x.startswith('0') else x)
-        df_mapped["Nivel de Riesgo"] = df["nivel_riesgo"]
-        df_mapped["Score Churn"] = (df["prob_churn"] * 100).round(2)
-        df_mapped["dias_sin_transar"] = df["dias_sin_transar"]
-        df_mapped["Transacciones (30d)"] = df["transacciones_promedio"]
-        df_mapped["Monto Promedio ($)"] = df["ticket_promedio_usd"]
-        df_mapped["Alertas Activas"] = df["tickets_soporte"]
-        
-        # Para evitar usar 'random', dejamos la fecha final de corte como la última
-        df_mapped["Último Análisis"] = pd.Timestamp.today().normalize()
-        
-        return df_mapped
+def mapear_datos_dashboard(df_raw: pd.DataFrame) -> pd.DataFrame:
+    """Mapea columnas del CSV al formato esperado por el dashboard"""
+    df_mapped = pd.DataFrame()
+    df_mapped["ID"] = df_raw["id_comercio"].astype(str).str[:8] # ID corto para visualización
+    df_mapped["Comercio"] = df_raw["tipo_negocio"] + " " + df_raw["provincia"] # Nombre mock
+    df_mapped["TipoComercio"] = df_raw["tipo_negocio"]
+    df_mapped["Provincia"] = df_raw["provincia"]
+    df_mapped["Propietario"] = df_raw["nombre_dueno"]
+    # Arreglar formato del número (pandas suele omitir el 0 inicial)
+    df_mapped["Numero celular"] = df_raw["celular"].astype(str).apply(lambda x: '0' + x if not x.startswith('0') else x)
+    df_mapped["Nivel de Riesgo"] = df_raw["nivel_riesgo"]
+    df_mapped["Score Churn"] = (df_raw["prob_churn"] * 100).round(2)
+    df_mapped["dias_sin_transar"] = df_raw["dias_sin_transar"]
+    df_mapped["Transacciones (30d)"] = df_raw["transacciones_promedio"]
+    df_mapped["Monto Promedio ($)"] = df_raw["ticket_promedio_usd"]
+    df_mapped["Alertas Activas"] = df_raw["tickets_soporte"]
+    
+    # Para evitar usar 'random', dejamos la fecha final de corte como la última
+    df_mapped["Último Análisis"] = pd.Timestamp.today().normalize()
+    
+    return df_mapped
 
-loader = DashboardDataLoader("predicciones_maestro (1).csv")
-df_raw = loader.get_data()
+df_raw = mapear_datos_dashboard(recursos)
 
 # Obtenemos las provincias presentes en los datos
 PROVINCIAS = df_raw["Provincia"].dropna().unique().tolist() if not df_raw.empty else []
@@ -730,12 +718,12 @@ with table_col:
 selected_rows = event.selection.rows if event.selection else []
 
 # ── En la sección de detalle del comercio seleccionado ─────────
-if selected_rows:
+if selected_rows and len(selected_rows) > 0 and selected_rows[0] < len(df_filtered):
     idx = selected_rows[0]
     # Obtener el índice original del comercio en df_filtered (antes de los índices filtrados)
     original_idx = df_filtered.index[idx]
-    row = df_filtered.iloc[original_idx]
-    row_raw = recursos.iloc[original_idx]
+    row = df_filtered.loc[original_idx]
+    row_raw = recursos.loc[original_idx]
 
     diagnostico, acciones, factores = generar_diagnostico(
         row=row_raw.to_dict(),
