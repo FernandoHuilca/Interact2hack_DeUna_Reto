@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -65,6 +66,25 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
+# Fuerza vista tipo escritorio en pantallas pequenas.
+components.html(
+        """
+        <script>
+            (function () {
+                const content = "width=1366, initial-scale=0.28, minimum-scale=0.28, maximum-scale=2.0, user-scalable=yes";
+                let viewport = window.parent.document.querySelector('meta[name="viewport"]');
+                if (!viewport) {
+                    viewport = window.parent.document.createElement("meta");
+                    viewport.name = "viewport";
+                    window.parent.document.head.appendChild(viewport);
+                }
+                viewport.setAttribute("content", content);
+            })();
+        </script>
+        """,
+        height=0,
+)
+
 # ─────────────────────────────────────────────
 # GLOBAL CSS  (paleta + tipografía)
 # ─────────────────────────────────────────────
@@ -93,6 +113,21 @@ st.markdown("""
 
 html, body, [data-testid="stAppViewContainer"] {
     color-scheme: light !important;
+}
+
+/* Fuerza layout de escritorio en moviles */
+[data-testid="stAppViewContainer"] {
+    min-width: 1280px;
+    overflow-x: auto;
+}
+
+@media (max-width: 1024px) {
+    [data-testid="stHorizontalBlock"] {
+        flex-wrap: nowrap !important;
+    }
+    [data-testid="stHorizontalBlock"] > div {
+        min-width: 260px;
+    }
 }
 
 /* ── HEADER ── */
