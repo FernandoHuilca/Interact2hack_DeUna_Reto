@@ -190,6 +190,15 @@ div[data-baseweb="select"] > div:focus-within {
     padding: 22px 22px 14px 22px;
     box-shadow: 0 4px 20px rgba(77,41,115,.13);
 }
+
+/* pie: tarjeta puntual (solo este bloque) */
+.st-key-pie_card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 28px 24px 28px;
+    box-shadow: 0 4px 20px rgba(77,41,115,.13);
+    min-height: 550px;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -413,85 +422,82 @@ with map_col:
         st.plotly_chart(fig_map, use_container_width=True)
 
 with pie_col:
-    st.markdown(
-        '<div style="background:#ffffff;border-radius:16px;padding:30px 28px 24px 28px;'
-        'box-shadow:0 4px 20px rgba(77,41,115,.13);">'
-        '<p style="font-family:Lilita One,cursive;font-weight:400;'
-        'font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">&#9685; Distribución de Riesgo</p>'
-        '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 16px 0;letter-spacing:.05em;">'
-        'Total de comercios analizados</p>',
-        unsafe_allow_html=True
-    )
-
-    st.markdown(
-        '<div style="height:12px;border-top:1px solid #ece8f7;margin:2px 0 14px 0;"></div>',
-        unsafe_allow_html=True
-    )
-
-    donut_c, metrics_c = st.columns([1.2, 0.8], gap="medium")
-
-    with donut_c:
-        total_pie = alto + medio + bajo
-        pct_alto  = round(alto  / total_pie * 100, 1)
-        pct_medio = round(medio / total_pie * 100, 1)
-        pct_bajo  = round(bajo  / total_pie * 100, 1)
-
-        fig_pie = px.pie(
-            values=[alto, medio, bajo],
-            names=["Alto", "Medio", "Bajo"],
-            color=["Alto", "Medio", "Bajo"],
-            color_discrete_map={"Alto": "#e74c3c", "Medio": "#fcb632", "Bajo": "#64bda1"},
-            hole=0.55,
+    with st.container(key="pie_card"):
+        st.markdown(
+            '<p style="font-family:Lilita One,cursive;font-weight:400;'
+            'font-size:1.15rem;color:#4d2973;margin:0 0 2px 0;">&#9685; Distribución de Riesgo</p>'
+            '<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0 0 16px 0;letter-spacing:.05em;">'
+            'Total de comercios analizados</p>',
+            unsafe_allow_html=True
         )
-        fig_pie.update_traces(
-            textposition="inside",
-            textinfo="percent+label",
-            textfont=dict(size=11, color="white"),
-            marker=dict(line=dict(color="#ffffff", width=3)),
-            hovertemplate="<b>%{label}</b><br>%{value} comercios<br>%{percent}<extra></extra>",
-        )
-        fig_pie.add_annotation(
-            text=f"<b>{total_pie}</b>",
-            x=0.5, y=0.56,
-            font=dict(size=28, color="#4d2973", family="Lilita One"),
-            showarrow=False,
-        )
-        fig_pie.add_annotation(
-            text="comercios",
-            x=0.5, y=0.40,
-            font=dict(size=10, color="#a478d1"),
-            showarrow=False,
-        )
-        fig_pie.update_layout(
-            showlegend=False,
-            margin=dict(l=8, r=8, t=18, b=12),
-            paper_bgcolor="rgba(236,232,247,0.45)",
-            plot_bgcolor="rgba(0,0,0,0)",
-            height=305,
-        )
-        st.plotly_chart(fig_pie, use_container_width=True)
 
-    with metrics_c:
-        st.markdown("<br>", unsafe_allow_html=True)
+        st.markdown(
+            '<div style="height:12px;border-top:1px solid #ece8f7;margin:2px 0 14px 0;"></div>',
+            unsafe_allow_html=True
+        )
 
-        metricas = [
-            (" Total comercio alto",  f"{alto}",  "#e74c3c"),
-            (" Total comercio medio", f"{medio}", "#fcb632"),
-            (" Total comercio bajo",  f"{bajo}",  "#64bda1"),
-        ]
-        for label, valor, color in metricas:
-            st.markdown(
-                f'<div style="margin-bottom:14px;">'
-                f'<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0;letter-spacing:.04em;">{label}</p>'
-                f'<p style="font-family:Lilita One,cursive;font-weight:400;'
-                f'font-size:1.45rem;color:{color};margin:2px 0 0 0;line-height:1.1;">{valor}</p>'
-                f'<div style="height:3px;width:40px;background:{color};border-radius:99px;margin-top:4px;'
-                f'opacity:.5;"></div>'
-                f'</div>',
-                unsafe_allow_html=True
+        donut_c, metrics_c = st.columns([1.2, 0.8], gap="medium")
+
+        with donut_c:
+            total_pie = alto + medio + bajo
+            pct_alto  = round(alto  / total_pie * 100, 1)
+            pct_medio = round(medio / total_pie * 100, 1)
+            pct_bajo  = round(bajo  / total_pie * 100, 1)
+
+            fig_pie = px.pie(
+                values=[alto, medio, bajo],
+                names=["Alto", "Medio", "Bajo"],
+                color=["Alto", "Medio", "Bajo"],
+                color_discrete_map={"Alto": "#e74c3c", "Medio": "#fcb632", "Bajo": "#64bda1"},
+                hole=0.55,
             )
+            fig_pie.update_traces(
+                textposition="inside",
+                textinfo="percent+label",
+                textfont=dict(size=11, color="white"),
+                marker=dict(line=dict(color="#ffffff", width=3)),
+                hovertemplate="<b>%{label}</b><br>%{value} comercios<br>%{percent}<extra></extra>",
+            )
+            fig_pie.add_annotation(
+                text=f"<b>{total_pie}</b>",
+                x=0.5, y=0.56,
+                font=dict(size=28, color="#4d2973", family="Lilita One"),
+                showarrow=False,
+            )
+            fig_pie.add_annotation(
+                text="comercios",
+                x=0.5, y=0.40,
+                font=dict(size=10, color="#a478d1"),
+                showarrow=False,
+            )
+            fig_pie.update_layout(
+                showlegend=False,
+                margin=dict(l=8, r=8, t=18, b=12),
+                paper_bgcolor="rgba(236,232,247,0.45)",
+                plot_bgcolor="rgba(0,0,0,0)",
+                height=305,
+            )
+            st.plotly_chart(fig_pie, use_container_width=True)
 
-    st.markdown('</div>', unsafe_allow_html=True)
+        with metrics_c:
+            st.markdown("<br>", unsafe_allow_html=True)
+
+            metricas = [
+                (" Total comercio alto",  f"{alto}",  "#e74c3c"),
+                (" Total comercio medio", f"{medio}", "#fcb632"),
+                (" Total comercio bajo",  f"{bajo}",  "#64bda1"),
+            ]
+            for label, valor, color in metricas:
+                st.markdown(
+                    f'<div style="margin-bottom:14px;">'
+                    f'<p style="font-family:Montserrat,sans-serif;font-size:.78rem;color:#a478d1;margin:0;letter-spacing:.04em;">{label}</p>'
+                    f'<p style="font-family:Lilita One,cursive;font-weight:400;'
+                    f'font-size:1.45rem;color:{color};margin:2px 0 0 0;line-height:1.1;">{valor}</p>'
+                    f'<div style="height:3px;width:40px;background:{color};border-radius:99px;margin-top:4px;'
+                    f'opacity:.5;"></div>'
+                    f'</div>',
+                    unsafe_allow_html=True
+                )
 
 
 # ─────────────────────────────────────────────
