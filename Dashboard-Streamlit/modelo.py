@@ -71,7 +71,13 @@ components.html(
         """
         <script>
             (function () {
-                const content = "width=1366, initial-scale=0.28, minimum-scale=0.28, maximum-scale=2.0, user-scalable=yes";
+                const desktopWidth = 1366;
+                const vw = Math.min(window.screen.width || 0, window.innerWidth || 0) || 390;
+                const isMobile = vw <= 900;
+                const fitScale = Math.max(0.22, Math.min(1, vw / desktopWidth));
+                const content = isMobile
+                    ? `width=${desktopWidth}, initial-scale=${fitScale}, minimum-scale=${fitScale}, maximum-scale=${fitScale}, user-scalable=no`
+                    : "width=device-width, initial-scale=1";
                 let viewport = window.parent.document.querySelector('meta[name="viewport"]');
                 if (!viewport) {
                     viewport = window.parent.document.createElement("meta");
@@ -113,21 +119,6 @@ st.markdown("""
 
 html, body, [data-testid="stAppViewContainer"] {
     color-scheme: light !important;
-}
-
-/* Fuerza layout de escritorio en moviles */
-[data-testid="stAppViewContainer"] {
-    min-width: 1280px;
-    overflow-x: auto;
-}
-
-@media (max-width: 1024px) {
-    [data-testid="stHorizontalBlock"] {
-        flex-wrap: nowrap !important;
-    }
-    [data-testid="stHorizontalBlock"] > div {
-        min-width: 260px;
-    }
 }
 
 /* ── HEADER ── */
